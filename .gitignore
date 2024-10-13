@@ -16,7 +16,7 @@ Servers/
 # 자바 관련 무시할 파일 확장자
 # Java
 *.class
-*.jar
+#*.jar
 *.war
 *.ear
 ##META-INF

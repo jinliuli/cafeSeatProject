@@ -1,0 +1,3 @@
+- name: "Web Dynamic Project"
+- context root: "/cafe"
+- generate web.xml (o)
