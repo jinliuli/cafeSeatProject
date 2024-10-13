@@ -1,5 +1,23 @@
 # cafeSeatProject
 
+## git 사용하기
+###최신 정보 가져오기
+- git fetch
+
+### 최신 정보 보여주기(화면에)
+- git status
+
+### 원격저장소에서 최신 정보 다운로드하기
+- git pull
+
+##로컬저장소 내용을 커밋하고 원격으로 푸시하기
+- git fetch
+- git status
+- git add .
+- git commit -m "뭐 업데이트 했어요 이거 지웠어요"
+- git push
+
+
 ### git 저장소 연결하기
 
 
