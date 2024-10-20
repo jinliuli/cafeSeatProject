@@ -100,6 +100,8 @@
 git push -u origin main
 git push --set-upstream origin main
 
+### 깃명령어 목록
+https://nachwon.github.io/git-command/
 ### use this
 https://velog.io/@aksen5240/Git-%EC%9D%B4%ED%95%B4%EC%9D%98-%ED%95%B5%EC%8B%AC-%EC%9E%91%EC%97%85-%EC%98%81%EC%97%AD%EA%B3%BC-%ED%8C%8C%EC%9D%BC-%EC%83%81%ED%83%9C
 
@@ -178,7 +180,7 @@ git pull origin main --allow-unrelated-histories
         - checkout HEAD^ -> 바로 이전 커밋으로 이동
         - checkout HEAD~n -> 현재 HEAD 기준으로 n 회차 이전 커밋으로 이동
     - switch main -> 위 명령어랑 동일
-    - switch (브램치 이름) -> 해당 브랜치로 이동
+    - switch (브랜치 이름) -> 해당 브랜치로 이동
 
     - restore --staged (파일명) -> 스테이징된 파일에 대해서 스테이징 취소
     - branch -> 현재 로컬저장소에 있는 브랜치 리스트 출력
