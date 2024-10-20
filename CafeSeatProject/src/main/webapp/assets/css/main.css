@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -315,7 +315,7 @@ input, select, textarea {
 					padding-top: 2.5em;
 				}
 
-		@media screen and (max-width: 1680px) {
+		/* @media screen and (max-width: 1680px) {
 
 			.row {
 				display: flex;
@@ -1293,7 +1293,7 @@ input, select, textarea {
 							padding-top: 2.5em;
 						}
 
-		}
+		} */
 
 /* Basic */
 
@@ -1332,7 +1332,7 @@ input, select, textarea {
 		line-height: 1.75em;
 	}
 
-		@media screen and (max-width: 1680px) {
+		/* @media screen and (max-width: 1680px) {
 
 			body, input, textarea, select {
 				font-size: 15pt;
@@ -1362,7 +1362,7 @@ input, select, textarea {
 				font-size: 11pt;
 			}
 
-		}
+		} */
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
@@ -1384,7 +1384,7 @@ input, select, textarea {
 		letter-spacing: -0.015em;
 	}
 
-	@media screen and (max-width: 736px) {
+	/* @media screen and (max-width: 736px) {
 
 		h1 {
 			font-size: 1.75em;
@@ -1398,7 +1398,7 @@ input, select, textarea {
 			font-size: 1em;
 		}
 
-	}
+	} */
 
 	blockquote {
 		border-left: solid 0.5em #ddd;
@@ -1536,13 +1536,13 @@ input, select, textarea {
 			color: #aaa;
 		}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			header {
 				margin: 0 0 1em 0;
 			}
 
-		}
+		} */
 
 /* Image */
 
@@ -1668,7 +1668,7 @@ input, select, textarea {
 			padding: 0.5em 1.25em 0.5em 1.25em;
 		}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			input[type="button"],
 			input[type="submit"],
@@ -1678,7 +1678,7 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		}
+		} */
 
 /* List */
 
@@ -1717,7 +1717,7 @@ input, select, textarea {
 				margin-left: 0;
 			}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			ul.actions li {
 				display: block;
@@ -1728,7 +1728,7 @@ input, select, textarea {
 					margin-top: 0;
 				}
 
-		}
+		} */
 
 /* Icons */
 
@@ -1863,13 +1863,13 @@ input, select, textarea {
 					border-bottom-width: 0.5em;
 				}
 
-		@media screen and (max-width: 980px) {
+		/* @media screen and (max-width: 980px) {
 
 			#nav a span {
 				display: none;
 			}
 
-		}
+		} */
 
 /* Wrapper */
 
@@ -1905,7 +1905,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		@media screen and (max-width: 1280px) {
+		/* @media screen and (max-width: 1280px) {
 
 			#wrapper {
 				padding: 3em 0;
@@ -1939,7 +1939,7 @@ input, select, textarea {
 				max-width: 100%;
 			}
 
-		}
+		} */
 
 /* Main */
 
@@ -1970,13 +1970,13 @@ input, select, textarea {
 				opacity: 0;
 			}
 
-			@media screen and (max-width: 736px) {
+			/* @media screen and (max-width: 736px) {
 
 				#main > .panel {
 					padding: 2em 1.5em 1.5em 1.5em;
 				}
 
-			}
+			} */
 
 			#main > .panel.intro {
 				padding: 0;
@@ -2101,7 +2101,7 @@ input, select, textarea {
 						margin: 0.25em 0 0 0;
 					}
 
-				@media screen and (max-width: 980px) {
+				/* @media screen and (max-width: 980px) {
 
 					#main > .panel.intro {
 						-moz-flex-direction: column;
@@ -2138,7 +2138,7 @@ input, select, textarea {
 							margin: 0.25em 0 0 0;
 						}
 
-				}
+				} */
 
 /* Footer */
 
@@ -2181,11 +2181,14 @@ input, select, textarea {
 					border-left: 0;
 				}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			#footer .copyright li {
 				padding-left: 0.5em;
 				margin-left: 0.5em;
 			}
 
-		}
+		} */
+		
+
+		

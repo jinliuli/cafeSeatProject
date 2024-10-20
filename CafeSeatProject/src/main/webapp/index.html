@@ -10,8 +10,25 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/menu.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<style>
+		/* #order #price {
+			width: 350px;
+			float: right;
+			text-align: center;
+		}
+
+		#order #price #totalPrice {
+			border: none; 
+			text-align: center;
+			font-size: 25px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			cursor: inherit;
+		}  */
+	</style>
 	<body class="is-preload">
 
 		<!-- Wrapper-->
@@ -30,94 +47,102 @@
 
 						<!-- Me -->
 							<article id="home" class="panel intro">
-								<header>
-									<h1>Jane Doe</h1>
-									<p>Senior Astral Projectionist</p>
-								</header>
-								<a href="#work" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a>
+
 							</article>
 
-						<!-- Work -->
+						<!-- Menu -->
 							<article id="work" class="panel">
-								<header>
-									<h2>Work</h2>
-								</header>
-								<p>
-									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
-									Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-									luctus elit eget interdum.
-								</p>
-								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
-										</div>
+								<div id="category">
+									<button class="categoryName">Coffee</button>
+									<button class="categoryName">Drink</button>
+									<button class="categoryName">Dessert</button>
+								</div>
+								<div id="menuList" class="menuList">
+									<div class="menu">
+										<div class="menuName">복숭아 아샷추</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
 									</div>
-								</section>
-							</article>
+									<div class="menu">
+										<div class="menuName">레몬아샷추</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">올타임콜드브루</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">아인슈패너</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">복숭아 아샷추</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">레몬아샷추</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">올타임콜드브루</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
+									</div>
+									<div class="menu">
+										<div class="menuName">아인슈패너</div>
+										<div class="menuprice">3,500원</div>		
+										<!-- <div class="optionSelect">
+											<span>옵션 선택</span></div> -->
+										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
+									</div>
+								</div>
+								<hr>
+								
+								<div id="order">
+								<table id="orderDetail">
+									<tr>
+										<th>메뉴명</th>
+										<th>수량</th>
+									</tr>
+									<tr>
+										<td><input type="text" id="orderName" value="" readonly></td>
+										<td><input type="text" id="orderCount" value="" readonly></td>
+									</tr>
+								</table>
+								<div id="price">
+									<input type="text" id="totalPrice" value="Total Price: 13,000원" readonly>
+								</div>
+								<div id="payType">
+									<button type="submit" id="kakaopay"><img src="assets/payment/kakao.jpg" alt=""></button>
+									<button type="submit" id="tosspay"><img src="assets/payment/tosspay.png" alt=""></button>
+									<button type="submit" id="payETC">기타 결제</button>
+								</div>
+							</div>															
+						</article>
+						<article id="menuoption" class="'panel">
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
-								<header>
-									<h2>Contact Me</h2>
-								</header>
-								<form action="#" method="post">
-									<div>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-medium">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="6"></textarea>
-											</div>
-											<div class="col-12">
-												<input type="submit" value="Send Message" />
-											</div>
-										</div>
-									</div>
-								</form>
+
 							</article>
 
 					</div>
@@ -137,6 +162,17 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				
+				$('#menuImg').click(() => {
+					
+					$('#orderName').val('아이스 아메리카노');
+					$('#orderCount').val('4');
+
+				})
+
+			</script>
 
 	</body>
 </html>
