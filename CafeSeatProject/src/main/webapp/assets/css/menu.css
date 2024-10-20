@@ -5,18 +5,18 @@ import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i
 		/* 메뉴 리스트 --------------------------------------------*/
 		#category {
 			position: absolute;
-			padding-bottom: 20px;
 		}
 		
 		#category .categoryName {
 			display: inline-block;
 			width: 320px;
-			height: 40px;
+			height: 50px;
 			background-color: rgb(253, 243, 188);
 			border-radius: 20px;
 			margin-right: 45px;
 			text-align: center;
-			font-size: 18px;
+			font-size: 20px;
+			letter-spacing: 1px;
 			color: #999999;
 		}
 
@@ -33,7 +33,7 @@ import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i
 			display: flex;
 			flex-flow: wrap;
 			column-gap: 2em;
-			margin-top: 80px;
+			margin-top: 50px;
 			/* column-count: 3;	 */	
 		}
 		
@@ -44,25 +44,35 @@ import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i
 		}
 
 		#menuList .menu .menuName {
-			height: 28px;
+			display: block;
+			cursor: inherit;
+			width: 320px;
 			font-size: 18px;
 			text-align: center;
+			padding: 0;
 			font-weight: bold;
+			background-color: white;
+			color: black;
 		}
 
 		#menuList .menu .menuprice {
+			display: block;
+			cursor: inherit;
+			width: 320px;
 			text-align: center;
 			font-size: 18px;
 			letter-spacing: 1px;
+			background-color: white;
+			color: black;
 		}
 
-		#menuList .menu #menuImg {
+		#menuList .menu .menuImg {
 			background-color: white;
 			padding: 0;
 			cursor: pointer;
 		}
 
-		#menuList .menu #menuImg img {
+		#menuList .menu .menuImg img {
  			/* display: block; */
 			width: 320px;
 			height: 240px;

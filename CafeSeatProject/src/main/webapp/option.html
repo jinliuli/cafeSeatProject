@@ -10,8 +10,121 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/options.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<style>
+		h2 {
+			font-size: 30px;
+			text-align: center;
+			margin: 0;
+			margin-bottom: 50px;
+			font-weight: bold;
+		}
+
+		#optionImg {
+
+		}
+		
+		#optionImg input[type=text] {
+
+		}
+
+		#optionImg img {
+			float: left;
+			width: 600px;
+			height: 480px;
+			border-radius: 30px;
+			border: 1px solid #c3c3c3;
+			margin-bottom: 50px;
+		}
+
+		#option {
+			float: right;
+			width: 450px;
+			height: auto;
+			text-align: center;
+			border: 1px solid rgb(214, 214, 214);
+			background-color: #f6f6f6;
+			border-radius: 30px;
+			padding: 0px 10px 10px 10px;
+		}
+
+		#option .optionName {
+			font-size: 15px;
+			text-align: left;
+			margin-left: 10px;
+			margin-top: 10px;
+			height: 35px;
+		}
+
+		#option  .temperature {
+			background-color: white;
+			width: 200px;
+			color: black;
+			font-size: 18px;
+			border: 1px solid #c3c3c3;
+			border-radius: 15px;
+			margin-left: 10px;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+
+		#option .temperature:hover {
+			background-color: rgb(253, 243, 188);
+			border: none;
+		}
+
+		#option .size {
+			background-color: white;
+			color: black;
+			width: 120px;
+			height: 40px;
+			border: 1px solid #c3c3c3;
+			border-radius: 10px;
+			font-size: 17px;
+			padding: 0;
+			margin: 0px 8px 0px 8px;
+		}
+
+		#option .iceamout {
+			background-color: white;
+			color: black;
+			width: 120px;
+			height: 40px;
+			border: 1px solid #c3c3c3;
+			border-radius: 10px;
+			font-size: 17px;
+			padding: 0;
+			margin: 0px 8px 0px 8px;
+		}
+
+		#option .shotadd {
+			background-color: white;
+			color: black;
+			width: 120px;
+			height: 40px;
+			border: 1px solid #c3c3c3;
+			border-radius: 10px;
+			font-size: 17px;
+			padding: 0;
+			margin: 0px 8px 0px 8px;
+		}
+
+		#select input[type=submit] {
+			float: right;
+			background-color: rgb(255, 209, 194);
+			color: black;
+			width: 120px;
+			height: 40px;
+			border-radius: 10px;
+			font-size: 20px;
+			padding: 0;
+			margin: 30px 8px 0px 8px;
+			font-weight: bold;
+		}
+
+	</style>
 	<body class="is-preload">
 
 		<!-- Wrapper-->
@@ -33,89 +146,33 @@
 
 							</article>
 
-						<!-- Menu -->
+						<!-- options -->
 							<article id="work" class="panel">
-								<div id="category">
-									<div class="categoryName">Coffee</div>
-									<div class="categoryName">Drink</div>
-									<div class="categoryName">Dessert</div>
+								<h2>복숭아 아샷추</h2>
+								<div id="optionImg">
+									<!-- <input type="text" value="복숭아 아샷추"> -->
+									<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg" alt="">
 								</div>
-								<div id="menuList" class="menuList">
-									<div class="menu">
-										<div class="menuName">복숭아 아샷추</div>
-										<div class="price">3,500원</div>		
-										<div class="optionSelect">
-											<span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">레몬 아샷추</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">올타임콜드브루</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">아인슈패너</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">복숭아 아샷추</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">레몬 아샷추</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">올타임콜드브루</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg" class="img">
-									</div>
-									<div class="menu">
-										<div class="menuName">아인슈패너</div>
-										<div class="price">3,500원</div>
-										<div class="optionSelect"><span>옵션 선택</span></div>
-										<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg" class="img">
-									</div>
+								<div id="option">
+									<div class="optionName">1. 온도(ICE or HOT)</div>
+										<input type="button" class="temperature" name="ice" value="ICE">
+										<input type="button" class="temperature" name="hot" value="HOT">
+									<div class="optionName">2. 사이즈(Size)</div>
+										<input type="button" class="size" name="cupSize" value="기본(R)">
+										<input type="button" class="size" name="cupSize" value="라지(L)">
+										<input type="button" class="size" name="cupSize" value="맥스(M)">
+									<div class="optionName">3. 얼음 양(Ice Amout)</div>
+										<input type="button" class="iceamout" name="icefew" value="얼음 적게">
+										<input type="button" class="iceamout" name="icebasic" value="기본">
+										<input type="button" class="iceamout" name="icelots" value="얼음 많이">
+									<div class="optionName">4. 샷 추가(Shot)</div>
+										<input type="button" class="shotadd" name="noshot" value="기본">
+										<input type="button" class="shotadd" name="shot" value="샷 추가">
 								</div>
-								<hr>
-								
-								<div id="order">
-								<table id="orderDetail">
-									<tr>
-										<th>메뉴명</th>
-										<th>수량</th>
-									</tr>
-									<tr>
-										<td>복숭아 아샷추</td>
-										<td>1</td>
-									</tr>
-
-								</table>
-								<div id="totalPrice">Total Price: 1,3000원</div>
-								<div id="payType">
-									<!-- <div id="kakaopay"><img src="assets/payment/kakao.jpg"></div>
-									<div id="tosspay"><img src="assets/payment/tosspay.png"></div>
-									<div id="payETC">기타 결제</div> -->
-									<button type="submit" id="kakaopay"><img src="assets/payment/kakao.jpg" alt=""></button>
-									<button type="submit" id="tosspay"><img src="assets/payment/tosspay.png" alt=""></button>
-									<button type="submit" id="payETC">기타 결제</button>
-								</div>
-							</div>															
-						</article>
+								<div id="select">
+									<input type="submit" name="options" value="선택">
+								</div>												
+							</article>
 						<article id="menuoption" class="'panel">
 
 						<!-- Contact -->

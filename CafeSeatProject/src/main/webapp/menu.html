@@ -53,66 +53,30 @@
 						<!-- Menu -->
 							<article id="work" class="panel">
 								<div id="category">
-									<button class="categoryName">Coffee</button>
-									<button class="categoryName">Drink</button>
-									<button class="categoryName">Dessert</button>
+									<button type="button" class="categoryName">Coffee</button>
+									<button type="button" class="categoryName">Drink</button>
+									<button type="button" class="categoryName">Dessert</button>
 								</div>
 								<div id="menuList" class="menuList">
 									<div class="menu">
-										<div class="menuName">복숭아 아샷추</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
+										<button type="button" class="menuName">복숭아 아샷추</button>
+										<button type="button" class="menuprice">3,500원</button>		
+										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
 									</div>
 									<div class="menu">
-										<div class="menuName">레몬아샷추</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
+										<button type="button" class="menuName">레몬아샷추</button>
+										<button type="button" class="menuprice">3,500원</button>		
+										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
 									</div>
 									<div class="menu">
-										<div class="menuName">올타임콜드브루</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
+										<button type="button" class="menuName">올타임콜드브루</button>
+										<button type="button" class="menuprice">3,500원</button>		
+										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
 									</div>
 									<div class="menu">
-										<div class="menuName">아인슈패너</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
-									</div>
-									<div class="menu">
-										<div class="menuName">복숭아 아샷추</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
-									</div>
-									<div class="menu">
-										<div class="menuName">레몬아샷추</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
-									</div>
-									<div class="menu">
-										<div class="menuName">올타임콜드브루</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
-									</div>
-									<div class="menu">
-										<div class="menuName">아인슈패너</div>
-										<div class="menuprice">3,500원</div>		
-										<!-- <div class="optionSelect">
-											<span>옵션 선택</span></div> -->
-										<button id="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
+										<button type="button" class="menuName">아인슈패너</button>
+										<button type="button" class="menuprice">3,500원</button>		
+										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
 									</div>
 								</div>
 								<hr>
@@ -164,12 +128,13 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-				
-				$('#menuImg').click(() => {
-					
-					$('#orderName').val('아이스 아메리카노');
-					$('#orderCount').val('4');
 
+				$('#category').click(() => {			
+					alert(event.target.textContent);
+				})
+
+				$('.menu').click(() => {			
+					alert($('.menuName').val());
 				})
 
 			</script>
