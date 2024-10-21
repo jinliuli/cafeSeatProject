@@ -14,12 +14,56 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
+
+@font-face {
+    font-family: 'Paperlogy-5Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-6SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-7Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 		h2 {
-			font-size: 30px;
+			font-family: 'Paperlogy-8ExtraBold';
+			font-size: 50px;
 			text-align: center;
 			margin: 0;
-			margin-bottom: 50px;
-			font-weight: bold;
+			margin-bottom: 30px;
+			letter-spacing: 1px;
+		}
+
+		p {
+			font-family: 'Paperlogy-5Medium';
+			font-size: 20px;
+			text-align: center;
+			font-weight: 500;
 		}
 
 		#optionImg {
@@ -66,12 +110,12 @@
 			border: 1px solid #c3c3c3;
 			border-radius: 15px;
 			margin-left: 10px;
-			font-weight: bold;
 			letter-spacing: 1px;
 		}
 
 		#option .temperature:hover {
 			background-color: rgb(253, 243, 188);
+			font-weight: bold;
 			border: none;
 		}
 
@@ -109,6 +153,19 @@
 			font-size: 17px;
 			padding: 0;
 			margin: 0px 8px 0px 8px;
+		}
+
+		#select input[type=button] {
+
+			background-color: rgb(255, 209, 194);
+			color: black;
+			width: 120px;
+			height: 40px;
+			border-radius: 10px;
+			font-size: 20px;
+			padding: 0;
+			margin: 30px 8px 0px 200px;
+			font-weight: bold;
 		}
 
 		#select input[type=submit] {
@@ -149,6 +206,7 @@
 						<!-- options -->
 							<article id="work" class="panel">
 								<h2>복숭아 아샷추</h2>
+								<p>달콤하고 향긋한 복숭아 아이스티에 에스프레소를 달콤하게 즐기는 투썸 아샷추</p>
 								<div id="optionImg">
 									<!-- <input type="text" value="복숭아 아샷추"> -->
 									<img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg" alt="">
@@ -169,7 +227,9 @@
 										<input type="button" class="shotadd" name="noshot" value="기본">
 										<input type="button" class="shotadd" name="shot" value="샷 추가">
 								</div>
+								<!-- 나중에 위에 name은 삭제하고 히든태그에 name넣어서 버튼 클릭하면 그때 value값 받도록 -->
 								<div id="select">
+									<input type="button" name="back" class="back" value="취소">
 									<input type="submit" name="options" value="선택">
 								</div>												
 							</article>

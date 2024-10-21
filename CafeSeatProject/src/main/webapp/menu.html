@@ -52,10 +52,11 @@
 
 						<!-- Menu -->
 							<article id="work" class="panel">
-								<div id="category">
+								<div id="category" >
 									<button type="button" class="categoryName">Coffee</button>
 									<button type="button" class="categoryName">Drink</button>
 									<button type="button" class="categoryName">Dessert</button>
+									<input type="hidden" name="category">
 								</div>
 								<div id="menuList" class="menuList">
 									<div class="menu">
@@ -66,7 +67,7 @@
 									<div class="menu">
 										<button type="button" class="menuName">레몬아샷추</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
+										<button class="menuImg" data-price="3,500원"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">올타임콜드브루</button>
@@ -133,8 +134,9 @@
 					alert(event.target.textContent);
 				})
 
-				$('.menu').click(() => {			
-					alert($('.menuName').val());
+				$('.menuImg').click(function() {	
+					console.log(this);		
+					alert($(this).data("price"));
 				})
 
 			</script>
