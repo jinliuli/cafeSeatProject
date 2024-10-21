@@ -1,0 +1,114 @@
+import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url("fontawesome-all.min.css");
+
+/* options */
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+#optionImg {
+
+}
+
+#optionImg input[type=text] {
+
+}
+
+#optionImg img {
+    float: left;
+    width: 600px;
+    height: 480px;
+    border-radius: 30px;
+    border: 1px solid #c3c3c3;
+    margin-bottom: 50px;
+}
+
+#option {
+    float: right;
+    width: 450px;
+    height: auto;
+    text-align: center;
+    border: 1px solid rgb(214, 214, 214);
+    background-color: #f6f6f6;
+    border-radius: 30px;
+    padding: 0px 10px 10px 10px;
+}
+
+#option .optionName {
+    font-size: 15px;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 35px;
+}
+
+#option  .temperature {
+    background-color: white;
+    width: 200px;
+    color: black;
+    font-size: 18px;
+    border: 1px solid #c3c3c3;
+    border-radius: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#option .temperature:hover {
+    background-color: rgb(253, 243, 188);
+    border: none;
+}
+
+#option .size {
+    background-color: white;
+    color: black;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 0;
+    margin: 0px 8px 0px 8px;
+}
+
+#option .iceamout {
+    background-color: white;
+    color: black;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 0;
+    margin: 0px 8px 0px 8px;
+}
+
+#option .shotadd {
+    background-color: white;
+    color: black;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+    font-size: 17px;
+    padding: 0;
+    margin: 0px 8px 0px 8px;
+}
+
+#select input[type=submit] {
+    float: right;
+    background-color: rgb(255, 209, 194);
+    color: black;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 0;
+    margin: 30px 8px 0px 8px;
+    font-weight: bold;
+}
