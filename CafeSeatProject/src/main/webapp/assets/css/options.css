@@ -3,12 +3,56 @@ import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i
 
 /* options */
 
+@font-face {
+    font-family: 'Paperlogy-5Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-6SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-7Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h2 {
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 50px;
-    font-weight: bold;
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 50px;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+
+p {
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	text-align: center;
+	letter-spacing: 1px;
+
 }
 
 #optionImg {
@@ -20,95 +64,128 @@ h2 {
 }
 
 #optionImg img {
-    float: left;
-    width: 600px;
-    height: 480px;
-    border-radius: 30px;
-    border: 1px solid #c3c3c3;
-    margin-bottom: 50px;
+	float: left;
+	width: 600px;
+	height: 480px;
+	border-radius: 30px;
+	border: 1px solid #c3c3c3;
+	margin-bottom: 50px;
 }
 
 #option {
-    float: right;
-    width: 450px;
-    height: auto;
-    text-align: center;
-    border: 1px solid rgb(214, 214, 214);
-    background-color: #f6f6f6;
-    border-radius: 30px;
-    padding: 0px 10px 10px 10px;
+	float: right;
+	width: 450px;
+	height: auto;
+	text-align: center;
+	border: 1px solid rgb(214, 214, 214);
+	background-color: #f6f6f6;
+	border-radius: 30px;
+	padding: 0px 10px 10px 10px;
 }
 
 #option .optionName {
-    font-size: 15px;
-    text-align: left;
-    margin-left: 10px;
-    margin-top: 10px;
-    height: 35px;
+    font-family: 'Paperlogy-5Medium';
+	font-size: 15px;
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	height: 35px;
 }
 
 #option  .temperature {
-    background-color: white;
-    width: 200px;
-    color: black;
-    font-size: 18px;
-    border: 1px solid #c3c3c3;
-    border-radius: 15px;
-    margin-left: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
+	background-color: white;
+	width: 200px;
+	color: black;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 18px;
+	border: 1px solid #c3c3c3;
+	border-radius: 15px;
+	margin-left: 10px;
+	letter-spacing: 1px;
 }
 
 #option .temperature:hover {
-    background-color: rgb(253, 243, 188);
-    border: none;
+	background-color: rgb(253, 243, 188);
+	border: none;
 }
 
 #option .size {
-    background-color: white;
-    color: black;
-    width: 120px;
-    height: 40px;
-    border: 1px solid #c3c3c3;
-    border-radius: 10px;
-    font-size: 17px;
-    padding: 0;
-    margin: 0px 8px 0px 8px;
+	background-color: white;
+	color: black;
+	width: 120px;
+	height: 40px;
+	border: 1px solid #c3c3c3;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 17px;
+	padding: 0;
+	margin: 0px 8px 0px 8px;
+}
+
+#option .size:hover {
+	background-color: rgb(253, 243, 188);
+	border: none;
 }
 
 #option .iceamout {
-    background-color: white;
-    color: black;
-    width: 120px;
-    height: 40px;
-    border: 1px solid #c3c3c3;
-    border-radius: 10px;
-    font-size: 17px;
-    padding: 0;
-    margin: 0px 8px 0px 8px;
+	background-color: white;
+	color: black;
+	width: 120px;
+	height: 40px;
+	border: 1px solid #c3c3c3;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 17px;
+	padding: 0;
+	margin: 0px 8px 0px 8px;
+}
+
+#option .iceamout:hover {
+	background-color: rgb(253, 243, 188);
+	border: none;
 }
 
 #option .shotadd {
-    background-color: white;
-    color: black;
-    width: 120px;
-    height: 40px;
-    border: 1px solid #c3c3c3;
-    border-radius: 10px;
-    font-size: 17px;
-    padding: 0;
-    margin: 0px 8px 0px 8px;
+	background-color: white;
+	color: black;
+	width: 120px;
+	height: 40px;
+	border: 1px solid #c3c3c3;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 17px;
+	padding: 0;
+	margin: 0px 8px 0px 8px;
+}
+
+#option .shotadd:hover {
+	background-color: rgb(253, 243, 188);
+	border: none;
+}
+
+#select input[type=button] {
+	background-color: rgb(255, 209, 194);
+	color: black;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	padding: 0;
+	margin: 30px 8px 0px 200px;
+	font-weight: bold;
 }
 
 #select input[type=submit] {
-    float: right;
-    background-color: rgb(255, 209, 194);
-    color: black;
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 0;
-    margin: 30px 8px 0px 8px;
-    font-weight: bold;
+	float: right;
+	background-color: rgb(255, 209, 194);
+	color: black;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	padding: 0;
+	margin: 30px 8px 0px 8px;
+	font-weight: bold;
 }
