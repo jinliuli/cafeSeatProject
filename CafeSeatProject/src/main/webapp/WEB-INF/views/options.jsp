@@ -7,7 +7,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/options.css" />
+		<link rel="stylesheet" href="assets/css/options2.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
@@ -46,19 +46,55 @@
 								<form method="GET" action="/cafe/menulist.do#work">
 								<div id="option">
 									<div class="optionName">1. 온도(ICE or HOT)</div>
-										<input type="button" class="temperature" name="ice" value="ICE">
-										<input type="button" class="temperature" name="hot" value="HOT">
+										<div class="radio_temperature">
+											<input id="temper_ice" type="radio" class="temperature" name="temperature" value="1">
+											<label for="temper_ice">ICE</label>
+										</div>
+										
+										<div class="radio_temperature">
+											<input id="temper_hot" type="radio" class="temperature" name="temperature" value="2">
+											<label for="temper_hot">HOT</label>
+										</div>
+										
 									<div class="optionName">2. 사이즈(Size)</div>
-										<input type="button" class="size" name="cupSize" value="기본(R)">
-										<input type="button" class="size" name="cupSize" value="라지(L)">
-										<input type="button" class="size" name="cupSize" value="맥스(M)">
+										<div class="radio_cupsize">
+											<input id="size_regular" type="radio" class="size" name="size" value="0">
+											<label for="size_regular">기본(R)</label>
+										</div>
+										<div class="radio_cupsize">
+											<input id="size_large" type="radio" class="size" name="size" value="1">
+											<label for="size_large">라지(L)</label>
+										</div>
+										<div class="radio_cupsize">
+											<input id="size_max" type="radio" class="size" name="size" value="2">
+											<label for="size_max">맥스(M)</label>
+										</div>
+										
 									<div class="optionName">3. 얼음 양(Ice Amout)</div>
-										<input type="button" class="iceamout" name="icefew" value="얼음 적게">
-										<input type="button" class="iceamout" name="icebasic" value="기본">
-										<input type="button" class="iceamout" name="icelots" value="얼음 많이">
+										<div class="radio_iceamout">
+											<input id="icefew" type="radio" class="iceamout" name="iceamout" value="0">
+											<label for="icefew">얼음 적게</label>
+										</div>
+										<div class="radio_iceamout">
+											<input id="icebasic" type="radio" class="iceamout" name="iceamout" value="1">
+											<label for="icebasic">기본</label>
+										</div>
+										<div class="radio_iceamout">
+											<input id="icelots" type="radio" class="iceamout" name="iceamout" value="2">
+											<label for="icelots">얼음 많이</label>
+										</div>
+										
 									<div class="optionName">4. 샷 추가(Shot)</div>
-										<input type="button" class="shotadd" name="noshot" value="기본">
-										<input type="button" class="shotadd" name="shot" value="샷 추가">
+										<div class="radio_shotadd">
+											<input id="noshot" type="radio" class="shotadd" name="shotadd" value="1">
+											<label for="noshot">기본</label>
+										</div>
+										
+										<div class="radio_shotadd">
+											<input id="shot" type="radio" class="shotadd" name="shotadd" value="2">
+											<label for="shot">샷 추가</label>
+										</div>
+										
 								</div>
 								<!-- 나중에 위에 name은 삭제하고 히든태그에 name넣어서 버튼 클릭하면 그때 value값 받도록 -->
 								<div id="select">
@@ -96,28 +132,7 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-				$(document).ready(function() {
-			
-			              let temperatureSelect = null;
-			
-			          $('.temperature').click(function() {
-			              const currentColor = $(this).css('background-color');
-			              const shadow = $(this).css('box-shadow');
-			              const selectColor = 'rgb(255, 200, 100)'; // 색깔
-			              const selected = '5px 5px 10px -5px inset';//그림자 적용
-			              temperatureSelect = $(this).val();
-			              alert("선택한 온도:" + temperatureSelect); //value값을 확인하는거
-			
-			              if (currentColor === selectColor) {
-			                  $(this).css('background-color', ''); // 원래 배경색으로 돌아감
-			                  $(this).css('box-shadow',''); //원래 그림자로 돌아감
-			              } else {
-			                  $(this).css('background-color', selectColor); // 배경색 변경
-			                  $(this).css('box-shadow', selected); //그림자 변경
-			
-			              }
-			          });
-			      });
+
 			</script>
 
 	</body>

@@ -59,12 +59,12 @@
 									<div class="menu">
 										<button type="button" class="menuName">복숭아 아샷추</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="assets/menuImages/drink/coffee01.jpg"></button>
+										<button class="menuImg" onclick="location.href='/cafe/options.do#work';"><img src="assets/menuImages/drink/coffee01.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">레몬아샷추</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg" data-price="3,500원"><img src="assets/menuImages/drink/coffee02.jpg"></button>
+										<button class="menuImg" data-menuName="레몬아샷추" data-price="3,500원"><img src="assets/menuImages/drink/coffee02.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">올타임콜드브루</button>
@@ -128,7 +128,7 @@
 
 			<script>
 
-				$('#category').click(() => {			
+/* 				$('#category').click(() => {			
 					alert(event.target.textContent);
 				});
 
@@ -139,7 +139,7 @@
 				
 				$('.menuImg').click(() => {
 					
-				});
+				}); */
 
 			</script>
 
