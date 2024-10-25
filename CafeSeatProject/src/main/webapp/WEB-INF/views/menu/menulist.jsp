@@ -1,17 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Astral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/menu.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
+		<link rel="stylesheet" href="/cafe/assets/css/menu.css" />
+		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
 		/* #order #price {
@@ -62,23 +59,24 @@
 									<div class="menu">
 										<button type="button" class="menuName">복숭아 아샷추</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee01.jpg"></button>
+										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do#work';"><img src="/cafe/assets/pic/menuImages/drink/coffee01.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">레몬아샷추</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg" data-price="3,500원"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee02.jpg"></button>
+										<button class="menuImg" data-menuName="레몬아샷추" data-price="3,500원"><img src="/cafe/assets/pic/menuImages/drink/coffee02.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">올타임콜드브루</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee03.jpg"></button>
+										<button class="menuImg"><img src="/cafe/assets/pic/menuImages/drink/coffee03.jpg"></button>
 									</div>
 									<div class="menu">
 										<button type="button" class="menuName">아인슈패너</button>
 										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/CafeSeatProject/src/main/webapp/assets/menuImages/drink/coffee04.jpg"></button>
+										<button class="menuImg"><img src="/cafe/assets/pic/menuImages/drink/coffee04.jpg"></button>
 									</div>
+									
 								</div>
 								<hr>
 								
@@ -97,8 +95,8 @@
 									<input type="text" id="totalPrice" value="Total Price: 13,000원" readonly>
 								</div>
 								<div id="payType">
-									<button type="submit" id="kakaopay"><img src="assets/payment/kakao.jpg" alt=""></button>
-									<button type="submit" id="tosspay"><img src="assets/payment/tosspay.png" alt=""></button>
+									<button type="submit" id="kakaopay"><img src="/cafe/assets/pic/payment/kakao.jpg" alt=""></button>
+									<button type="submit" id="tosspay"><img src="/cafe/assets/pic/payment/tosspay.png" alt=""></button>
 									<button type="submit" id="payETC">기타 결제</button>
 								</div>
 							</div>															
@@ -122,22 +120,26 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/cafe/assets/js/jquery.min.js"></script>
+			<script src="/cafe/assets/js/browser.min.js"></script>
+			<script src="/cafe/assets/js/breakpoints.min.js"></script>
+			<script src="/cafe/assets/js/util.js"></script>
+			<script src="/cafe/assets/js/main.js"></script>
 
 			<script>
 
-				$('#category').click(() => {			
+/* 				$('#category').click(() => {			
 					alert(event.target.textContent);
-				})
+				});
 
 				$('.menuImg').click(function() {	
 					console.log(this);		
 					alert($(this).data("price"));
-				})
+				});
+				
+				$('.menuImg').click(() => {
+					
+				}); */
 
 			</script>
 

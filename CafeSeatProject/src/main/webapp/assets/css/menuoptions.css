@@ -142,7 +142,7 @@ p {
 
 
 /* ice amount 수정 */
-#option .radio_iceamout {
+#option .radio_iceamount {
 	display: inline-block;
 	width: 120px;
 	margin: 0px 8px 0px 8px;
@@ -151,7 +151,7 @@ p {
 	border-radius: 15px;
 }
 
-#option .radio_iceamout label {
+#option .radio_iceamount label {
 	border-radius: 15px;
     font-family: 'Paperlogy-6SemiBold';
    	color: black;
@@ -162,15 +162,15 @@ p {
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-#option .radio_iceamout label:hover {
+#option .radio_iceamount label:hover {
 	background-color: rgb(252, 234, 199);
 }
 
-#option .radio_iceamout input[type='radio'] {
+#option .radio_iceamount input[type='radio'] {
 	display: none;
 }
 
-#option .radio_iceamout input[type='radio']:checked + label {
+#option .radio_iceamount input[type='radio']:checked + label {
 	background-color: rgb(255, 227, 176);
 	border: none;
 } 

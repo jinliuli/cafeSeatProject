@@ -6,9 +6,9 @@
 		<title>Astral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/options2.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
+		<link rel="stylesheet" href="/cafe/assets/css/menuoptions.css" />
+		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
 		
@@ -40,7 +40,7 @@
 								<p>달콤하고 향긋한 복숭아 아이스티에 에스프레소를 달콤하게 즐기는 투썸 아샷추</p>
 								<div id="optionImg">
 									<!-- <input type="text" value="복숭아 아샷추"> -->
-									<img src="assets/menuImages/drink/coffee01.jpg" alt="">
+									<img src="/cafe/assets/pic/menuImages/drink/coffee01.jpg" alt="">
 								</div>
 								
 								<form method="GET" action="/cafe/menulist.do#work">
@@ -70,17 +70,17 @@
 											<label for="size_max">맥스(M)</label>
 										</div>
 										
-									<div class="optionName">3. 얼음 양(Ice Amout)</div>
-										<div class="radio_iceamout">
-											<input id="icefew" type="radio" class="iceamout" name="iceamout" value="0">
+									<div class="optionName">3. 얼음 양(Ice Amount)</div>
+										<div class="radio_iceamount">
+											<input id="icefew" type="radio" class="iceamount" name="iceamount" value="0">
 											<label for="icefew">얼음 적게</label>
 										</div>
-										<div class="radio_iceamout">
-											<input id="icebasic" type="radio" class="iceamout" name="iceamout" value="1">
+										<div class="radio_iceamount">
+											<input id="icebasic" type="radio" class="iceamount" name="iceamount" value="1">
 											<label for="icebasic">기본</label>
 										</div>
-										<div class="radio_iceamout">
-											<input id="icelots" type="radio" class="iceamout" name="iceamout" value="2">
+										<div class="radio_iceamount">
+											<input id="icelots" type="radio" class="iceamount" name="iceamount" value="2">
 											<label for="icelots">얼음 많이</label>
 										</div>
 										
@@ -102,7 +102,7 @@
 									<input type="submit" name="options" value="선택" > -->
 									
 									<button type="submit" class="options">선택</button>
-									<button type="button" class="back" onclick="location.href='/cafe/menulist.do#work';">취소</button>
+									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#work';">취소</button>
 								</div>
 								</form>												
 							</article>
@@ -125,11 +125,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/cafe/assets/js/jquery.min.js"></script>
+			<script src="/cafe/assets/js/browser.min.js"></script>
+			<script src="/cafe/assets/js/breakpoints.min.js"></script>
+			<script src="/cafe/assets/js/util.js"></script>
+			<script src="/cafe/assets/js/main.js"></script>
 
 			<script>
 

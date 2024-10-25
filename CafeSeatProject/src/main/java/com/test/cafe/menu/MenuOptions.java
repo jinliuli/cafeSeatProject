@@ -1,4 +1,4 @@
-package com.test.cafe;
+package com.test.cafe.menu;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/menuoptions.do")
+@WebServlet("/menu/menuoptions.do")
 public class MenuOptions extends HttpServlet {
 
 	@Override
@@ -17,7 +17,7 @@ public class MenuOptions extends HttpServlet {
 
 		
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/menuoptions.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/menu/menuoptions.jsp");
 		dispatcher.forward(req, resp);
 
 	}
