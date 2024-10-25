@@ -1,0 +1,240 @@
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic"); */
+@import url("paperlogy_font.css");
+
+/* options */
+
+h2 {
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 50px;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 30px;
+	letter-spacing: 3px;
+}
+
+p {
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	text-align: center;
+	letter-spacing: 1px;
+
+}
+
+#optionImg {
+
+}
+
+#optionImg input[type=text] {
+
+}
+
+#optionImg img {
+	float: left;
+	width: 600px;
+	height: 480px;
+	border-radius: 30px;
+/* 	border: 1px solid #c3c3c3; */
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+	margin-bottom: 50px;
+}
+
+#option {
+	float: right;
+	width: 450px;
+	height: 400px;
+	text-align: center;
+	border: 1px solid rgb(214, 214, 214);
+	background-color: #f6f6f6;
+	border-radius: 30px;
+	padding: 0px 10px 10px 10px;
+}
+
+#option .optionName {
+    font-family: 'Paperlogy-5Medium';
+	font-size: 15px;
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	height: 35px;
+}
+
+/* 라디오 버튼 스타일 수정하기 --------------------- */
+
+#option .radio_temperature {
+	display: inline-block;
+	width: 200px;
+	height: 0;
+	background-color: white;
+/* 	border: 1px solid #c3c3c3; */
+	border-radius: 15px;
+	/* margin-left: 10px; */
+}
+
+/* #option .radio_ice .temperature {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	border: 1px solid #c3c3c3;
+	border-radius: 15px;
+	margin-left: 10px;
+	letter-spacing: 1px;
+} */
+
+#option .radio_temperature label {
+	border-radius: 15px;
+	margin: 0 auto;
+    font-family: 'Paperlogy-6SemiBold';
+   	color: black;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#option .radio_temperature label:hover {
+	background-color: rgb(252, 234, 199);
+}
+
+#option .radio_temperature input[type='radio'] {
+	display: none;
+}
+
+#option .radio_temperature input[type='radio']:checked + label {
+	background-color: rgb(255, 227, 176);
+	border: none;
+} 
+
+/* ------------------------------------------------------- */
+/* size 수정 */
+#option .radio_cupsize {
+	display: inline-block;
+	width: 120px;
+	margin: 0px 8px 0px 8px;
+	height: 0;
+	background-color: white;
+	border-radius: 15px;
+}
+
+#option .radio_cupsize label {
+	border-radius: 15px;
+    font-family: 'Paperlogy-6SemiBold';
+   	color: black;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#option .radio_cupsize label:hover {
+	background-color: rgb(252, 234, 199);
+}
+
+#option .radio_cupsize input[type='radio'] {
+	display: none;
+}
+
+#option .radio_cupsize input[type='radio']:checked + label {
+	background-color: rgb(255, 227, 176);
+	border: none;
+} 
+
+
+/* ice amount 수정 */
+#option .radio_iceamount {
+	display: inline-block;
+	width: 120px;
+	margin: 0px 8px 0px 8px;
+	height: 0;
+	background-color: white;
+	border-radius: 15px;
+}
+
+#option .radio_iceamount label {
+	border-radius: 15px;
+    font-family: 'Paperlogy-6SemiBold';
+   	color: black;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#option .radio_iceamount label:hover {
+	background-color: rgb(252, 234, 199);
+}
+
+#option .radio_iceamount input[type='radio'] {
+	display: none;
+}
+
+#option .radio_iceamount input[type='radio']:checked + label {
+	background-color: rgb(255, 227, 176);
+	border: none;
+} 
+
+/* shotadd 수정 */
+#option .radio_shotadd {
+	display: inline-block;
+	width: 120px;
+	margin: 0px 8px 0px 8px;
+	height: 0;
+	background-color: white;
+	border-radius: 15px;
+}
+
+#option .radio_shotadd label {
+	border-radius: 15px;
+    font-family: 'Paperlogy-6SemiBold';
+   	color: black;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#option .radio_shotadd label:hover {
+	background-color: rgb(252, 234, 199);
+}
+
+#option .radio_shotadd input[type='radio'] {
+	display: none;
+}
+
+#option .radio_shotadd input[type='radio']:checked + label {
+	background-color: rgb(255, 227, 176);
+	border: none;
+} 
+
+/* submit 버튼 ------------------------------------------------ */
+#select button {
+	float: right;
+	background-color: rgb(255, 209, 194);
+	color: black;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	padding: 0;
+	margin: 30px 8px 0px 20px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+/* #select button[type=submit] {
+	float: right;
+	background-color: rgb(255, 209, 194);
+	color: black;
+	width: 120px;
+	height: 40px;
+	border-radius: 10px;
+    font-family: 'Paperlogy-6SemiBold';
+	font-size: 20px;
+	padding: 0;
+	margin: 30px 8px 0px 8px;
+	font-weight: bold; 
+}*/

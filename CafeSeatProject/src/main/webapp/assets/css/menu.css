@@ -1,0 +1,214 @@
+/* import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+@import url("fontawesome-all.min.css"); */
+@import url("paperlogy_font.css");
+
+/* menu ---------------------------------------------------*/
+/* 메뉴 리스트 --------------------------------------------*/
+
+/* 카테고리 ------------------------------------------------ */
+#category {
+	position: absolute;
+}
+
+#category .categoryName {
+    font-family: 'Paperlogy-7Bold';
+	display: inline-block;
+	width: 320px;
+	height: 50px;
+	background-color: rgb(253, 243, 188);
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	border-radius: 20px;
+	margin-right: 45px;
+	text-align: center;
+	font-size: 20px;
+	letter-spacing: 1px;
+	color: #404040;
+}
+
+#category .categoryName:nth-child(3) {
+	margin-right: -45px;
+}
+
+#category .categoryName:hover {
+	background-color:  rgb(252, 235, 140);
+}
+
+/*  menu 이름, 가격, 이미지  -----------------------*/
+#menuList {
+	display: flex;
+	flex-flow: wrap;
+	column-gap: 2em;
+	margin-top: 65px;
+	/* column-count: 3;	 */	
+}
+
+#menuList .menu {
+	/* display: inline-block; */
+	/* margin-bottom: 20px; */
+	/* margin: auto 15px 20px 15px; */
+}
+
+#menuList .menu .menuName {
+    font-family: 'Paperlogy-6SemiBold';
+	display: block;
+	cursor: inherit;
+	width: 320px;
+	font-size: 20px;
+	text-align: center;
+	padding: 0;
+	margin-top: 35px;
+	letter-spacing: 1px;
+	background-color: white;
+	color: #4e4e4e;;
+}
+
+#menuList .menu .menuprice {
+    font-family: 'Paperlogy-5Medium';	
+	display: block;
+	cursor: inherit;
+	width: 320px;
+	padding: 10px;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 1px;
+	background-color: white;
+	color: #606060;
+}
+
+#menuList .menu .menuImg {
+	background-color: white;
+	padding: 0;
+	cursor: pointer;
+}
+
+#menuList .menu .menuImg img {
+		/* display: block; */
+	width: 320px;
+	height: 240px;
+	outline: 1px solid #cccccc;
+	border-radius: 15px;
+} 
+
+/* 주문 내역 */
+
+#order {
+	margin-top: 10px;
+}
+
+#order #orderDetail  {
+	width: 700px;
+	/* border: 1px solid black; */
+	float: left;
+}
+
+#order #orderDetail th {
+	border-bottom: 1px solid #777777;
+	border-style: dashed;
+    font-family: 'Paperlogy-6SemiBold';
+    color: #4e4e4e;
+	font-size: 19px;
+	padding: 2px;
+}
+
+#order #orderDetail td {
+	text-align: center;
+}
+
+#order #orderDetail #orderName, #orderCount{
+    font-family: 'Paperlogy-5Medium';
+	border: none;
+	font-size: 17px;
+	text-align: center;
+	padding: 3px;
+	cursor: inherit;
+	outline: none;
+}
+#order #orderDetail 
+
+/* 결제 --------------------------------------- */
+#order #price {
+	width: 350px;
+	float: right;
+	text-align: center;
+}
+
+#order #price #totalPrice {
+	border: none; 
+	text-align: center;
+    font-family: 'Paperlogy-8ExtraBold';
+	font-size: 23px;
+	letter-spacing: 0.5px;
+	cursor: inherit;
+	margin-left: 30px;
+	outline: none;
+	color: tomato;
+} 
+
+#order #payType {
+	float: right;
+	width: 250px;
+	height: 270px;
+	margin-right: 60px;
+} 
+/* 
+		#order #payType #kakaopay {
+			width: 230px;
+			height: 50px;
+			margin-top: 30px;
+			margin-right: 60px;
+			background-color: white;
+		} */
+
+#order #payType #kakaopay {
+	background-color: white;
+	margin-top: 20px;
+}
+
+#order #payType #kakaopay img {
+	width: 230px;
+	height: 50px;
+	background-color: white;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+/* #order #payType #tosspay {
+	width: 200px;
+	height: 35px;
+	margin-top: 30px;
+	margin-left: 10px;
+	margin-right: 75px;
+} */
+
+#order #payType #tosspay {
+	background-color: white;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+#order #payType #tosspay img{
+	width: 200px;
+	height: 35px;
+	cursor: pointer;
+}	
+
+#order #payType #payETC {
+	width: 230px;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 20px;
+	background-color: #ffffff;
+	color: rgb(72, 72, 72);
+	border-radius: 15px;
+    font-family: 'Paperlogy-7Bold';
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+	font-size: 20px;
+/* 	font-weight: bold; */
+}
+
+#order #payType #payETC:hover {			
+	background-color: #e1e1e1;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+	cursor: pointer;
+}
+		
