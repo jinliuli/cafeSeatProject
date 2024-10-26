@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <!--
 	Astral by HTML5 UP
@@ -7,10 +10,10 @@
 <html>
 	<head>
 		<title>Astral by HTML5 UP</title>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -36,7 +39,7 @@
 								</header>
 								<a href="#work" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
+									<img src="/cafe/images/me.jpg" alt="" />
 								</a>
 							</article>
 
@@ -53,40 +56,40 @@
 								<section>
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic01.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic02.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic03.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic04.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic05.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic06.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic07.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic08.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic09.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic10.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic11.jpg" alt=""></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+											<a href="#" class="image fit"><img src="/cafe/images/pic12.jpg" alt=""></a>
 										</div>
 									</div>
 								</section>
@@ -122,6 +125,12 @@
 
 					</div>
 
+				<!-- Aside -->
+					<div id="nav">
+						<a href="/cafe/seat/extendseat.do" class="icon solid fa-home"><span>자리 연장</span></a>
+						<a href="/cafe/seat/moveseat.do" class="icon solid fa-folder"><span>자리 이동</span></a>
+						<a href="/cafe/seat/endseat.do" class="icon solid fa-envelope"><span>이용 종료</span></a>
+					</div>
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
@@ -132,11 +141,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/cafe/assets/js/jquery.min.js"></script>
+			<script src="/cafe/assets/js/browser.min.js"></script>
+			<script src="/cafe/assets/js/breakpoints.min.js"></script>
+			<script src="/cafe/assets/js/util.js"></script>
+			<script src="/cafe/assets/js/main.js"></script>
 
 	</body>
 </html>

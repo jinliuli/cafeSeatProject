@@ -33,6 +33,9 @@
 
         - com.test.cafe.seat					: 좌석 패키지
             - SelectSeat.java					: 좌석 검색
+            - MoveSeat.java						: 좌석 이동
+            - ExtendSeat.java					: 좌석 연장
+            - EndSeat.java						: 좌석 종료
 
         - com.test.cafe.seat.repository 		: 좌석 DB (DAO)
             - SeatDAO.java
@@ -86,6 +89,9 @@
 
     - views > seat
         - selectseat.jsp
+        - moveseat.jsp
+        - extendseat.jsp
+        - endseat.jsp
 
     - views > menu
         - menulist.jsp
