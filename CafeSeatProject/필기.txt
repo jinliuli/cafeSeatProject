@@ -2,6 +2,8 @@
 - context root: "/cafe"
 - generate web.xml (o)
 
+- webapp > test: 테스트할 HTML 파일 여기로 저장!!!
+
 - 패키지
 	- com.test.cafe						        : 메인 패키지
 		- Index.java					        : 시작 페이지
@@ -30,7 +32,7 @@
             - CafeDTO.java
 
         - com.test.cafe.seat					: 좌석 패키지
-            - SeatSearch.java					: 좌석 검색
+            - SelectSeat.java					: 좌석 검색
 
         - com.test.cafe.seat.repository 		: 좌석 DB (DAO)
             - SeatDAO.java
@@ -83,7 +85,7 @@
         - cafesearch.jsp
 
     - views > seat
-        - seatsearch.jsp
+        - selectseat.jsp
 
     - views > menu
         - menulist.jsp

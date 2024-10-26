@@ -101,12 +101,14 @@
 								</div>
 							</div>															
 						</article>
-						<article id="menuoption" class="'panel">
+						
+						
+						<article id="menuoption" class="panel">
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
 
-							</article>
+						</article>
 
 					</div>
 

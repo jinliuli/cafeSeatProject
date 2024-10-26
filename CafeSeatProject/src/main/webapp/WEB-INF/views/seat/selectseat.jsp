@@ -12,8 +12,8 @@
 		<title>Astral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 
 		<style>
 			.seat {}
@@ -27,7 +27,7 @@
 			.seat form input.booked:hover {color: #999;}
 			.seat form input.blank {margin-right: 13.7142%;}
 			.seat form input:nth-child() {margin-bottom: 30px;}
-			.seat form input.plug {background: url(images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
+			.seat form input.plug {background: url(/cafe/images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
 			
 
 			.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 1px solid cornflowerblue; padding-top: 25px;}
@@ -185,11 +185,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/cafe/assets/js/jquery.min.js"></script>
+			<script src="/cafe/assets/js/browser.min.js"></script>
+			<script src="/cafe/assets/js/breakpoints.min.js"></script>
+			<script src="/cafe/assets/js/util.js"></script>
+			<script src="/cafe/assets/js/main.js"></script>
 
 			<script>
 					$(document).ready(function() {
