@@ -1,3 +1,116 @@
 - name: "Web Dynamic Project"
 - context root: "/cafe"
 - generate web.xml (o)
+
+- 패키지
+	- com.test.cafe						        : 메인 패키지
+		- Index.java					        : 시작 페이지
+		- Template.java					        : 템플릿 페이지
+
+        - com.test.cafe.user					: 회원 패키지
+			- Register.java						: 회원 가입
+            - Unregister.java					: 회원 탈퇴
+            - Login.java						: 로그인
+            - Logout.java						: 로그아웃
+            - Info.java					    	: 회원 정보
+
+        - com.test.cafe.user.repository	    	: 회원 DB (DAO)
+            - UserDAO.java					
+
+        - com.test.cafe.user.model		    	: 회원 DB (DTO)
+            - UserDTO.java
+
+        - com.test.cafe.cafe					: 카페 패키지
+            - CafeSearch.java					: 카페 검색
+
+        - com.test.cafe.cafe.repository	    	: 카페 DB (DAO)
+            - CafeDAO.java
+
+        - com.test.cafe.cafe.model		    	: 카페 DB (DTO)
+            - CafeDTO.java
+
+        - com.test.cafe.seat					: 좌석 패키지
+            - SeatSearch.java					: 좌석 검색
+
+        - com.test.cafe.seat.repository 		: 좌석 DB (DAO)
+            - SeatDAO.java
+
+        - com.test.cafe.seat.model	    		: 좌석 DB (DTO)
+            - SeatDTO.java
+
+        - com.test.cafe.menu					: 메뉴 패키지
+            - MenuList.java			    		: 메뉴 목록
+            - MenuOptions.java					: 메뉴 옵션
+
+        - com.test.cafe.menu.repository	    	: 메뉴 DB (DAO)
+            - MenuDAO.java
+
+        - com.test.cafe.menu.model	    		: 메뉴 DB (DTO)
+            - MenuDTO.java
+
+        (주문(order) 패키지는 menu패키지에 같이 포함시켜도 괜찮을 것 같기도?)
+
+        - com.test.cafe.order					: 주문(결제) 패키지
+            - Order.java			    		: 주문 검색
+
+        - com.test.cafe.order.repository    	: 주문 DB (DAO)
+            - OrderDAO.java
+
+        - com.test.cafe.order.model		    	: 주문 DB (DTO)
+            - OrderDTO.java
+
+
+        - com.test.cafe.filter
+            - EncodingFilter.java               : 인코딩 처리
+
+        - com.test.cafe.util
+            - OutputUtil.java                   : 오류메시지 전용
+
+
+- 뷰
+    - views
+        - index.jsp
+        - template.jsp
+
+    - views > user
+        - register.jsp
+        - unregister.jsp
+        - login.jsp
+        - logout.jsp
+        - info.jsp
+
+    - views > cafe
+        - cafeSearch.jsp
+
+    - views > seat
+        - seatSearch.jsp
+
+    - views > menu
+        - menuList.jsp
+        - menuoptions.jsp
+
+    - views > order
+        - order.jsp
+
+- 공통 요소 & 리소스
+    - views > inc
+        - asset.jsp
+        - header.jsp
+        - footer.jsp
+
+    - webapp > assets
+        - css
+            - main.css
+            - 
+        - js
+            - main.js
+        - img
+
+- 라이브러리
+    - lib
+        - jstl-1.2.jar
+        - ojdbc6.jar
+        - util.jar
+        - cos.jar
+        - json-simple-1.1.1.jar
+        - lombok.jar
