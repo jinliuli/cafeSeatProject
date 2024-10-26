@@ -80,13 +80,13 @@
         - info.jsp
 
     - views > cafe
-        - cafeSearch.jsp
+        - cafesearch.jsp
 
     - views > seat
-        - seatSearch.jsp
+        - seatsearch.jsp
 
     - views > menu
-        - menuList.jsp
+        - menulist.jsp
         - menuoptions.jsp
 
     - views > order
