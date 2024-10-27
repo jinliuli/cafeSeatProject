@@ -23,7 +23,7 @@
             - UserDTO.java
 
         - com.test.cafe.cafe					: 카페 패키지
-            - CafeSearch.java					: 카페 검색
+            - CafeMap.java			    		: 카페 검색
 
         - com.test.cafe.cafe.repository	    	: 카페 DB (DAO)
             - CafeDAO.java
@@ -85,7 +85,7 @@
         - info.jsp
 
     - views > cafe
-        - cafesearch.jsp
+        - cafemap.jsp
 
     - views > seat
         - selectseat.jsp

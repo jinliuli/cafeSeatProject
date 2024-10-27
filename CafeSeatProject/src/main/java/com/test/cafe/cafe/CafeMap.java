@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/cafemap.do")
+@WebServlet("/cafe/cafemap.do")
 public class CafeMap extends HttpServlet {
 
 	@Override
@@ -17,7 +17,7 @@ public class CafeMap extends HttpServlet {
 
 		
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/cafemap.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/cafe/cafemap.jsp");
 		dispatcher.forward(req, resp);
 	}
 }
