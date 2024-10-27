@@ -1,6 +1,15 @@
 @charset "UTF-8";
+@import url("paperlogy_font.css");
 
-.map_wrap, .map_wrap * {
+/* 지도 사이즈 */
+.map_wrap #map {
+	width: 100%;
+	height: 540px;
+	position: relative;
+	overflow: hidden;
+}
+
+.map_wrap, .map_wrap {
 	margin: 0;
 	padding: 0;
 	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
@@ -12,19 +21,22 @@
 	text-decoration: none;
 }
 
+/* 전체 사이즈 */
 .map_wrap {
 	position: relative;
 	width: 100%;
-	height: 400px;
+	height: 540px;
 }
 
+/* 검색창 위치 및 사이즈 */
 #menu_wrap {
 	position: absolute;
-	top: 8px;
-	left: 0;
-	bottom: 350px;
-	width: 250px;
-	height: 360px;
+	top: -3px;
+	/* left: 300px; */
+	left: 890px;
+	bottom: 0;
+	width: 300px;
+	height: 526px;
 	margin-left: auto; 
 	margin: 10px 0 10px 10px;
 	padding: 5px;
@@ -39,16 +51,25 @@
 	background: #fff;
 }
 
+
+/* 검색창 + 버튼 CSS */
+
+/* 검색창 밑에 버튼 */
 #menu_wrap hr {
 	display: block;
 	height: 1px;
 	border: 0;
-	border-top: 2px solid #5F5F5F;
-	margin: 3px 0;
+	border-top: 2px solid #7a9ea7;
+	/* margin: 3px 0; */
+	margin-top: 5px;
+	padding: 0;
 }
 
 #menu_wrap .option {
-	text-align: center;
+	text-align: left;
+	display: flex;
+	height: 50px;
+	position: sticky;
 }
 
 #menu_wrap .option p {
@@ -58,14 +79,71 @@
 #menu_wrap .option button {
 	margin-left: 5px;
 }
+/* 검색창 + 버튼 CSS */
+/* 
+.search-txt {
 
+	outline: 1px solid #333; 포커스주기
+} */
+#search-box {
+	position: absolute;
+	top: 8px;
+	height: 35px;
+	width: 265px;
+	background: white;
+	border-radius: 40px;
+	padding: 10px;
+	border: 1px solid #A3C6C4;
+	margin-left: 5px;
+}
+#keyword {
+	position:absolute;
+	top: 7px;
+	border: none;
+	background: none;
+	outline: left;
+	padding: 0;
+	float: left;
+	color: #797979;
+	background-color: transparent;
+	font-size: 15px;
+	line-height: 30px;
+	width: 220px;
+	height: 20px;
+	outline: none;
+} 
+#search-btn {
+	position: absolute;
+	top: 1px;
+	left: 225px;
+	color: #A3C6C4;
+	float: right;
+	width: 5px;
+	height: 90%;
+	border-radius: 50%;
+	background: white;
+	border: none;
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+/* 리스트에 밑에 밑줄 */
+#placesList ul {
+	padding-left: 0;
+}
 #placesList li {
 	list-style: none;
+	padding-left: 0;
 }
 
 #placesList .item {
 	position: relative;
-	border-bottom: 1px solid #888;
+	border-bottom: 1px solid #7a9ea7;
 	overflow: hidden;
 	cursor: pointer;
 	min-height: 65px;
@@ -83,11 +161,13 @@
 }
 
 #placesList .item .info {
-	padding: 10px 0 10px 55px;
+	padding: 5px 0 10px 55px;
 }
 
+/* 지번주소 */
 #placesList .info .gray {
 	color: #8a8a8a;
+	padding-top: 10px;
 }
 
 #placesList .info .jibun {
@@ -95,83 +175,43 @@
 	background:
 		url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png)
 		no-repeat;
+	
 }
 
 #placesList .info .tel {
-	color: #009900;
+	color: #3e83df;
 }
 
 #placesList .item .markerbg {
 	float: left;
 	position: absolute;
 	width: 36px;
-	height: 37px;
-	margin: 10px 0 0 10px;
+	height: 45px;
+	margin: 10px 0 0 5px;
 	background:
 		url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
 		no-repeat;
+		/* background: url(./images/map_marker.png) no-repeat; */
 }
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
 
-#placesList .item .marker_1 {
-	background-position: 0 -10px;
-}
 
-#placesList .item .marker_2 {
-	background-position: 0 -56px;
-}
 
-#placesList .item .marker_3 {
-	background-position: 0 -102px
-}
-
-#placesList .item .marker_4 {
-	background-position: 0 -148px;
-}
-
-#placesList .item .marker_5 {
-	background-position: 0 -194px;
-}
-
-#placesList .item .marker_6 {
-	background-position: 0 -240px;
-}
-
-#placesList .item .marker_7 {
-	background-position: 0 -286px;
-}
-
-#placesList .item .marker_8 {
-	background-position: 0 -332px;
-}
-
-#placesList .item .marker_9 {
-	background-position: 0 -378px;
-}
-
-#placesList .item .marker_10 {
-	background-position: 0 -423px;
-}
-
-#placesList .item .marker_11 {
-	background-position: 0 -470px;
-}
-
-#placesList .item .marker_12 {
-	background-position: 0 -516px;
-}
-
-#placesList .item .marker_13 {
-	background-position: 0 -562px;
-}
-
-#placesList .item .marker_14 {
-	background-position: 0 -608px;
-}
-
-#placesList .item .marker_15 {
-	background-position: 0 -654px;
-}
-
+/* 페이지 숫자 */
 #pagination {
 	margin: 10px auto;
 	text-align: center;
@@ -185,5 +225,100 @@
 #pagination .on {
 	font-weight: bold;
 	cursor: default;
-	color: #777;
+	color: #7a9ea7;
 }
+
+
+#placesList .item h5 {
+	width: 140px;
+}
+
+#placesList .item .btntitle {
+	width: 30px;
+	height: 20px;
+	padding: 0;
+	font-size: 10px;
+	background-color: #3e83df;
+	color: white;
+	margin-left: 15px;
+	border-radius: 20%;
+}
+
+#placesList .item .btntitle :hover {
+	background-color: #f04f36;
+}
+
+#placesList .info-title {
+	display: flex;
+	align-items: center;
+}
+
+
+/* 폰트 바꾸기 */
+#placesList .item h5{
+	font-family: 'Paperlogy-6SemiBold';
+}
+#placesList .item .info {
+	font-family: 'Paperlogy-4Regular';
+}
+#menu_wrap #keyword {
+	font-family: 'Paperlogy-5Medium';
+}
+.customoverlay .marker-title {
+	font-family: 'Paperlogy-5Medium';
+}
+
+
+
+
+/* 지도에 이름 표시하는 창 */
+
+/* 
+.customoverlay {
+    position: absolute;
+    left: -3.5rem;
+    bottom: 50px;
+    width: 120px;
+    height: 49px;
+    margin-left: -144px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+    line-height: 1.5;
+}
+
+.customoverlay * {
+    padding: 0;
+    margin: 0;
+}
+
+.customoverlay {
+    width: 120px;
+    height: 37px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+    border: 0;
+    box-shadow: 0 1px 2px #888;
+}
+
+.customoverlay .marker-title {
+    padding: 5px 0 0 20px;
+    height: 37px;
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.marker-title {
+    display: block;
+    background: #50627F;
+    color: #fff;
+    text-align: center;
+    height: 24px;
+    line-height:22px;
+    border-radius:4px;
+    padding:0px 10px;
+} */
