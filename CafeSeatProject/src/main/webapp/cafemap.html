@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Astral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/map.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-map"><span>Map</span></a>
+						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+							<div class="map_wrap">
+							    <div id="map"></div>
+							
+							    <div id="menu_wrap" class="bg_white">
+							        <div class="option">
+										<div>
+											
+							                <form onsubmit="searchPlaces(); return false;">
+											<div id="search-box">
+							                    <input type="text" value="강남역" id="keyword" size="15"> 
+							                    <button type="submit" id="search-btn">
+							                    	<i class="fa-solid fa-magnifying-glass"></i>
+							                    </button> 
+											</div>
+							                </form>
+							             
+							            </div>
+							        </div>
+							        <hr>
+							        <ul id="placesList"></ul>
+							        <div id="pagination"></div>
+							    </div>
+							</div>	
+								
+								
+							</article>
+
+						<!-- CafeSeat -->
+							<article id="cafeseat" class="panel">
+								
+							</article>
+
+						<!-- Mypage -->
+							<article id="mypage" class="panel">
+								
+							</article>
+							
+							
+							<!-- Login -->
+							<article id="login" class="panel">
+							</article>					
+							</div>
+					
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ef00a9579c4de664a8dcf691494c9b70&libraries=services"></script>
+			<script src="assets/js/map.js"></script>
+			
+	</body>
+</html>
