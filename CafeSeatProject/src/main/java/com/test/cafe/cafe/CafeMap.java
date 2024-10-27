@@ -1,4 +1,4 @@
-package com.test.cafe;
+package com.test.cafe.cafe;
 
 import java.io.IOException;
 

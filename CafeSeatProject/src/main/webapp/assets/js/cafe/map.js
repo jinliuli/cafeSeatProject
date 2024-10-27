@@ -1,8 +1,8 @@
 /**
  * 
  */
- 
 // 마커를 담을 배열입니다
+
 			var markers = [];
 			
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -235,6 +235,4 @@
 			 
 
 
-
-			
 		
