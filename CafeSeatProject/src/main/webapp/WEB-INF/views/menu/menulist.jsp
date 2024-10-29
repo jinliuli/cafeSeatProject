@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,20 +12,7 @@
 		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
-		/* #order #price {
-			width: 350px;
-			float: right;
-			text-align: center;
-		}
 
-		#order #price #totalPrice {
-			border: none; 
-			text-align: center;
-			font-size: 25px;
-			font-weight: bold;
-			letter-spacing: 1px;
-			cursor: inherit;
-		}  */
 	</style>
 	<body class="is-preload">
 
@@ -33,10 +21,10 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
+						<a href="#" class="icon solid fa-map"><span>Map</span></a>
+						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
 					</nav>
 
 				<!-- Main -->
@@ -48,34 +36,44 @@
 							</article>
 
 						<!-- Menu -->
-							<article id="work" class="panel">
+							<article id="cafeseat" class="panel">
 								<div id="category" >
-									<button type="button" class="categoryName">Coffee</button>
+									<div class="radio_category">
+										<input id="category_coffee" type="radio" class="category" name="category" value="1">
+										<label for="category_coffee">Coffee</label>
+									</div>
+									<div class="radio_category">
+										<input id="category_drink" type="radio" class="category" name="category" value="2">
+										<label for="category_drink">Drink</label>
+									</div>
+									<div class="radio_category">
+										<input id="category_dessert" type="radio" class="category" name="category" value="3">
+										<label for="category_dessert">Dessert</label>
+									</div>
+									<!-- <button type="button" class="categoryName">Coffee</button>
 									<button type="button" class="categoryName">Drink</button>
-									<button type="button" class="categoryName">Dessert</button>
+									<button type="button" class="categoryName">Dessert</button> -->
 									<input type="hidden" name="category">
 								</div>
 								<div id="menuList" class="menuList">
-									<div class="menu">
-										<button type="button" class="menuName">복숭아 아샷추</button>
-										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do#work';"><img src="/cafe/assets/pic/menuImages/drink/coffee01.jpg"></button>
+									<c:forEach items="${list}" var="dto">
+									<div class="menu" data-category="${dto.seqCategory}">
+										<c:if test="${dto.seqCategory != '3'}">
+										<button type="button" class="menuName">${dto.name}</button>
+										<button type="button" class="menuprice">${dto.price}원</button>		
+										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#work';"><img src="/cafe/assets/pic/menuImages/drink/${dto.image}"></button>
+										<input type="hidden" name="seq" value="${dto.seq}">
+										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
+										</c:if>
+										<c:if test="${dto.seqCategory == '3'}">
+										<button type="button" class="menuName">${dto.name}</button>
+										<button type="button" class="menuprice">${dto.price}원</button>		
+										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#work';"><img src="/cafe/assets/pic/menuImages/dessert/${dto.image}"></button>
+										<input type="hidden" name="seq" value="${dto.seq}">
+										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
+										</c:if>
 									</div>
-									<div class="menu">
-										<button type="button" class="menuName">레몬아샷추</button>
-										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg" data-menuName="레몬아샷추" data-price="3,500원"><img src="/cafe/assets/pic/menuImages/drink/coffee02.jpg"></button>
-									</div>
-									<div class="menu">
-										<button type="button" class="menuName">올타임콜드브루</button>
-										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/cafe/assets/pic/menuImages/drink/coffee03.jpg"></button>
-									</div>
-									<div class="menu">
-										<button type="button" class="menuName">아인슈패너</button>
-										<button type="button" class="menuprice">3,500원</button>		
-										<button class="menuImg"><img src="/cafe/assets/pic/menuImages/drink/coffee04.jpg"></button>
-									</div>
+									</c:forEach>
 									
 								</div>
 								<hr>
@@ -103,10 +101,11 @@
 						</article>
 						
 						
-						<article id="menuoption" class="panel">
+						<article id="mypage" class="panel">
+						</article>
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
+							<article id="login" class="panel">
 
 						</article>
 
@@ -130,10 +129,32 @@
 
 			<script>
 
-/* 				$('#category').click(() => {			
-					alert(event.target.textContent);
+ 				document.querySelectorAll('input[name="category"]').forEach(radio => {
+					radio.addEventListener('change', function() {
+						const selectedCategory = this.value;
+						const menus = document.querySelectorAll('.menu');
+						
+						menus.forEach(menu =>{
+							if(menu.getAttribute('data-category') === selectedCategory) {
+								menu.style.display = 'block';
+							} else {
+								menu.style.display = 'none';
+							}
+						});
+					});
 				});
-
+			
+ 				document.querySelectorAll('.menuImg').forEach(imgButton => {
+ 				    imgButton.addEventListener('click', function() {
+ 				        const menuName = this.previousElementSibling.previousElementSibling.textContent; // 메뉴 이름 가져오기
+ 				        document.getElementById('orderName').value = menuName; // 주문 이름에 설정
+ 				    });
+ 				});
+ 				
+/*
+ 				$(input[name='category']).click(() => {			
+					alert(input[name='category'].value);
+				});
 				$('.menuImg').click(function() {	
 					console.log(this);		
 					alert($(this).data("price"));
