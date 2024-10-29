@@ -1850,11 +1850,36 @@ input, select, textarea {
 					border-right: solid 0.6em transparent;
 				}
 
-		#aside a {
+			#nav a:hover {
+				opacity: 1.0;
+			}
+
+				#nav a:hover span {
+					opacity: 1.0;
+				}
+
+			#nav a.active {
+				opacity: 1.0;
+			}
+
+				#nav a.active:after {
+					border-bottom-width: 0.5em;
+				}
+				
+/*
+	index.jsp (메인메뉴) 전용 css
+	#nav랑 기능이 같지만 화살표 내용만 제거	
+	
+*/			
+	#navNoArrow {
+		text-align: center;
+		height: 4.25em;
+		cursor: default;
+	}
+
+		#navNoArrow a {
 			position: relative;
-			top: 0;
-			right: 500px;
-			display: grid;
+			display: inline-block;
 			color: #ffffff;
 			width: 1em;
 			height: 1em;
@@ -1869,12 +1894,36 @@ input, select, textarea {
 			transition: opacity .25s ease-in-out;
 		}
 
-			#aside a span {
+			#navNoArrow a.icon:before {
+				padding-right: 0;
+			}
+
+			#navNoArrow a:before {
+				font-size: 0.8em;
+			}
+
+			#navNoArrow a:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: -0.75em;
+				margin-left: -0.5em;
+				border-bottom: solid 0em #ffffff;
+				border-left: solid 0.5em transparent;
+				border-right: solid 0.5em transparent;
+				-moz-transition: border-bottom-width .25s ease-in-out;
+				-webkit-transition: border-bottom-width .25s ease-in-out;
+				-ms-transition: border-bottom-width .25s ease-in-out;
+				transition: border-bottom-width .25s ease-in-out;
+			}
+
+			#navNoArrow a span {
 				display: block;
 				position: absolute;
 				background: #222222;
 				color: #ffffff;
-				top: 2.75em;
+				top: -2.75em;
 				font-size: 0.3em;
 				height: 2.25em;
 				line-height: 2.25em;
@@ -1888,23 +1937,31 @@ input, select, textarea {
 				margin-left: -2.75em;
 			}
 
-			#aside a:hover {
-				opacity: 1.0;
-			}
-			
-			#nav a:hover {
+/* 				#navNoArrow a span:after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: -0.4em;
+					left: 50%;
+					margin-left: -0.6em;
+					border-top: solid 0.6em #222222;
+					border-left: solid 0.6em transparent;
+					border-right: solid 0.6em transparent;
+				} */
+
+			#navNoArrow a:hover {
 				opacity: 1.0;
 			}
 
-				#nav a:hover span {
+				#navNoArrow a:hover span {
 					opacity: 1.0;
 				}
 
-			#nav a.active {
+			#navNoArrow a.active {
 				opacity: 1.0;
 			}
 
-				#nav a.active:after {
+				#navNoArrow a.active:after {
 					border-bottom-width: 0.5em;
 				}
 /*
