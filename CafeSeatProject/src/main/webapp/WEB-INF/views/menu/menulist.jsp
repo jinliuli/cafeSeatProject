@@ -140,16 +140,22 @@
 							} else {
 								menu.style.display = 'none';
 							}
+							
 						});
 					});
 				});
 			
+ 				
  				document.querySelectorAll('.menuImg').forEach(imgButton => {
  				    imgButton.addEventListener('click', function() {
  				        const menuName = this.previousElementSibling.previousElementSibling.textContent; // 메뉴 이름 가져오기
  				        document.getElementById('orderName').value = menuName; // 주문 이름에 설정
  				    });
  				});
+ 				
+ 				<c:if test="">
+ 					document.getElementById("orderName").value = "${dto.name}";
+ 				</c:if>
  				
 /*
  				$(input[name='category']).click(() => {			
