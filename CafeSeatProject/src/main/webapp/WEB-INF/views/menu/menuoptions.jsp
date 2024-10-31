@@ -22,10 +22,10 @@
 				<!-- Nav -->
 				<!-- Nav -->
 					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
+						<a href="#" class="icon solid fa-map"><span>Map</span></a>
+						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
 					</nav>
 
 				<!-- Main -->
@@ -37,7 +37,7 @@
 							</article>
 
 						<!-- options -->
-							<article id="work" class="panel">
+							<article id="cafeseat" class="panel">
 								<h2>${dto.name}</h2>
 								<p>${dto.description}</p>
 								<div id="optionImg">
@@ -107,14 +107,15 @@
 
 									<input type="number" name="totalCount" id="totalCount" min="1" max="10" placeholder="수량">
 									<button type="button" class="options">선택</button>
-									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#work';">취소</button>
+									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#cafeseat';">취소</button>
 								</div>
 								</form>												
 							</article>
-						<article id="menuoption" class="'panel">
+						<article id="mypage" class="'panel">
+						</article>
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
+							<article id="login" class="panel">
 
 							</article>
 
@@ -169,7 +170,7 @@
 				        return; // 샷 추가를 선택하지 않았으면 종료
 				    }
 				    
-				    url = `/cafe/menu/menulist.do?seq=${dto.seq}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&totalCount=\${totalCount}#work`;
+				    url = `/cafe/menu/menulist.do?seq=${dto.seq}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&totalCount=\${totalCount}#cafeseat`;
 				    
 				    // 이동
 				    location.href = url;

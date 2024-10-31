@@ -61,14 +61,14 @@
 										<c:if test="${dto.seqCategory != '3'}">
 										<button type="button" class="menuName">${dto.name}</button>
 										<button type="button" class="menuprice">${dto.price}원</button>		
-										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#work';"><img src="/cafe/assets/pic/menuImages/drink/${dto.image}"></button>
+										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/drink/${dto.image}"></button>
 										<input type="hidden" name="seq" value="${dto.seq}">
 										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
 										</c:if>
 										<c:if test="${dto.seqCategory == '3'}">
 										<button type="button" class="menuName">${dto.name}</button>
 										<button type="button" class="menuprice">${dto.price}원</button>		
-										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#work';"><img src="/cafe/assets/pic/menuImages/dessert/${dto.image}"></button>
+										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/dessert/${dto.image}"></button>
 										<input type="hidden" name="seq" value="${dto.seq}">
 										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
 										</c:if>

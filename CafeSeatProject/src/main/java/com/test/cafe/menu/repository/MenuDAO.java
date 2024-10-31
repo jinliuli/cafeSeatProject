@@ -19,7 +19,7 @@ public class MenuDAO {
 	private ResultSet rs;
 	
 	private MenuDAO() {
-		this.conn = DBUtil.open("localhost", "sideproject", "java1234");
+		this.conn = DBUtil.open("localhost", "cafeseat", "java1234");
 	}//MenuDAO DB연동 -----------------------------
 	
 	public static MenuDAO getInstance() {
