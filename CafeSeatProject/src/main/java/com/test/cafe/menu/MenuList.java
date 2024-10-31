@@ -32,8 +32,19 @@ public class MenuList extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		/*
+		 * String seqProduct = req.getParameter("menuseq"); String orderName =
+		 * req.getParameter("orderName"); String orderCount =
+		 * req.getParameter("orderCount"); String temperature =
+		 * req.getParameter("menutemperature"); String size =
+		 * req.getParameter("menusize"); String iceamount =
+		 * req.getParameter("menuiceamount"); String shotadd =
+		 * req.getParameter("menushotadd"); String totalPrice =
+		 * req.getParameter("totalPrice");
+		 */
 		
-	
+		resp.sendRedirect("/cafe/cafe/cafemap.do#");
+		
 	}
 
 }

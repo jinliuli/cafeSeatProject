@@ -10,7 +10,12 @@ public class DBUtil {
 	public static Connection open() {
 	
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "cafeseat";
+		//학원용
+		//String id = "cafeseat";
+		
+		//집용
+		String id = "sideproject";
+		
 		String pw = "java1234";
 		
 		try {

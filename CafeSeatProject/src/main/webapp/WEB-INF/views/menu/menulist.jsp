@@ -20,12 +20,20 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-					<nav id="nav">
+<!-- 					<nav id="nav">
 						<a href="#" class="icon solid fa-map"><span>Map</span></a>
 						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
 						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
 						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
-					</nav>
+					</nav> -->
+					
+					<!-- Nav -->
+			        <nav id="nav">
+			            <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+			            <a href="/cafe/menu/menulist.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+			            <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+			            <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+			        </nav>
 
 				<!-- Main -->
 					<div id="main">
@@ -78,25 +86,41 @@
 								</div>
 								<hr>
 								
+								<% String temperature = request.getParameter("temperature");%>
+								<% String size = request.getParameter("size");%>
+								<% String iceamount = request.getParameter("iceamount");%>
+								<% String shotadd = request.getParameter("shotadd");%>
+								<% String totalCount = request.getParameter("totalCount");%>
+								
 								<div id="order">
+								
+								<form method="POST" action="/cafe/menu/menulist.do">
 								<table id="orderDetail">
 									<tr>
 										<th>메뉴명</th>
 										<th>수량</th>
 									</tr>
 									<tr>
-										<td><input type="text" id="orderName" value="" readonly></td>
-										<td><input type="text" id="orderCount" value="" readonly></td>
+										<td><input type="text" id="orderName" name="orderName" value="${dto.name}" readonly></td>
+										<td><input type="text" id="orderCount" name="orderCount" value="<%= totalCount %>" readonly></td>
 									</tr>
 								</table>
+								
+								<input type="hidden" name="menutemperature" value="<%= temperature %>">
+								<input type="hidden" name="menusize" value="<%= size %>">
+								<input type="hidden" name="menuiceamount" value="<%= iceamount %>">
+								<input type="hidden" name="menushotadd" value="<%= shotadd %>">
+								<input type="hidden" name="menuseq" value="${dto.seq}">
+								
 								<div id="price">
-									<input type="text" id="totalPrice" value="Total Price: 13,000원" readonly>
+									<input type="text" id="totalPrice" name="totalPrice" value="Total Price: 13,000원" readonly>
 								</div>
 								<div id="payType">
 									<button type="submit" id="kakaopay"><img src="/cafe/assets/pic/payment/kakao.jpg" alt=""></button>
 									<button type="submit" id="tosspay"><img src="/cafe/assets/pic/payment/tosspay.png" alt=""></button>
 									<button type="submit" id="payETC">기타 결제</button>
 								</div>
+								</form>
 							</div>															
 						</article>
 						
