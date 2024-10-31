@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class SeatDTO {
+public class ReservationDTO {
 	
 	
 	private String seq;
@@ -15,6 +15,8 @@ public class SeatDTO {
 	private String usedate;
 	private String timestart;
 	private String timeend;
+	private String seatNum;
+	private String person;
 	
 
 }

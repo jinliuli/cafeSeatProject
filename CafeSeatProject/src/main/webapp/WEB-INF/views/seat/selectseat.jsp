@@ -12,8 +12,8 @@
 		<title>Astral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 		<style>
 			.seat {}
@@ -138,6 +138,7 @@
 										<div class="bottom">
 											<input type="number" name="count" id="person" min="1" max="4" value="1" placeholder="인원 수">
 											<input type="submit" value="메뉴선택" id="selectMenu">
+											 <input type="hidden" id="selectedSeats" name="selectedSeats">
 										</div>
 									</form>
 									</div>
@@ -189,11 +190,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="../../assets/js/jquery.min.js"></script>
-			<script src="../../assets/js/browser.min.js"></script>
-			<script src="../../assets/js/breakpoints.min.js"></script>
-			<script src="../../assets/js/util.js"></script>
-			<script src="../../assets/js/main.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 			<script>
 					$(document).ready(function() {
@@ -256,9 +257,6 @@
 			 		alert('좌석을 선택해주세요.');
 			 	}
 			 });
-			
-			
-			
 
 			</script>
 
