@@ -1947,7 +1947,7 @@ input, select, textarea {
 	}
 
 		body.is-preload #wrapper {
-			opacity: 0;
+			opacity: 1;
 		}
 /*
 		@media screen and (max-width: 1280px) {
@@ -2025,7 +2025,7 @@ input, select, textarea {
 */
 			#main > .panel.intro {
 				padding: 0;
-				height: 20em;
+				height: 0em;
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;

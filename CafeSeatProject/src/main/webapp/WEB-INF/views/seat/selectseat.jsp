@@ -12,12 +12,12 @@
 		<title>Astral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 		<style>
 			.seat {}
-			.seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 2px solid cornflowerblue; padding: 10px; box-sizing: Border-box; border-radius: 15px;}
+			.seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 5px solid #AF8F6F;; padding: 10px; box-sizing: Border-box; border-radius: 15px;}
 			.seat form input {width: 13.7142%; padding: 15px; margin-right: 1%; display: inline-block;background-color: rgb(221, 221, 221); color: #444; font-weight: bold; color: #999;}
 			.seat form input {margin-bottom: 10px; border-radius: 5px; box-shadow: 1px 1px 2px rgba(0,0,0,0.15);} 
 			.seat form input :nth-of-type(5n) {margin-right: 0;}
@@ -27,10 +27,10 @@
 			.seat form input.booked:hover {color: #999;}
 			.seat form input.blank {margin-right: 13.7142%;}
 			.seat form input:nth-child() {margin-bottom: 30px;}
-			.seat form input.plug {background: url(/cafe/images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
+			.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
 			
 
-			.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 1px solid cornflowerblue; padding-top: 25px;}
+			.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 4px solid #AF8F6F; padding-top: 25px;}
 
 			.bottom #selectMenu {width: 30%;}
 			.bottom #person {width: 20%;}
@@ -51,6 +51,10 @@
 				font-family: 'Paperlogy-8ExtraBold';
 			}
 
+			.panel{
+				background-color: #F8F4E1;
+			}
+
 
 		</style>
 	</head>
@@ -61,10 +65,10 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
+						<a href="#" class="icon solid fa-map"><span>Map</span></a>
+						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
 					</nav>
 
 				<!-- Main -->
@@ -83,7 +87,7 @@
 							</article>
 
 						<!-- Work -->
-							<article id="work" class="panel">
+							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
 								<h1 class="storename">투썸플레이스 역삼성흥타워점</h1>
@@ -106,7 +110,7 @@
 
 										<!-- 좌석 선택 -->
 								<div class="seat"> 
-									<form id="seatForm" method="post" action="">
+									<form id="seatForm" method="GET" action="/cafe/menu/menulist.do#cafeseat">
 										<input type="button" value="1" class="booked seatButton">
 										<input type="button" value="2" class="plug seatButton">
 										<input type="button" value="3" class="blank seatButton">
@@ -132,8 +136,9 @@
 									
 											<!-- 하단부 -->
 										<div class="bottom">
-											<input type="number" name="count" id="person" min="1" max="4" placeholder="인원 수">
+											<input type="number" name="count" id="person" min="1" max="4" value="1" placeholder="인원 수">
 											<input type="submit" value="메뉴선택" id="selectMenu">
+											 <input type="hidden" id="selectedSeats" name="selectedSeats">
 										</div>
 									</form>
 									</div>
@@ -141,7 +146,7 @@
 							</article>
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
+							<article id="mypage" class="panel">
 								<!-- <header>
 									<h2>Contact Me</h2>
 								</header>
@@ -170,7 +175,7 @@
 							
 							
 							<!-- Twitter -->
-							<article id="Twitter" class="panel">
+							<article id="login" class="panel">
 							</article>					
 							</div>
 					
@@ -185,59 +190,90 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="/cafe/assets/js/jquery.min.js"></script>
-			<script src="/cafe/assets/js/browser.min.js"></script>
-			<script src="/cafe/assets/js/breakpoints.min.js"></script>
-			<script src="/cafe/assets/js/util.js"></script>
-			<script src="/cafe/assets/js/main.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 			<script>
 					$(document).ready(function() {
+					let selectedSeats = []; // 좌석을 여러 개 선택할 경우를 위해 배열로
+					let maxSeats = 0; //최대 선택가능 좌석
+					maxSeats = parseInt($('#person').val()) || 0; // 입력된 숫자를 가져옴
 
-						let selectedSeats = []; //좌석을 여러개 선택할 경우를 위해 배열로
-						
+					$('#person').on('input', function() {
+						maxSeats = parseInt($(this).val()) || 0; // 입력값 변경 시 maxSeats 업데이트
+					});
+
 					$('.seatButton').click(function() {
 						const seatValue = $(this).val();
-						const currentColor = $(this).css('background-color'); //원래 색
-						const shadow = $(this).css('box-shadow'); //원래그림자
-						const selectColor = 'rgb(255, 200, 100)'; // 선택했을때 색
-						const selected = '5px 5px 10px -5px inset'; // 선택했을때 그림자
-						alert("선택한 좌석:" + seatValue);
+						const selectColor = 'rgb(255, 200, 100)'; // 선택했을 때 색
+						const selected = '5px 5px 10px -5px inset'; // 선택했을 때 그림자
+
+						alert("선택한 좌석: " + seatValue);
 
 						if (selectedSeats.includes(seatValue)) {
-							selectedSeats = selectedSeats.filter(seat => seat !== seatValue); //배열에 추가할지 안할지 걸러주는 필터역할~
+							selectedSeats = selectedSeats.filter(seat => seat !== seatValue); // 배열에서 제거
 							$(this).css('background-color', ''); // 원래 배경색으로 돌아감
-							$(this).css('box-shadow',''); //원래 그림자로 돌아감
+							$(this).css('box-shadow', ''); // 원래 그림자로 돌아감
 						} else {
-							selectedSeats.push(seatValue);
-							$(this).css('background-color', selectColor); // 선택시 배경색 변경
-							$(this).css('box-shadow', selected); // 선택시 그림자 변경
-							
+							if (selectedSeats.length < maxSeats) { // 선택한 좌석 수가 최대 좌석 수보다 적은 경우
+								selectedSeats.push(seatValue);
+								$(this).css('background-color', selectColor); // 선택 시 배경색 변경
+								$(this).css('box-shadow', selected); // 선택 시 그림자 변경
+							} else {
+								alert("최대 " + maxSeats + " 개의 좌석만 선택할 수 있습니다."); // 최대 좌석 수 초과 알림
+							}
 						}
+						
 					});
+					
+					$('#seatForm').on('submit', function(event) {
+				        event.preventDefault(); // 기본 제출 방지
+
+				        if (selectedSeats.length === 0) {
+				            alert("좌석을 선택하세요.");
+				            return;
+				        }
+
+				        // 선택된 좌석을 쿼리 스트링으로 설정
+				        $('#selectedSeats').val(selectedSeats.join(',')); // 배열을 문자열로 변환
+				        this.submit(); // 폼 제출
+				    });
+					
 				});
 
-				$('#seatForm').submit(function(event){
-				if (selectedSeats.length > 0) {
-					$.ajax({
-						url: '서버url', // 실제 서버 URL로 변경해야함
-						type: 'POST',
-						data: {
-							seats: selectedSeats,
-							count: $('#person').val()
-						},
-						success: function(response) {
-							alert('전송완료: ' + response);
-							
-						},
-						error: function(jqXhr, textStatus, errorThrown) {
-							alert('전송오류: ' + textStatus);
-						}
-					});
-				} else {
-					alert('좌석을 선택해주세요.');
-				}
-			});
+
+
+
+
+
+
+			 	/*
+			 	$('#seatForm').submit(function(event){
+			 	event.preventDefault(); // 기본 폼 제출 방지
+			 	if (selectedSeats.length > 0) {
+			 		$.ajax({
+			 			url: '서버url', // 실제 서버 URL로 변경해야함
+			 			type: 'POST',
+			 			data: {
+			 				seats: selectedSeats,
+			 				count: $('#person').val()
+			 			},
+			 			success: function(response) {
+			 				alert('전송완료: ' + response);
+						
+			 			},
+			 			error: function(jqXhr, textStatus, errorThrown) {
+			 				alert('전송오류: ' + textStatus);
+			 			}
+			 		});
+			 	} else {
+			 		alert('좌석을 선택해주세요.');
+			 	}
+			 }); 
+			 	*/
 
 			</script>
 

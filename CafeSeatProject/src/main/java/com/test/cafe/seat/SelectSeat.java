@@ -8,6 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.test.cafe.seat.model.ReservationDTO;
+import com.test.cafe.seat.model.SeatReservationDTO;
+import com.test.cafe.seat.repository.SeatDAO;
 
 @WebServlet("/seat/selectseat.do")
 public class SelectSeat extends HttpServlet {
@@ -20,4 +25,34 @@ public class SelectSeat extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/seat/selectseat.jsp");
 		dispatcher.forward(req, resp);
 	}
+	
+	
+	
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		
+////		req.setCharacterEncoding("UTF-8");
+////		
+////		String selectedSeats = req.getParameter("seats");
+////		String person = req.getParameter("count");
+////		
+////		System.out.println(selectedSeats);
+////		System.out.println(person);
+////		
+////		
+////		ReservationDTO dto = new ReservationDTO();
+////		dto.setSeq(selectedSeats);
+////		dto.setPerson(person);
+////		
+////		
+////		SeatDAO dao = SeatDAO.getInstance();
+////		int result = dao.reservation(dto);
+//		
+//		
+//		
+//		
+//		
+//		
+//	}
+	
 }
