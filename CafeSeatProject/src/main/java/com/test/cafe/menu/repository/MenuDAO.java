@@ -18,12 +18,17 @@ public class MenuDAO {
 	private PreparedStatement pstat;
 	private ResultSet rs;
 	
-	private MenuDAO() {
+	public MenuDAO() {
 		//학원용
 //		this.conn = DBUtil.open("localhost", "cafeseat", "java1234");
 		
 		//집용
-		this.conn = DBUtil.open("localhost", "sideproject", "java1234");
+//		this.conn = DBUtil.open("localhost", "sideproject", "java1234");
+		
+		//프로젝트 샘플용
+		this.conn = DBUtil.open("localhost", "cafe", "java1234");
+		
+		
 	}//MenuDAO DB연동 -----------------------------
 	
 	public static MenuDAO getInstance() {
