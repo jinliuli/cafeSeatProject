@@ -14,7 +14,11 @@ public class DBUtil {
 		//String id = "cafeseat";
 		
 		//집용
-		String id = "sideproject";
+		//String id = "sideproject";
+
+		//프로젝트 샘플용
+		//String id = "cafe";
+		
 		
 		String pw = "java1234";
 		
