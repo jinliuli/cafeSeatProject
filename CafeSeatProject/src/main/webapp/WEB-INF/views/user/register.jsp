@@ -162,31 +162,34 @@
 
             <!-- Nav -->
             <nav id="nav">
-                <a href="#" class="icon solid fa-home"><span>Home</span></a>
-                <a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-                <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-                <a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
+                <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+                <a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+                <a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+                <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
                 <button id="loginButton" class="nav-button">로그인</button>
             </nav>
 
             <!-- Main -->
             <div id="main">
 
-                <!-- Me -->
-                <article id="home" class="panel intro">
-                </article>
+               <!-- Me -->
+               <article id="home" class="panel intro">
+                    
+               </article>
 
-                <!-- Work -->
-                <article id="work" class="panel">
-                </article>
+               <!-- CafeSeat -->
+               <article id="cafeseat" class="panel">
+                   
+               </article>
 
-                <!-- Contact -->
-                <article id="contact" class="panel">
-                </article>
-
-                <!-- Twitter -->
-                <article id="Twitter" class="panel">
-                    <div class="panel-content">
+               <!-- Mypage -->
+               <article id="mypage" class="panel">
+                   
+               </article>
+                           
+                           
+               <!-- Login -->
+               <article id="login" class="panel">
                         <form method="post" action="/cafe/user/register.do">
                             <h1>로그인 정보</h1>
                             <div class="login-info">
@@ -201,7 +204,7 @@
                                     </tr>
                                     <tr>
                                         <th>비밀번호</th>
-                                        <td><input type="password" name="pw" id="pw" placeholder="비밀번호(8~12자, 영문 + 숫자 + 특수문자)" required></td>
+                                        <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
                                     </tr>
                                     <tr>
                                         <th>비밀번호 확인</th>
@@ -264,6 +267,12 @@
         <script src="/cafe/assets/js/main.js"></script>
 
         <script>
+
+            document.getElementById('loginButton').addEventListener('click', function() {
+                location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
+            });
+
+
             $('#btnCheck').click(() => {
                 if ($('input[name=id]').val().trim() == '') return;
 
@@ -298,6 +307,7 @@
                     $('.member-info-table').append(newRows);
                 }
             });
+            
         </script>
     </body>
 </html>

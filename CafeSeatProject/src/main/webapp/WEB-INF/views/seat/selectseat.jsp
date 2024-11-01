@@ -60,13 +60,14 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
-					</nav>
-
+				
+				<nav id="nav">
+					<a href="#" class="icon solid fa-map"><span>Map</span></a> 
+					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+					<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+					<a href="#login" class="icon solid fa-user"><span>Login</span></a>
+					<button id="loginButton" class="nav-button">로그인</button>
+				</nav>
 				<!-- Main -->
 					<div id="main">
 
@@ -82,8 +83,8 @@
 								</a> -->
 							</article>
 
-						<!-- Work -->
-							<article id="work" class="panel">
+						<!-- CafeSeat -->
+							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
 								<h1 class="storename">투썸플레이스 역삼성흥타워점</h1>
@@ -140,8 +141,8 @@
 								
 							</article>
 
-						<!-- Contact -->
-							<article id="contact" class="panel">
+						<!-- Mypage -->
+							<article id="mypage" class="panel">
 								<!-- <header>
 									<h2>Contact Me</h2>
 								</header>
@@ -169,8 +170,9 @@
 							</article>
 							
 							
-							<!-- Twitter -->
-							<article id="Twitter" class="panel">
+						<!-- Login -->
+							<article id="login" class="panel">
+
 							</article>					
 							</div>
 					

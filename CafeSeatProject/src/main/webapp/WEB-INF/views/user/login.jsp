@@ -160,11 +160,11 @@
 
             <!-- Nav -->
             <nav id="nav">
-                <a href="#" class="icon solid fa-home"><span>Home</span></a>
-                <a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-                <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-                <a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
-				<button id="loginButton" class="nav-button">로그인</button>
+                <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+                <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+                <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+                <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+                <button id="loginButton" class="nav-button">로그인</button>
             </nav>
 
             <!-- Main -->
@@ -172,37 +172,42 @@
 
                 <!-- Me -->
                 <article id="home" class="panel intro">
+                    
                 </article>
 
-                <!-- Work -->
-                <article id="work" class="panel">
+                <!-- CafeSeat -->
+                <article id="cafeseat" class="panel">
+                    
                 </article>
 
-                <!-- Contact -->
-                <article id="contact" class="panel">
+				<!-- Mypage -->
+                <article id="mypage" class="panel">
+                    
                 </article>
-
-                <!-- Twitter -->
-                <article id="Twitter" class="panel">
+									
+                <!-- Login -->
+                <article id="login" class="panel">
                     <h1 class="banner">사이트명</h1>
                     <div class="panel-content">
-                        <form method="post" action="/cafe/user/login.do">
+                        <form method="post" action="/cafe/user/login.do#login">
                             <div class="opt-login-form">
                                 <input type="radio" id="admin" class="opt-login" name="opt-login" value="admin" checked>
                                 <label for="admin" class="choice">관리자 로그인</label>    
                                 <input type="radio" id="user" class="opt-login" name="opt-login" value="user">
                                 <label for="user" class="choice">사용자 로그인</label>
                             </div>
+
+                            <input type="hidden" name="loginType" id="loginType" value="admin">
                             
                             <div class="login-form">    
                                 <table class="login-table">
                                     <tr>
                                         <th>아이디</th>
-                                        <td><input type="text" name="id" id="id" placeholder="아이디" required></td>
+                                        <td><input type="text" name="id" id="id" placeholder="영문, 숫자 조합 5~12자" required></td>
                                     </tr>
                                     <tr>
                                         <th>비밀번호</th>
-                                        <td><input type="password" name="pw" id="pw" placeholder="비밀번호(8~12자, 영문 + 숫자 + 특수문자)" required></td>
+                                        <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
                                     </tr>
                                 </table>
                             </div>
@@ -213,9 +218,9 @@
                         </form>
 
                         <div class="link">
-                            <a href="" onclick="">회원가입</a> 
-                            <a href="" onclick="">아이디 찾기</a>
-                            <a href="" onclick="">비밀번호 찾기</a>
+                            <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/use/register.do';">회원가입</a> 
+                            <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
+                            <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
                         </div>       
                     </div>
                 </article>                    
@@ -238,6 +243,17 @@
         <script src="/cafe/assets/js/main.js"></script>
 
         <script>
+
+            document.getElementById('loginButton').addEventListener('click', function() {
+                location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
+            });
+
+            document.querySelectorAll('input[name="opt-login"]').forEach((radio) => {
+                radio.addEventListener('change', () => {
+                    document.getElementById('loginType').value = radio.value; // 히든 필드에 라디오 버튼 값 설정
+                });
+            });
+
         </script>
 
     </body>
