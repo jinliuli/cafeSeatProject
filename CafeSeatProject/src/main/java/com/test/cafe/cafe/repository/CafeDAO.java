@@ -17,7 +17,7 @@ public class CafeDAO {
 	private ResultSet rs;
 	
 	public CafeDAO() {
-		this.conn = DBUtil.open("localhost", "yul", "java1234");
+		this.conn = DBUtil.open("localhost", "cafe", "java1234");
 		
 	}
 	
