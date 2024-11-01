@@ -10,6 +10,7 @@ h2 {
 	margin: 0;
 	margin-bottom: 30px;
 	letter-spacing: 3px;
+	color: #3A2714;
 }
 
 p {
@@ -17,6 +18,7 @@ p {
 	font-size: 20px;
 	text-align: center;
 	letter-spacing: 1px;
+	color: #74512D;
 
 }
 
@@ -43,8 +45,8 @@ p {
 	width: 450px;
 	height: 400px;
 	text-align: center;
-	border: 1px solid rgb(214, 214, 214);
-	background-color: #f6f6f6;
+	border: .5px solid #AF8F6F;
+	background-color: #F8F4E1;
 	border-radius: 30px;
 	padding: 0px 10px 10px 10px;
 }
@@ -56,6 +58,7 @@ p {
 	margin-left: 10px;
 	margin-top: 10px;
 	height: 35px;
+	color: #AF8F6F;
 }
 
 /* 라디오 버튼 스타일 수정하기 --------------------- */
@@ -84,7 +87,7 @@ p {
 	border-radius: 15px;
 	margin: 0 auto;
     font-family: 'Paperlogy-6SemiBold';
-   	color: black;
+	color: #3A2714;
 	font-size: 18px;
 	text-align: center;
 	letter-spacing: 1px;
@@ -93,7 +96,7 @@ p {
 }
 
 #option .radio_temperature label:hover {
-	background-color: rgb(252, 234, 199);
+	background-color: #AF8F6F;
 }
 
 #option .radio_temperature input[type='radio'] {
@@ -101,7 +104,7 @@ p {
 }
 
 #option .radio_temperature input[type='radio']:checked + label {
-	background-color: rgb(255, 227, 176);
+	background-color: #AF8F6F;
 	border: none;
 } 
 
@@ -119,7 +122,7 @@ p {
 #option .radio_cupsize label {
 	border-radius: 15px;
     font-family: 'Paperlogy-6SemiBold';
-   	color: black;
+	color: #3A2714;
 	font-size: 18px;
 	text-align: center;
 	letter-spacing: 1px;
@@ -128,7 +131,7 @@ p {
 }
 
 #option .radio_cupsize label:hover {
-	background-color: rgb(252, 234, 199);
+	background-color: #AF8F6F;
 }
 
 #option .radio_cupsize input[type='radio'] {
@@ -136,7 +139,7 @@ p {
 }
 
 #option .radio_cupsize input[type='radio']:checked + label {
-	background-color: rgb(255, 227, 176);
+	background-color: #AF8F6F;
 	border: none;
 } 
 
@@ -154,16 +157,16 @@ p {
 #option .radio_iceamount label {
 	border-radius: 15px;
     font-family: 'Paperlogy-6SemiBold';
-   	color: black;
+	color: #3A2714;
 	font-size: 18px;
 	text-align: center;
 	letter-spacing: 1px;
 	background-color: white;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 #option .radio_iceamount label:hover {
-	background-color: rgb(252, 234, 199);
+	background-color: #AF8F6F;
 }
 
 #option .radio_iceamount input[type='radio'] {
@@ -171,7 +174,7 @@ p {
 }
 
 #option .radio_iceamount input[type='radio']:checked + label {
-	background-color: rgb(255, 227, 176);
+	background-color: #AF8F6F;
 	border: none;
 } 
 
@@ -188,16 +191,16 @@ p {
 #option .radio_shotadd label {
 	border-radius: 15px;
     font-family: 'Paperlogy-6SemiBold';
-   	color: black;
+	color: #603911;
 	font-size: 18px;
 	text-align: center;
 	letter-spacing: 1px;
 	background-color: white;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 #option .radio_shotadd label:hover {
-	background-color: rgb(252, 234, 199);
+	background-color: #AF8F6F;
 }
 
 #option .radio_shotadd input[type='radio'] {
@@ -205,15 +208,29 @@ p {
 }
 
 #option .radio_shotadd input[type='radio']:checked + label {
-	background-color: rgb(255, 227, 176);
+	background-color: #AF8F6F;
 	border: none;
 } 
+
+/* 수량 ------------------------------------------------------- */
+#select #totalCount {
+    font-family: 'Paperlogy-6SemiBold';
+    font-size: 18px;
+    text-align: center;
+    width: 80px;
+	height: 40px;
+    border: 1px solid #603911;
+   	border-radius: 15px;
+	margin: 30px 0px 0px 20px;
+	outline: none;
+	color: #603911;
+}
 
 /* submit 버튼 ------------------------------------------------ */
 #select button {
 	float: right;
-	background-color: rgb(255, 209, 194);
-	color: black;
+	background-color: #74512D;
+	color: #F8F4E1;
 	width: 120px;
 	height: 40px;
 	border-radius: 10px;

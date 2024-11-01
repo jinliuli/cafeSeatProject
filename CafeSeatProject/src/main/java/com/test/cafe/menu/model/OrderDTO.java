@@ -7,13 +7,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MenuDTO {
+public class OrderDTO {
 
 	private String seq;
-	private String seqCategory;
-	private String name;
-	private String price;
-	private String image;
-	private String description;
+	private String seqPayment;
+	private String seqProduct;
+	private String seqOptions;
+	private String totalCount;
 	
 }

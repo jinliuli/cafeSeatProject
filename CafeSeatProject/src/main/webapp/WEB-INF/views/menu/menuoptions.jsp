@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,12 +20,13 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
-					</nav>
+				<!-- Nav -->
+			        <nav id="nav">
+			            <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+			            <a href="/cafe/menu/menulist.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+			            <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+			            <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+			        </nav>av>
 
 				<!-- Main -->
 					<div id="main">
@@ -35,15 +37,20 @@
 							</article>
 
 						<!-- options -->
-							<article id="work" class="panel">
-								<h2>복숭아 아샷추</h2>
-								<p>달콤하고 향긋한 복숭아 아이스티에 에스프레소를 달콤하게 즐기는 투썸 아샷추</p>
+							<article id="cafeseat" class="panel">
+								<h2>${dto.name}</h2>
+								<p>${dto.description}</p>
 								<div id="optionImg">
-									<!-- <input type="text" value="복숭아 아샷추"> -->
-									<img src="/cafe/assets/pic/menuImages/drink/coffee01.jpg" alt="">
+									<c:if test="${dto.seqCategory != '3'}">
+									<img src="/cafe/assets/pic/menuImages/drink/${dto.image}" alt="">
+									</c:if>
+									<c:if test="${dto.seqCategory == '3'}">
+									<img src="/cafe/assets/pic/menuImages/dessert/${dto.image}" alt="">
+									</c:if>
 								</div>
+								<input type="hidden" name="seq" value="${dto.seq}">
 								
-								<form method="GET" action="/cafe/menulist.do#work">
+								<form method="POST" action="/cafe/menu/menulist.do#cafeseat">
 								<div id="option">
 									<div class="optionName">1. 온도(ICE or HOT)</div>
 										<div class="radio_temperature">
@@ -96,20 +103,19 @@
 										</div>
 										
 								</div>
-								<!-- 나중에 위에 name은 삭제하고 히든태그에 name넣어서 버튼 클릭하면 그때 value값 받도록 -->
 								<div id="select">
-								<!-- 	<input type="button" name="back" class="back" value="취소">
-									<input type="submit" name="options" value="선택" > -->
-									
-									<button type="submit" class="options">선택</button>
-									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#work';">취소</button>
+
+									<input type="number" name="totalCount" id="totalCount" min="1" max="10" placeholder="수량">
+									<button type="button" class="options">선택</button>
+									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#cafeseat';">취소</button>
 								</div>
 								</form>												
 							</article>
-						<article id="menuoption" class="'panel">
+						<article id="mypage" class="'panel">
+						</article>
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
+							<article id="login" class="panel">
 
 							</article>
 
@@ -132,7 +138,54 @@
 			<script src="/cafe/assets/js/main.js"></script>
 
 			<script>
+			
+				document.querySelector('.options').addEventListener('click', function() {
+				    
+					const temperature = document.querySelector('input[name="temperature"]:checked').value;
+				    const size = document.querySelector('input[name="size"]:checked').value;
+				    const iceamount = document.querySelector('input[name="iceamount"]:checked').value;
+				    const shotadd = document.querySelector('input[name="shotadd"]:checked').value;
+				    
+				    const totalCount = document.getElementById('totalCount').value || 1; // 기본값을 1로 설정
+				    
+				    if (!temperature) {
+				        alert('온도를 선택해 주세요.');
+				        return; // 온도를 선택하지 않았으면 종료
+				    }
 
+				    if (!size) {
+				        alert('사이즈를 선택해 주세요.');
+				        return; // 사이즈를 선택하지 않았으면 종료
+				    }
+				    
+
+				    if (!iceamount) {
+				        alert('얼음 양을 선택해 주세요.');
+				        return; // 얼음 양을 선택하지 않았으면 종료
+				    }
+				    
+
+				    if (!shotadd) {
+				        alert('샷추가 여부를 선택해 주세요.');
+				        return; // 샷 추가를 선택하지 않았으면 종료
+				    }
+				    
+				    url = `/cafe/menu/menulist.do?seq=${dto.seq}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&totalCount=\${totalCount}#cafeseat`;
+				    
+				    // 이동
+				    location.href = url;
+	
+				});
+				
+				const temperature = $('input:radio[name="temperature"]:checked').val();
+			    const size = $('input:radio[name="size"]:checked').val();
+			    const iceamount = $('input:radio[name="iceamount"]:checked').val();
+			    const shotadd = $('input:radio[name="shotadd"]:checked').val();
+			    
+			    const totalCount = document.getElementById('totalCount').value || 1; // 기본값을 1로 설정
+			    
+
+			
 			</script>
 
 	</body>
