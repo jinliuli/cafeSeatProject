@@ -1,0 +1,6 @@
+--CafeSeatProject
+
+SHOW USER;
+
+CREATE USER cafe IDENTIFIED BY java1234;
+GRANT CONNECT, RESOURCE, DBA TO cafe;

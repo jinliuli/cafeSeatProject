@@ -1607,8 +1607,7 @@ INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payD
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 187, '간편결제', '카카오페이', 6700, '2024-09-14');
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 188, '간편결제', '네이버페이', 5500, '2024-09-14');
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 189, '간편결제', '네이버페이', 6000, '2024-09-14');
-I
-NSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 190, '간편결제', '토스페이', 6800, '2024-09-14');
+INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 190, '간편결제', '토스페이', 6800, '2024-09-14');
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 191, '간편결제', '토스페이', 6000, '2024-09-14');
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 192, '간편결제', '네이버페이', 6500, '2024-09-14');
 INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, 193, '간편결제', '카카오페이', 5400, '2024-09-14');
