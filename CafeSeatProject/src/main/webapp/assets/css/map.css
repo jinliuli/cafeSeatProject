@@ -152,6 +152,9 @@
 #placesList .item span {
 	display: block;
 	margin-top: 4px;
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #placesList .item h5, #placesList .item .info {
@@ -275,3 +278,6 @@
 
 
 /* 지도에 이름 표시하는 창 */
+
+
+

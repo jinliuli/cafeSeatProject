@@ -119,37 +119,32 @@
 			    map.setBounds(bounds);
 			}
 			
-			// 검색결과 항목을 Element로 반환하는 함수입니다
-			function getListItem(index, places) {
-			
-			    var el = document.createElement('li'),
-			    itemStr = `<span class="markerbg marker_${index+1}"></span>
-			                <div class="info">
-								<div class="info-title">
-			                	<h5>${places.place_name}</h5>							
-									<input type="submit" id="btntitle${index+1}" class="btntitle" value="예약" data-value="${places.place_name}">
-								</div>`;
-			
-			    if (places.road_address_name) {
-			        itemStr += `<span>${places.road_address_name}</span>
-			                    <span class="jibun gray">${places.address_name}</span>`;
-			    } else {
-			        itemStr += `<span>${places.address_name}</span>`; 
-			    }
-			                 
-			      itemStr += `<span class="tel">${places.phone}</span>
-							</div>`;           
+			// 검색 결과 항목을 Element로 반환하는 함수입니다
+			function getListItem(index, place) {
+			    var el = document.createElement('li');
+			    var itemStr = `
+			        <li>
+			            <span class="markerbg marker_${index + 1}"></span>
+			            <div class="info">
+			                <div class="info-title">
+			                    <h5>${place.place_name}</h5>                            
+			                    <input type="button" id="btntitle${index}" class="btntitle" value="예약" data-value="${place.place_name}">
+			                </div>
+			                <span>${place.road_address_name || place.address_name}</span>
+			                <span class="jibun gray">${place.address_name}</span>
+			                <span class="tel">${place.phone}</span>
+			            </div>
+			        </li>`;
 			
 			    el.innerHTML = itemStr;
 			    el.className = 'item';
-			
 			    return el;
 			}
-			
+						
 			// 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 			function addMarker(position, idx, title) {
 				//var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
-				var imageSrc = '../../images/location-pointer.png',
+				var imageSrc = '../images/location-pointer.png',
 					imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
 					imgOptions =  {
 						// spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
