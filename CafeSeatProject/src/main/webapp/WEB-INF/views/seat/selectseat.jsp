@@ -27,7 +27,7 @@
 			.seat form input.booked:hover {color: #999;}
 			.seat form input.blank {margin-right: 13.7142%;}
 			.seat form input:nth-child() {margin-bottom: 30px;}
-			.seat form input.plug {background: url(images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
+			.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
 			
 
 			.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 4px solid #AF8F6F; padding-top: 25px;}
@@ -65,10 +65,10 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
+						<a href="#" class="icon solid fa-map"><span>Map</span></a>
+						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
 					</nav>
 
 				<!-- Main -->
@@ -87,7 +87,7 @@
 							</article>
 
 						<!-- Work -->
-							<article id="work" class="panel">
+							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
 								<h1 class="storename">투썸플레이스 역삼성흥타워점</h1>
@@ -110,7 +110,7 @@
 
 										<!-- 좌석 선택 -->
 								<div class="seat"> 
-									<form id="seatForm" method="POST" action="/cafe/seat/selectSeat.do">
+									<form id="seatForm" method="GET" action="/cafe/menu/menulist.do#cafeseat">
 										<input type="button" value="1" class="booked seatButton">
 										<input type="button" value="2" class="plug seatButton">
 										<input type="button" value="3" class="blank seatButton">
@@ -146,7 +146,7 @@
 							</article>
 
 						<!-- Contact -->
-							<article id="contact" class="panel">
+							<article id="mypage" class="panel">
 								<!-- <header>
 									<h2>Contact Me</h2>
 								</header>
@@ -175,7 +175,7 @@
 							
 							
 							<!-- Twitter -->
-							<article id="Twitter" class="panel">
+							<article id="login" class="panel">
 							</article>					
 							</div>
 					
@@ -226,7 +226,22 @@
 								alert("최대 " + maxSeats + " 개의 좌석만 선택할 수 있습니다."); // 최대 좌석 수 초과 알림
 							}
 						}
+						
 					});
+					
+					$('#seatForm').on('submit', function(event) {
+				        event.preventDefault(); // 기본 제출 방지
+
+				        if (selectedSeats.length === 0) {
+				            alert("좌석을 선택하세요.");
+				            return;
+				        }
+
+				        // 선택된 좌석을 쿼리 스트링으로 설정
+				        $('#selectedSeats').val(selectedSeats.join(',')); // 배열을 문자열로 변환
+				        this.submit(); // 폼 제출
+				    });
+					
 				});
 
 
@@ -235,6 +250,7 @@
 
 
 
+			 	/*
 			 	$('#seatForm').submit(function(event){
 			 	event.preventDefault(); // 기본 폼 제출 방지
 			 	if (selectedSeats.length > 0) {
@@ -256,7 +272,8 @@
 			 	} else {
 			 		alert('좌석을 선택해주세요.');
 			 	}
-			 });
+			 }); 
+			 	*/
 
 			</script>
 

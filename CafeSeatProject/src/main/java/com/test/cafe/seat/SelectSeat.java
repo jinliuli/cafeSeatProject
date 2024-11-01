@@ -28,31 +28,31 @@ public class SelectSeat extends HttpServlet {
 	
 	
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-//		req.setCharacterEncoding("UTF-8");
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		
-//		String selectedSeats = req.getParameter("seats");
-//		String person = req.getParameter("count");
+////		req.setCharacterEncoding("UTF-8");
+////		
+////		String selectedSeats = req.getParameter("seats");
+////		String person = req.getParameter("count");
+////		
+////		System.out.println(selectedSeats);
+////		System.out.println(person);
+////		
+////		
+////		ReservationDTO dto = new ReservationDTO();
+////		dto.setSeq(selectedSeats);
+////		dto.setPerson(person);
+////		
+////		
+////		SeatDAO dao = SeatDAO.getInstance();
+////		int result = dao.reservation(dto);
 //		
-//		System.out.println(selectedSeats);
-//		System.out.println(person);
 //		
 //		
-//		ReservationDTO dto = new ReservationDTO();
-//		dto.setSeq(selectedSeats);
-//		dto.setPerson(person);
 //		
 //		
-//		SeatDAO dao = SeatDAO.getInstance();
-//		int result = dao.reservation(dto);
-		
-		
-		
-		
-		
-		
-	}
+//		
+//	}
 	
 }
