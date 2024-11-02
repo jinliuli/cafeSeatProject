@@ -14,6 +14,8 @@
             - Unregister.java					: 회원 탈퇴
             - Login.java						: 로그인
             - Logout.java						: 로그아웃
+            - FindId.java                       : 아이디 찾기
+            - FindPw.java                       : 비번 찾기
             - Info.java					    	: 회원 정보
 
         - com.test.cafe.user.repository	    	: 회원 DB (DAO)
@@ -21,6 +23,9 @@
 
         - com.test.cafe.user.model		    	: 회원 DB (DTO)
             - UserDTO.java
+
+    - com.test.cafe.mypage  				    : 마이페이지 패키지
+            - MyPage.java                       : 마이페이지
 
         - com.test.cafe.cafe					: 카페 패키지
             - CafeMap.java			    		: 카페 검색
@@ -64,6 +69,8 @@
         - com.test.cafe.order.model		    	: 주문 DB (DTO)
             - OrderDTO.java
 
+            
+
 
         - com.test.cafe.filter
             - EncodingFilter.java               : 인코딩 처리
@@ -82,6 +89,11 @@
         - unregister.jsp
         - login.jsp
         - logout.jsp
+        - findid.jsp
+        - findpw.jsp
+        - findidmodal.jsp
+        - findpwmodal.jsp
+        - replacepwmoda.jsp
         - info.jsp
 
     - views > cafe
@@ -99,6 +111,9 @@
 
     - views > order
         - order.jsp
+
+    - views > mypage
+        - mypage.jsp
 
 - 공통 요소 & 리소스
     - views > inc
