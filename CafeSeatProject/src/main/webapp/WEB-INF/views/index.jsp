@@ -20,33 +20,40 @@
 		<!-- Wrapper-->
 			<div id="wrapper">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="https://twitter.com/ajlkn" class="icon brands fa-twitter"><span>Twitter</span></a>
+				<!-- NavNoArrow: Nav 메뉴 아이콘 아래 따라다니는 화살표가 없는 버전 -->
+					<nav id="navNoArrow">
+					<!-- 
+						<a href="#" class="icon solid fa-home"><span>메인 페이지</span></a>
+						<a href="#extend-seat" class="icon solid fa-folder"><span>자리 연장</span></a>
+						<a href="#move-seat" class="icon solid fa-envelope"><span>자리 이동</span></a>
+						<a href="#end-seat" class="icon brands fa-twitter"><span>이용 종료</span></a>
+						 -->
+
+						<!-- <a href="#" class="icon solid fa-home"><span>메인 페이지</span></a> -->
+						<a href="/cafe/seat/extendseat.do" class="icon solid fa-solid fa-mug-hot"><span>자리 연장</span></a>
+						<a href="/cafe/seat/moveseat.do" class="icon solid fa-solid fa-shuffle"><span>자리 이동</span></a>
+						<a href="/cafe/seat/endseat.do" class="icon solid fa-solid fa-arrow-right-from-bracket"><span>이용 종료</span></a>
 					</nav>
 
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Me -->
-							<article id="home" class="panel intro">
+							<article id="main-seat" class="panel intro">
 								<header>
-									<h1>Jane Doe</h1>
+									<h1>메인 페이지</h1>
 									<p>Senior Astral Projectionist</p>
 								</header>
-								<a href="#work" class="jumplink pic">
+								<a href="#main-seat" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
 									<img src="/cafe/images/me.jpg" alt="" />
 								</a>
 							</article>
 
-						<!-- Work -->
-							<article id="work" class="panel">
+						<!-- extend-seat -->
+							<article id="extend-seat" class="panel">
 								<header>
-									<h2>Work</h2>
+									<h2>자리 연장</h2>
 								</header>
 								<p>
 									Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
@@ -95,10 +102,10 @@
 								</section>
 							</article>
 
-						<!-- Contact -->
-							<article id="contact" class="panel">
+						<!-- move-seat -->
+							<article id="move-seat" class="panel">
 								<header>
-									<h2>Contact Me</h2>
+									<h2>자리 이동</h2>
 								</header>
 								<form action="#" method="post">
 									<div>
@@ -123,14 +130,36 @@
 								</form>
 							</article>
 
+						<!-- end-seat -->
+							<article id="end-seat" class="panel">
+								<header>
+									<h2>이용 종료</h2>
+								</header>
+								<form action="#" method="post">
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-medium">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<input type="submit" value="Send Message" />
+											</div>
+										</div>
+									</div>
+								</form>
+							</article>
+							
 					</div>
 
-				<!-- Aside -->
-					<div id="nav">
-						<a href="/cafe/seat/extendseat.do" class="icon solid fa-home"><span>자리 연장</span></a>
-						<a href="/cafe/seat/moveseat.do" class="icon solid fa-folder"><span>자리 이동</span></a>
-						<a href="/cafe/seat/endseat.do" class="icon solid fa-envelope"><span>이용 종료</span></a>
-					</div>
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
@@ -141,6 +170,9 @@
 			</div>
 
 		<!-- Scripts -->
+			<!-- Font Awesome Icon 전용 스크립트 -->
+			<script src="https://kit.fontawesome.com/1d5f7aae7c.js" crossorigin="anonymous"></script>
+			
 			<script src="/cafe/assets/js/jquery.min.js"></script>
 			<script src="/cafe/assets/js/browser.min.js"></script>
 			<script src="/cafe/assets/js/breakpoints.min.js"></script>
