@@ -18,11 +18,13 @@
             - FindPw.java                       : 비번 찾기
             - Info.java					    	: 회원 정보
 
-        - com.test.cafe.user.repository	    	: 회원 DB (DAO)
-            - UserDAO.java					
+        - com.test.cafe.user.repository	    	: 유저 DB (DAO)
+            - UserDAO.java                      : 일반회원
+            - AdminDAO.java					    : 관리자
 
-        - com.test.cafe.user.model		    	: 회원 DB (DTO)
-            - UserDTO.java
+        - com.test.cafe.user.model		    	: 유저 DB (DTO)
+            - UserDTO.java                      : 일반회원
+            - AdminDTO.java                     : 관리자
 
     - com.test.cafe.mypage  				    : 마이페이지 패키지
             - MyPage.java                       : 마이페이지
