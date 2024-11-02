@@ -21,17 +21,24 @@ public class AdminDAO {
 	
 	public AdminDAO() {
 		
-		this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
+		//this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
 		
-		try {
-			if(!this.conn.isClosed()) {
-				System.out.println("관리자 계정 연결 성공");
+		//프로젝트 샘플용은 cafe@localhost로 통일		
+		this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결
+		
+		 try {
+
+			if (!conn.isClosed()) {
+				System.out.println("DB 연결 성공!");
 			} else {
-				System.out.println("관리자 계정 연결 실패");
+				System.out.println("DB 연결 실패!");
 			}
+
 		} catch (Exception e) {
+			System.out.println("AdminDAO.AdminDAO");
 			e.printStackTrace();
 		}
+		 
 	}
 	
 	public static AdminDAO getInstance() {
@@ -66,8 +73,11 @@ public class AdminDAO {
 				result.setCompanyId(rs.getString("companyId"));
 				result.setIng(rs.getInt("ing"));
 				
+				System.out.println("관리자 계정 연결 성공");
 				return result;	//로그인 성공 시 AdminDTO 객체 반환
 				
+			} else {
+				System.out.println("관리자 계정 연결 실패");
 			}
 		} catch (Exception e) {
 			System.out.println("AdminDAO.login");

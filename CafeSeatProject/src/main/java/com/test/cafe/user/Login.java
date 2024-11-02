@@ -33,12 +33,13 @@ public class Login extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String loginType = req.getParameter("loginType");
+		String admin = "admin";
 		
 		//입력된 ID와 PW 출력되는지 확인
 		System.out.println("ID: " + id + ", PW: " + pw);
 		
 		
-		if ("admin".equals(loginType)) {
+		if (admin.equals(loginType)) {
 			 	
 			// Admin 로그인 처리
             AdminDTO dto = new AdminDTO();
@@ -81,7 +82,7 @@ public class Login extends HttpServlet {
 			 UserDTO result = dao.login(dto);
 		
 			 if (result != null) {
-				System.out.println("사용자 로그인 성공");
+
 		
 				//인증 티켓 발급
 				session.setAttribute("auth", id);

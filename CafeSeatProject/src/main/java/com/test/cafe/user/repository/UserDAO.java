@@ -22,17 +22,26 @@ public class UserDAO {
 	
 	public UserDAO() {
 		
-		this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
+
+		//this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
 		
-		try {
-			if(!this.conn.isClosed()) {
-				System.out.println("사용자 계정 연결 성공");
+		//프로젝트 샘플용은 cafe@localhost로 통일		
+		this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결
+
+		
+		 try {
+			 
+			if (!conn.isClosed()) {
+				System.out.println("DB 연결 성공!");
 			} else {
-				System.out.println("사용자 계정 연결 실패");
+				System.out.println("DB 연결 실패!");
 			}
+
 		} catch (Exception e) {
+			System.out.println("UserDAO.UserDAO");
 			e.printStackTrace();
 		}
+		 
 	}
 	
 	public static UserDAO getInstance() {
@@ -67,9 +76,16 @@ public class UserDAO {
 				result.setEmail(rs.getString("email"));
 				result.setIng(rs.getInt("ing"));
 				
+				System.out.println("사용자 로그인 성공");
 				return result;	//로그인 성공 시 UserDTO 객체 반환
 				
+			} else {
+				
+				System.out.println("사용자 로그인 실패!");
+				
 			}
+			
+			
 		} catch (Exception e) {
 			System.out.println("UserDAO.login");
 			e.printStackTrace();
