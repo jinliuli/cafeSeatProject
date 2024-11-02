@@ -23,9 +23,11 @@ public class SeatDAO {
 	
 	private SeatDAO() {
 
-		//프로젝트 샘플용은 "cafe"로 통일
-		//this.conn = DBUtil.open("localhost", "cafeproject", "java1234");
-		this.conn = DBUtil.open("localhost", "cafe", "java1234");
+		//개인 테스트용은 cafe로 통일!
+		//this.conn = DBUtil.open("localhost", "cafe", "java1234");
+		
+		//프로젝트 공용
+		this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234");
 		
 	}
 	
