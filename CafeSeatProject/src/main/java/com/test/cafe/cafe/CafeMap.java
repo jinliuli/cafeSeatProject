@@ -37,8 +37,15 @@ public class CafeMap extends HttpServlet {
 		//세션 만들기
 		HttpSession session = req.getSession();
 		
-		//
+		//POST로 받은 카페번호 스트링 cseq에 담기
 		String cseq = req.getParameter("cseq");
+		
+		//카페번호 세션에 입력
+		session.setAttribute("cseq", cseq);
+		
+		
+		//resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
+		resp.sendRedirect("/cafe/seat/selectseat.do");
 		
 
 
