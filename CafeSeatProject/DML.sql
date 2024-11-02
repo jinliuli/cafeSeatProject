@@ -1390,31 +1390,30 @@ INSERT INTO tblProduct(seq, seqCategory, name, price, image, description)VALUES(
 INSERT INTO tblProduct(seq, seqCategory, name, price, image, description)VALUES(seqProduct.nextVal, 3, '생크림소프트쉬폰', 6800, 'dessert11.jpg', '부드러운 텍스쳐의 쉬폰과 신선한 생크림을 곁들여 먹는 미니 디저트');
 
 -- tblOptions 옵션관리 ---------------------------------------------------------------------------------------------------
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 0, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 0, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 1, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 1, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 2, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 1, 0, 2, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 0, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 0, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 1, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 1, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 2, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 0, 2, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 0, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 0, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 1, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 1, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 2, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 1, 2, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 0, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 0, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 1, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 1, 1);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 2, 0);
-INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(seqOptions.nextVal, 2, 2, 2, 1);
-
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1000, 1, 0, 0, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1001, 1, 0, 0, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1010, 1, 0, 1, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1011, 1, 0, 1, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1020, 1, 0, 2, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(1021, 1, 0, 2, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2000, 2, 0, 0, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2001, 2, 0, 0, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2010, 2, 0, 1, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2011, 2, 0, 1, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2020, 2, 0, 2, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2021, 2, 0, 2, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2100, 2, 1, 0, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2101, 2, 1, 0, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2110, 2, 1, 1, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2111, 2, 1, 1, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2120, 2, 1, 2, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2121, 2, 1, 2, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2200, 2, 2, 0, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2201, 2, 2, 0, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2210, 2, 2, 1, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2211, 2, 2, 1, 1);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2220, 2, 2, 2, 0);
+INSERT INTO tblOptions(seq, temperature, ice, cupSize, shot) VALUES(2221, 2, 2, 2, 1);
 
 
 -- tblPayment 결제 관리 ----------------------------------------------------------------------------------
