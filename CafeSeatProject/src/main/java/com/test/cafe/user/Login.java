@@ -67,7 +67,6 @@ public class Login extends HttpServlet {
 			} else {
 				
 				req.setAttribute("loginError", "일치하는 관리자 정보가 없습니다.");
-				
 				resp.sendRedirect("/cafe/user/login.do#login");
 			}
 			
@@ -106,37 +105,5 @@ public class Login extends HttpServlet {
 		}
 	}
 }
-		 // User 로그인 처리
-//		 System.out.println(req.getParameter("loginType"));
-//		 UserDTO dto = new UserDTO();
-//		 dto.setId(id);
-//		 dto.setPw(pw);
-//
-//		 UserDAO dao = new UserDAO();
-//		 UserDTO result = dao.login(dto);
-//	
-//		 System.out.println(result);
-//		 if (result != null) {
-//			System.out.println("사용자 로그인 성공");
-//	
-//			//인증 티켓 발급
-//			session.setAttribute("auth", id);
-//			session.setAttribute("loginType", loginType);
-//		
-//			//회원 정보
-//			session.setAttribute("name", result.getName());
-//			session.setAttribute("tel", result.getTel());
-//			session.setAttribute("email", result.getEmail());
-//			session.setAttribute("ing", result.getIng());
-//		
-////			resp.sendRedirect("/cafe/cafe/cafemap.do");
-//			resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
-//			 
-//		 }else {
-//			 
-//			 resp.sendRedirect("/cafe/user/login.do#/login");
-//		 }
-//		
-//	}
 	
 	
