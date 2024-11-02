@@ -64,13 +64,14 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-map"><span>Map</span></a>
-						<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-						<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-						<a href="#login" class="icon solid fa-user"><span>Login</span></a>
-					</nav>
-
+				
+				<nav id="nav">
+					<a href="#" class="icon solid fa-map"><span>Map</span></a> 
+					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+					<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+					<a href="#login" class="icon solid fa-user"><span>Login</span></a>
+					<button id="loginButton" class="nav-button">로그인</button>
+				</nav>
 				<!-- Main -->
 					<div id="main">
 
@@ -86,7 +87,7 @@
 								</a> -->
 							</article>
 
-						<!-- Work -->
+						<!-- CafeSeat -->
 							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
@@ -145,7 +146,7 @@
 								
 							</article>
 
-						<!-- Contact -->
+						<!-- Mypage -->
 							<article id="mypage" class="panel">
 								<!-- <header>
 									<h2>Contact Me</h2>
@@ -174,8 +175,9 @@
 							</article>
 							
 							
-							<!-- Twitter -->
+						<!-- Login -->
 							<article id="login" class="panel">
+
 							</article>					
 							</div>
 					

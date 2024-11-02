@@ -23,7 +23,9 @@
 	<script src="https://bit.ly/4cMuheh"></script>
 	<script>
 
-		
+		document.getElementById('loginButton').addEventListener('click', function() {
+            location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
+        });
 	
 	</script>
 </body>

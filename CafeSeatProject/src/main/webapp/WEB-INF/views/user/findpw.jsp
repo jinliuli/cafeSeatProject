@@ -17,16 +17,11 @@
 
         <style>
             @import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
-        
+
             body {
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
-            #Twitter {
-                display: float;
-                justify-content: center;
-            }
-            
             .panel-content {
                 display: flex;
                 flex-direction: column;
@@ -36,9 +31,9 @@
             h1 {
                 text-align: center;
                 font-family: 'Paperlogy-8ExtraBold';
-                font-size: 50px; 
+                font-size: 55px; 
                 margin-top: 20px;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
 
             .input-form {
@@ -63,7 +58,7 @@
                 margin-bottom: 10px;
             }
 
-            #name, #email {
+            #id, #name, #email {
                 border: none; 
                 width: 350px;
                 height: 45px;
@@ -79,14 +74,14 @@
                 justify-content: center;
                 align-content: center;
                 box-sizing: content-box;
-				margin-top: 30px;
+                margin-top: 140px;
             }
 
             .btnFind button {
                 width: 296px;
-                height: px;
+                height: 25px;
                 font-size: 18px;
-                margin-top: 10px;
+                margin-top: 10px; 
             }
 
             .link {
@@ -94,9 +89,8 @@
                 justify-content: space-between;
                 width: 35%;
             }
-			
+
             .link a {
-				align-items: center;
                 font-size: 20px;
                 text-align: center;
                 white-space: nowrap; /* 글씨를 한 줄로 표시 */
@@ -127,11 +121,11 @@
 
             <!-- Nav -->
             <nav id="nav">
-                <a href="#" class="icon solid fa-home"><span>Home</span></a>
-                <a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-                <a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-                <a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
-				<button id="loginButton" class="nav-button">로그인</button>
+                <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+                <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+                <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+                <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+                <button id="loginButton" class="nav-button">로그인</button>
             </nav>
 
             <!-- Main -->
@@ -139,23 +133,30 @@
 
                 <!-- Me -->
                 <article id="home" class="panel intro">
+                    
                 </article>
 
                 <!-- Work -->
                 <article id="work" class="panel">
+                    
                 </article>
 
                 <!-- Contact -->
                 <article id="contact" class="panel">
+                
                 </article>
-
+                    
                 <!-- Twitter -->
                 <article id="Twitter" class="panel">
-                    <h1 class="find-id-from">아이디 찾기</h1>
+                    <h1 class="findPwFrom">비밀번호 찾기</h1>
                     <div class="panel-content">
                         <form method="post" action="실제 처리할 URL">
                             <div class="input-form">
                                 <table class="input-table">
+                                    <tr>
+                                        <th>아이디</th>
+                                        <td><input type="text" name="id" id="id" placeholder="아이디" required></td>
+                                    </tr>
                                     <tr>
                                         <th>성명</th>
                                         <td><input type="text" name="name" id="name" placeholder="이름" required></td>
@@ -167,14 +168,13 @@
                                 </table>
                             </div>
                             <div class="btnFind">
-                                <button id="btnfindId" type="submit">아이디 찾기</button>
+                                <button id="btnFindPw" type="submit">비밀번호 찾기</button>
                             </div>
                         </form>
-
                         <div class="link">
-                            <a href="" onclick="">회원가입</a>
+                            <a href="" onclick="">로그인</a>
                             <a href="" onclick="">아이디 찾기</a>
-                        </div>        
+                        </div>      
                     </div>
                 </article>                    
             </div>
@@ -182,8 +182,7 @@
             <!-- Footer -->
             <div id="footer">
                 <ul class="copyright">
-                    <li>&copy; Untitled.</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    <li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                 </ul>
             </div>
 
@@ -197,6 +196,11 @@
         <script src="assets/js/main.js"></script>
 
         <script>
+            
+            document.getElementById('loginButton').addEventListener('click', function() {
+                location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
+            });
+
         </script>
 
     </body>
