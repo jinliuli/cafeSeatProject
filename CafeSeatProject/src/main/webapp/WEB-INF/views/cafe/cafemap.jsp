@@ -70,14 +70,18 @@
 									<div class="info">
 										<div class="info-title">
 											<h5>${dto.name}</h5>
-											<input type="submit" id="btntitle${dto.cseq}" class="btntitle"
-												value="예약" data-value="${dto.cseq}">
+											<form method="POST" action="/cafe/cafe/cafemap.do">
+											<input type="hidden" id="cseq" class="btntitle"
+												value="${dto.cseq}" data-value="${dto.cseq}">
+											<button type="submit">예약</button>
+											</form>
 										</div>
 										<span>${dto.address}</span> 
 										<span class="jibun gray">${dto.lotAddress}</span>
 										<span class="tel">${dto.tel}</span>
 									</div>
 									</li>
+									
 							</c:forEach>
 						</ul>
 						<div id="pagination"></div>
@@ -160,12 +164,16 @@
 	
 	
 	//예약버튼 보기btntitle
+	
+/* 	
 	for (let i = 0; i <= 108; i++) {
+	
 		$(document).on('click', '#btntitle' + i, function() {
 			//alert($('#btntitle' + i).data('value'));
 			location.href="/cafe/seat/selectseat.do?cafe="+$('#btntitle' + i).data('value')+"#cafeseat";
 		});
-	}
+	} 
+*/
 	
 	
 	</script>
