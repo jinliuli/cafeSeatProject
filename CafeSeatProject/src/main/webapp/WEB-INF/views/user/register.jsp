@@ -22,7 +22,7 @@
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
-            #Twitter {
+            #login {
                 display: float;
                 justify-content: center;
             }
@@ -136,22 +136,6 @@
                 width: 314px; 
                 font-size: 18px; 
             }
-
-            #nav .nav-button {
-                background-color: rgb(48, 102, 204); 
-                border: none; 
-                border-radius: 2px; 
-                padding: 10px 20px; 
-                font-size: 18px; 
-                margin-left: 20px; 
-                cursor: pointer; 
-            }
-
-            #nav .nav-button:hover {
-                background-color: #ffffff; 
-               
-            }
-          
                 
         </style>
     </head>
@@ -163,12 +147,11 @@
             <!-- Nav -->
             <nav id="nav">
                 <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
-                <a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-                <a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+                <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+                <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
                 <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-                <button id="loginButton" class="nav-button">로그인</button>
             </nav>
-
+            
             <!-- Main -->
             <div id="main">
 
@@ -190,64 +173,68 @@
                            
                <!-- Login -->
                <article id="login" class="panel">
-                        <form method="post" action="/cafe/user/register.do">
-                            <h1>로그인 정보</h1>
-                            <div class="login-info">
-                                <table class="login-info-table">
-                                    <tr>
-                                        <th>아이디</th>
-                                        <td>
-                                            <input type="text" name="id" id="id" placeholder="아이디" required>
-                                            <input type="button" value="중복검사" id="btnCheck">
-                                            <span id="result"></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>비밀번호</th>
-                                        <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
-                                    </tr>
-                                    <tr>
-                                        <th>비밀번호 확인</th>
-                                        <td><input type="password" name="checkPw" id="checkPw" placeholder="입력한 비밀번호와 동일한 비밀번호를 입력해주세요" required></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <h1>회원 정보</h1>
-                            <div class="member-info">
-                                <table class="member-info-table">
-                                    <tr>
-                                        <th>회원 정보</th>
-                                        <td>
-                                            <div class="option">
-                                                <input type="radio" id="user" class="opt-member" name="opt-member" value="user" checked>
-                                                <label for="user" class="choice">개인</label>
-                                            </div>
-                                            <div class="option">
-                                                <input type="radio" id="admin" class="opt-member" name="opt-member" value="admin">
-                                                <label for="admin" class="choice">사업자</label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>성명</th>
-                                        <td><input type="text" name="name" id="name" placeholder="이름" required></td>
-                                    </tr>
-                                    <tr>
-                                        <th>전화번호</th>
-                                        <td><input type="text" name="tel" id="tel" placeholder="010-1234-5678" required></td>
-                                    </tr>
-                                    <tr>
-                                        <th>이메일</th>
-                                        <td><input type="email" name="email" id="email" placeholder="example@example.com" required></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div id="btnSignup">
-                                <button type="submit">가입하기</button>
-                            </div>
-                        </form>
-                    </div>
+	              <form method="post" action="/cafe/user/register.do">
+	                  <h1>로그인 정보</h1>
+	                  <div class="login-info">
+	                      <table class="login-info-table">
+	                          <tr>
+	                              <th>아이디</th>
+	                              <td>
+	                                  <input type="text" name="id" id="id" placeholder="영문, 숫자 조합 5~12자" required>
+	                                  <input type="button" value="중복검사" id="btnCheck">
+	                                  <span id="result"></span>
+	                              </td>
+	                          </tr>
+	                          <tr>
+	                              <th>비밀번호</th>
+	                              <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
+	                          </tr>
+	                          <tr>
+	                              <th>비밀번호 확인</th>
+	                              <td><input type="password" name="checkPw" id="checkPw" placeholder="입력한 비밀번호와 동일한 비밀번호를 입력해주세요" required></td>
+	                          </tr>
+	                      </table>
+	                  </div>
+	                  
+	                  <h1>회원 정보</h1>
+	                  <div class="member-info">
+	                      <table class="member-info-table">
+	                          <tr>
+	                              <th>회원 정보</th>
+	                              <td>
+	                                  <div class="option">
+	                                      <input type="radio" id="user" class="opt-member" name="opt-member" value="user" checked>
+	                                      <label for="user" class="choice">개인</label>
+	                                  </div>
+	                                  <div class="option">
+	                                      <input type="radio" id="admin" class="opt-member" name="opt-member" value="admin">
+	                                      <label for="admin" class="choice">사업자</label>
+	                                  </div>
+	
+	                                  <input type="hidden" name="loginType" id="loginType" value="user">
+	                                  
+	                              </td>
+	                          </tr>
+	                          <tr>
+	                              <th>성명</th>
+	                              <td><input type="text" name="name" id="name" placeholder="이름" required></td>
+	                          </tr>
+	                          <tr>
+	                              <th>전화번호</th>
+	                              <td><input type="text" name="tel" id="tel" placeholder="010-1234-5678" required></td>
+	                          </tr>
+	                          <tr>
+	                              <th>이메일</th>
+	                              <td><input type="email" name="email" id="email" placeholder="example@example.com" required></td>
+	                          </tr>
+	                      </table>
+	                   </div>
+	                   <div id="btnSignup">
+	                       <button type="submit">가입하기</button>
+	                   </div>
+	               </form>
                 </article>
+                
             </div>
 
             <!-- Footer -->

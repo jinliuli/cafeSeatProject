@@ -125,7 +125,6 @@
                 <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
                 <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-                <button id="loginButton" class="nav-button">로그인</button>
             </nav>
 
             <!-- Main -->

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.test.cafe.user.model.AdminDTO;
 import com.test.cafe.user.model.UserDTO;
 import com.test.util.DBUtil;
 
@@ -68,6 +69,7 @@ public class UserDAO {
 			
 			rs = pstat.executeQuery();
 			
+			
 			if (rs.next()) { //결과가 있으면
 				
 				UserDTO result = new UserDTO();	//결과를 담을 UserDTO 객체 생성
@@ -79,22 +81,39 @@ public class UserDAO {
 				result.setIng(rs.getInt("ing"));
 				
 				System.out.println("사용자 로그인 성공");
-				return result;	//로그인 성공 시 UserDTO 객체 반환
+				return result;	
 				
 			} else {
-				
-				System.out.println("사용자 로그인 실패!");
-				
+				System.out.println("사용자 로그인 실패");
 			}
-			
 			
 		} catch (Exception e) {
 			System.out.println("UserDAO.login");
 			e.printStackTrace();
 		}
 		
-		return null;	//로그인 실패 시 null 반환
+		return null;	
 	}
 	
-	
+	public int register(UserDTO dto) {
+
+		try {		
+			String sql = "insert into tblUser (id, pw, name, tel, email, ing) values (?, ?, ?, ?, ?, default)"; 
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getId());
+			pstat.setString(2, dto.getPw());
+			pstat.setString(3, dto.getName());
+			pstat.setString(4, dto.getTel());
+			pstat.setString(5, dto.getEmail());
+			pstat.setInt(6, dto.getIng());
+			
+			return pstat.executeUpdate();
+		
+		} catch (Exception e) {
+			System.out.println("UserDAO.register");
+			e.printStackTrace();	
+		}
+		
+		return 0;
+	}
 }
