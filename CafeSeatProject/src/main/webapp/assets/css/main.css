@@ -1803,6 +1803,11 @@ input, select, textarea {
 				font-size: 0.8em;
 			}
 
+			/* 
+			controls the animation of the arrow
+			화살표 아이콘 애니메이션 설정
+			*/
+/* 			
 			#nav a:after {
 				content: '';
 				display: block;
@@ -1818,6 +1823,7 @@ input, select, textarea {
 				-ms-transition: border-bottom-width .25s ease-in-out;
 				transition: border-bottom-width .25s ease-in-out;
 			}
+ */
 
 			#nav a span {
 				display: block;
