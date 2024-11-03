@@ -20,8 +20,12 @@ public class SelectSeat extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		HttpSession session = req.getSession();
 		
-
+		String cseq = (String) session.getAttribute("cseq");
+		
+		
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/seat/selectseat.jsp");
 		dispatcher.forward(req, resp);
 	}

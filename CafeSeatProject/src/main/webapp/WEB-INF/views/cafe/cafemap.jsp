@@ -33,9 +33,10 @@
 
 		<!-- Nav -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-map"><span>Map</span></a> 
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-			<a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+			<a href="#" class="icon solid fa-map"><span>Map</span></a> <a
+				href="/cafe/seat/selectseat.do#cafeseat"
+				class="icon solid fa-mug-hot"><span>CafeSeat</span></a> <a
+				href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
 			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
 		</nav>
 
@@ -64,20 +65,36 @@
 						</div>
 						<hr>
 						<ul id="placesList">
-						<c:forEach items="${list}" var="dto">
-								<li class=item>
-								<span class="markerbg marker_${dto.cseq}"></span>
+							<c:forEach items="${list}" var="dto">
+								<li class=item><span class="markerbg marker_${dto.cseq}"></span>
 									<div class="info">
+
 										<div class="info-title">
 											<h5>${dto.name}</h5>
-											<input type="submit" id="btntitle${dto.cseq}" class="btntitle"
-												value="예약" data-value="${dto.cseq}">
+											<form method="POST" action="/cafe/cafe/cafemap.do">
+												<input type="hidden" id="cseq" name="cseq" value="${dto.cseq}">
+												<input type="submit" class="btntitle" value="예약">
+											</form>
 										</div>
-										<span>${dto.address}</span> 
-										<span class="jibun gray">${dto.lotAddress}</span>
+
+
+										<%--
+										기존에 카페 선택 페이지에서 좌석 선택 페이지로 갈 때 
+										GET방식으로 카페 번호를 query string에 입력해서 보내 줬는데,
+										이걸 세션으로 넘겨주는 방식으로 수정. 이에 맞게 예약 버튼을 누르면
+										본인 페이지로 한 번 더 카페 정보를 가지고 서블릿으로 이동하고
+										서블릿은 해당 정보를 세션에 입력하고 알맞은 카페로 이동 시켜줌
+ 										<div class="info-title">
+											<h5>${dto.name}</h5>
+											<input type="submit" id="btntitle${dto.cseq}"
+												class="btntitle" value="예약" data-value="${dto.cseq}">
+										</div> 
+										
+--%>
+										<span>${dto.address}</span> <span class="jibun gray">${dto.lotAddress}</span>
 										<span class="tel">${dto.tel}</span>
-									</div>
-									</li>
+									</div></li>
+
 							</c:forEach>
 						</ul>
 						<div id="pagination"></div>
@@ -118,7 +135,7 @@
 	<script type="text/javascript"
 		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ef00a9579c4de664a8dcf691494c9b70&libraries=services"></script>
 	<!-- <script src="../assets/js/cafe/map.js"></script> -->
-	
+
 	<script>
 
 	var markers = [];
@@ -160,15 +177,19 @@
 	
 	
 	//예약버튼 보기btntitle
+	
+/* 	
 	for (let i = 0; i <= 108; i++) {
+	
 		$(document).on('click', '#btntitle' + i, function() {
 			//alert($('#btntitle' + i).data('value'));
 			location.href="/cafe/seat/selectseat.do?cafe="+$('#btntitle' + i).data('value')+"#cafeseat";
 		});
-	}
+	} 
+*/
 	
 	
 	</script>
-	
+
 </body>
 </html>
