@@ -67,18 +67,18 @@
 									<c:forEach items="${list}" var="dto">
 									<div class="menu" data-category="${dto.seqCategory}">
 										<c:if test="${dto.seqCategory != '3'}">
-										<button type="button" class="menuName">${dto.name}</button>
-										<button type="button" class="menuprice">${dto.price}원</button>		
-										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/drink/${dto.image}"></button>
-										<input type="hidden" name="seq" value="${dto.seq}">
-										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
+											<button type="button" class="menuName">${dto.name}</button>
+											<button type="button" class="menuprice">${dto.price}원</button>		
+											<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?&seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/drink/${dto.image}"></button>
+											<input type="hidden" name="seqProduct" value="${dto.seq}">
+											<input type="hidden" name="menu-category" value="${dto.seqCategory}">
 										</c:if>
 										<c:if test="${dto.seqCategory == '3'}">
-										<button type="button" class="menuName">${dto.name}</button>
-										<button type="button" class="menuprice">${dto.price}원</button>		
-										<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/dessert/${dto.image}"></button>
-										<input type="hidden" name="seq" value="${dto.seq}">
-										<input type="hidden" name="menu-category" value="${dto.seqCategory}">
+											<button type="button" class="menuName">${dto.name}</button>
+											<button type="button" class="menuprice">${dto.price}원</button>		
+											<button class="menuImg" onclick="location.href='/cafe/menu/menuoptions.do?&seq=${dto.seq}#cafeseat';"><img src="/cafe/assets/pic/menuImages/dessert/${dto.image}"></button>
+											<input type="hidden" name="seqProduct" value="${dto.seq}">
+											<input type="hidden" name="seqCategory" value="${dto.seqCategory}">
 										</c:if>
 									</div>
 									</c:forEach>
@@ -91,6 +91,8 @@
 								<% String iceamount = request.getParameter("iceamount");%>
 								<% String shotadd = request.getParameter("shotadd");%>
 								<% String totalCount = request.getParameter("totalCount");%>
+								<% String totalPrice = request.getParameter("price");%>
+								<% String seqProduct = request.getParameter("seq");%>
 								
 								<div id="order">
 								
@@ -110,7 +112,10 @@
 								<input type="hidden" name="menusize" value="<%= size %>">
 								<input type="hidden" name="menuiceamount" value="<%= iceamount %>">
 								<input type="hidden" name="menushotadd" value="<%= shotadd %>">
-								<input type="hidden" name="menuseq" value="${dto.seq}">
+								<input type="hidden" name="seqProduct" value="<%= seqProduct %>">
+								<input type="hidden" name="totalPrice" value="<%= totalPrice %>">
+								<input type="hidden" name="selectedSeats" value="selectedSeats">
+							 	<input type="hidden" name="totalCount" value="<%= totalCount %>">
 								
 								<div id="price">
 									<input type="text" id="totalPrice" name="totalPrice" value="Total Price: 13,000원" readonly>

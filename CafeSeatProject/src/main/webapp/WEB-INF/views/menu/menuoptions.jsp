@@ -170,7 +170,7 @@
 				        return; // 샷 추가를 선택하지 않았으면 종료
 				    }
 				    
-				    url = `/cafe/menu/menulist.do?seq=${dto.seq}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&totalCount=\${totalCount}#cafeseat`;
+				    url = `/cafe/menu/menulist.do?seq=${dto.seq}&price=${dto.price}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&shotadd=\${shotadd}&totalCount=\${totalCount}#cafeseat`;
 				    
 				    // 이동
 				    location.href = url;
