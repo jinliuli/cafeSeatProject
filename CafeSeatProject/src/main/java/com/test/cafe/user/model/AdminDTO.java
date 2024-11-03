@@ -9,7 +9,7 @@ public class AdminDTO {
 	
 	private String id;
 	private String pw;
-	private String adminPw;
+//	private String checkPw;
 	private String name;
 	private String tel;
 	private String email;

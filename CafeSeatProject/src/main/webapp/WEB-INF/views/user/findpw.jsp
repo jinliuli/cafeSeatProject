@@ -22,6 +22,11 @@
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
+            #login {
+                display: float;
+                justify-content: center;
+            }
+
             .panel-content {
                 display: flex;
                 flex-direction: column;
@@ -125,7 +130,6 @@
                 <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
                 <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-                <button id="loginButton" class="nav-button">로그인</button>
             </nav>
 
             <!-- Main -->
@@ -147,7 +151,7 @@
                 </article>
                     
                 <!-- Twitter -->
-                <article id="Twitter" class="panel">
+                <article id="login" class="panel">
                     <h1 class="findPwFrom">비밀번호 찾기</h1>
                     <div class="panel-content">
                         <form method="post" action="실제 처리할 URL">

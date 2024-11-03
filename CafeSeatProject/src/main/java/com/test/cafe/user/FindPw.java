@@ -15,8 +15,6 @@ public class FindPw extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		
-
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user/findpw.jsp");
 		dispatcher.forward(req, resp);
 	}

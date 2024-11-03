@@ -19,7 +19,7 @@ public class Logout extends HttpServlet {
 		
 		session.invalidate();
 		
-		resp.sendRedirect("/cafe/seat/selectseat.do");
+		resp.sendRedirect("/cafe/cafe/cafemap.do#");
 		
 	}
 }

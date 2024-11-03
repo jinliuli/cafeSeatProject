@@ -18,12 +18,11 @@
         <style>
             @import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
 
-            /* 로그인 -------------------------------------------------------------------------*/
             body {
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
-            #Twitter {
+            #login {
                 display: float;
                 justify-content: center;
             }
@@ -73,8 +72,6 @@
             .opt-login:checked + label {
                 color: rgb(37, 92, 193);
             }
-
-			
 
             .login-table th {
                 display: flex;
@@ -136,7 +133,17 @@
 				margin-bottom: 10px;
 			}
 
-			#nav .nav-button {
+			.logout-form {
+			 	text-align: center;
+			 	justify-content: center;
+                align-content: center;	 
+			}
+			
+			.logout {
+				margin-bottom: 20px;
+			}
+         
+			/* #nav .nav-button {
                 background-color: rgb(48, 102, 204); 
                 border: none; 
                 border-radius: 2px; 
@@ -149,22 +156,23 @@
             #nav .nav-button:hover {
                 background-color: #ffffff; 
                
-            }
+            } */
 
         </style>
     </head>
     <body class="is-preload">
 
+       
         <!-- Wrapper-->
         <div id="wrapper">
-
+ 		
             <!-- Nav -->
             <nav id="nav">
                 <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
                 <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
                 <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-                <button id="loginButton" class="nav-button">로그인</button>
+                <!-- <button id="loginButton" class="nav-button">로그인</button> -->
             </nav>
 
             <!-- Main -->
@@ -187,44 +195,61 @@
 									
                 <!-- Login -->
                 <article id="login" class="panel">
-                    <h1 class="banner">사이트명</h1>
-                    <div class="panel-content">
-                        <form method="post" action="/cafe/user/login.do#login">
-                            <div class="opt-login-form">
-                                <input type="radio" id="admin" class="opt-login" name="opt-login" value="admin" checked>
-                                <label for="admin" class="choice">관리자 로그인</label>    
-                                <input type="radio" id="user" class="opt-login" name="opt-login" value="user">
-                                <label for="user" class="choice">사용자 로그인</label>
-                            </div>
+                    
+                    <c:if test="${empty auth}">
+                        <h1 class="banner">사이트명</h1>
+                        <div class="panel-content">
+                            <form method="post" action="/cafe/user/login.do#login">
+                                <div class="opt-login-form">
+                                	<input type="radio" id="user" class="opt-login" name="opt-login" value="user" checked>
+                                    <label for="user" class="choice">사용자 로그인</label>
+                                    <input type="radio" id="admin" class="opt-login" name="opt-login" value="admin">
+                                    <label for="admin" class="choice">관리자 로그인</label>    
+                                </div>
 
-                            <input type="hidden" name="loginType" id="loginType" value="admin">
+                                <input type="hidden" name="loginType" id="loginType" value="user">
+                                
+                                <div class="login-form">    
+                                    <table class="login-table">
+                                        <tr>
+                                            <th>아이디</th>
+                                            <td><input type="text" name="id" id="id" placeholder="영문, 숫자 조합 5~12자" required></td>
+                                        </tr>
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="btnLogin">
+                                    <button type="submit">로그인</button>
+                                </div>
+                            </form>
                             
-                            <div class="login-form">    
-                                <table class="login-table">
-                                    <tr>
-                                        <th>아이디</th>
-                                        <td><input type="text" name="id" id="id" placeholder="영문, 숫자 조합 5~12자" required></td>
-                                    </tr>
-                                    <tr>
-                                        <th>비밀번호</th>
-                                        <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
-                                    </tr>
-                                </table>
-                            </div>
+                            <div class="link">
+                                <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
+                                <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
+                                <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
+                            </div>       
+                        </div>
+                    </c:if>
+                    
+                    <c:if test="${not empty auth}">
+                    	<div class="logout-form">
+	                        <div class="logout">
+	                            로그아웃 하시겠습니까?
+	                        </div>
+	                        <div>
+	                            <button type="button" id="btnBack" onclick="location.href='/cafe/cafe/cafemap.do#';">뒤로가기</button>
+	                            <button type="button" id="btnLogout" onclick="location.href='/cafe/user/logout.do#logout';">로그아웃</button>
+	                        </div>
+	                    </div>
+                    </c:if>
 
-                            <div class="btnLogin">
-                                <button type="submit">로그인</button>
-                            </div>
-                        </form>
-
-                        <div class="link">
-                            <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/use/register.do';">회원가입</a> 
-                            <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
-                            <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
-                        </div>       
-                    </div>
                 </article>                    
             </div>
+           
 
             <!-- Footer -->
             <div id="footer">
@@ -243,10 +268,6 @@
         <script src="/cafe/assets/js/main.js"></script>
 
         <script>
-
-            document.getElementById('loginButton').addEventListener('click', function() {
-                location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
-            });
 
             document.querySelectorAll('input[name="opt-login"]').forEach((radio) => {
                 radio.addEventListener('change', () => {

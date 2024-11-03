@@ -33,13 +33,12 @@ public class Login extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String loginType = req.getParameter("loginType");
-		String admin = "admin";
+		String checkLoginType = "user";
 		
 		//입력된 ID와 PW 출력되는지 확인
 		System.out.println("ID: " + id + ", PW: " + pw);
 		
-		
-		if (admin.equals(loginType)) {
+		if (!checkLoginType.equals(loginType)) {
 			 	
 			// Admin 로그인 처리
             AdminDTO dto = new AdminDTO();
@@ -50,20 +49,18 @@ public class Login extends HttpServlet {
 			AdminDTO result = dao.login(dto);
 		
 			if (result != null) {
-				System.out.println("관리자 로그인 성공");
 		
-			//인증 티켓 발급
-			session.setAttribute("auth", id);
-			session.setAttribute("loginType", loginType);
-			
-			//회원 정보
-			session.setAttribute("name", result.getName());
-			session.setAttribute("tel", result.getTel());
-			session.setAttribute("email", result.getEmail());
-			session.setAttribute("ing", result.getIng());
-			
-//			resp.sendRedirect("/cafe/cafe/cafemap.do");
-			resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
+				//인증 티켓 발급
+				session.setAttribute("auth", id);
+				session.setAttribute("loginType", loginType);
+				
+				//회원 정보
+				session.setAttribute("name", result.getName());
+				session.setAttribute("tel", result.getTel());
+				session.setAttribute("email", result.getEmail());
+				session.setAttribute("ing", result.getIng());
+				
+				resp.sendRedirect("/cafe/cafe/cafemap.do#");
 			
 			} else {
 				
@@ -82,8 +79,6 @@ public class Login extends HttpServlet {
 			 UserDTO result = dao.login(dto);
 		
 			 if (result != null) {
-
-		
 				//인증 티켓 발급
 				session.setAttribute("auth", id);
 				session.setAttribute("loginType", loginType);
@@ -94,8 +89,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("email", result.getEmail());
 				session.setAttribute("ing", result.getIng());
 			
-//				resp.sendRedirect("/cafe/cafe/cafemap.do");
-				resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
+				resp.sendRedirect("/cafe/cafe/cafemap.do#");
 		
 			 } else {
 				
