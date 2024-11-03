@@ -9,7 +9,7 @@ public class UserDTO {
 
 	private String id;
 	private String pw;
-	private String checkPw;
+//	private String checkPw;
 	private String name;
 	private String tel;
 	private String email;

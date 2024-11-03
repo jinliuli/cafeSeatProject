@@ -20,8 +20,6 @@ public class AdminDAO {
 	
 	public AdminDAO() {
 		
-		//this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
-
 		//개인 테스트용은 cafe로 통일!
 		//this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결
 		
@@ -96,16 +94,15 @@ public class AdminDAO {
 		
 		try {
 			
-			String sql = "insert into tblAdmin (id, pw, adminPw, name, tel, email, companyId, ing) values (?, ?, ?, ?, ?, ?, ?, default)"; 
+			String sql = "insert into tblAdmin (id, pw, name, tel, email, companyId, ing) values (?, ?, ?, ?, ?, ?, default)"; 
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, dto.getId());
 			pstat.setString(2, dto.getPw());
-			pstat.setString(3, dto.getAdminPw());
-			pstat.setString(4, dto.getName());
-			pstat.setString(5, dto.getTel());
-			pstat.setString(6, dto.getEmail());
-			pstat.setString(7, dto.getCompanyId());
-			pstat.setInt(8, dto.getIng());
+			pstat.setString(3, dto.getName());
+			pstat.setString(4, dto.getTel());
+			pstat.setString(5, dto.getEmail());
+			pstat.setString(6, dto.getCompanyId());
+			pstat.setInt(7, dto.getIng());
 			
 			return pstat.executeUpdate();
 		

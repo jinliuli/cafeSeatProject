@@ -22,8 +22,6 @@ public class UserDAO {
 	
 	
 	public UserDAO() {
-		
-		//this.conn = DBUtil.open("localhost", "jang", "java1234"); //데이터 베이스 연결
 
 		//개인 테스트용은 cafe로 통일!
 		//this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결

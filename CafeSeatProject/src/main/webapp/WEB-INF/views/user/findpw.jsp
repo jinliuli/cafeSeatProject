@@ -22,6 +22,11 @@
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
+            #login {
+                display: float;
+                justify-content: center;
+            }
+
             .panel-content {
                 display: flex;
                 flex-direction: column;
@@ -146,7 +151,7 @@
                 </article>
                     
                 <!-- Twitter -->
-                <article id="Twitter" class="panel">
+                <article id="login" class="panel">
                     <h1 class="findPwFrom">비밀번호 찾기</h1>
                     <div class="panel-content">
                         <form method="post" action="실제 처리할 URL">

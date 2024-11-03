@@ -33,12 +33,12 @@ public class Login extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String loginType = req.getParameter("loginType");
-		String user = "user";
+		String checkLoginType = "user";
 		
 		//입력된 ID와 PW 출력되는지 확인
 		System.out.println("ID: " + id + ", PW: " + pw);
 		
-		if (!user.equals(loginType)) {
+		if (!checkLoginType.equals(loginType)) {
 			 	
 			// Admin 로그인 처리
             AdminDTO dto = new AdminDTO();

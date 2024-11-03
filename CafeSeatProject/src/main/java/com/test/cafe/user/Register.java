@@ -29,10 +29,11 @@ public class Register extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		try {
+			
 			req.setCharacterEncoding("UTF-8");
 			
-			String loginType = req.getParameter("loginType");
-			String user = "user";
+			String registerType = req.getParameter("registerType");
+			String checkRegisterType = "user";
 			
 			String id = req.getParameter("id");
 			String pw = req.getParameter("pw");
@@ -40,9 +41,9 @@ public class Register extends HttpServlet {
 			String tel = req.getParameter("tel");
 			String email = req.getParameter("email");
 			String companyId = req.getParameter("companyId");
-			String adminPw = req.getParameter("adminPw");
+		
 			
-			if (!user.equals(loginType)) {
+			if (!checkRegisterType.equals(registerType)) {
 				
 				AdminDTO dto = new AdminDTO();
 				dto.setId(id);
@@ -51,7 +52,6 @@ public class Register extends HttpServlet {
 				dto.setTel(tel);
 				dto.setEmail(email);
 				dto.setCompanyId(companyId);
-//				dto.setAdminPw(adminPw);
 				
 				AdminDAO dao = AdminDAO.getInstance();
 				

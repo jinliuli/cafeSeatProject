@@ -22,7 +22,7 @@
                 font-family: 'Paperlogy-8ExtraBold';
             }
 
-            #Twitter {
+            #login {
                 display: float;
                 justify-content: center;
             }

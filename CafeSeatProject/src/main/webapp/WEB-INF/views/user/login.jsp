@@ -228,7 +228,7 @@
                             </form>
                             
                             <div class="link">
-                                <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#register';">회원가입</a>
+                                <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
                                 <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
                                 <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
                             </div>       
@@ -268,10 +268,6 @@
         <script src="/cafe/assets/js/main.js"></script>
 
         <script>
-
-            // document.getElementById('loginButton').addEventListener('click', function() {
-            //     location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
-            // });
 
             document.querySelectorAll('input[name="opt-login"]').forEach((radio) => {
                 radio.addEventListener('change', () => {

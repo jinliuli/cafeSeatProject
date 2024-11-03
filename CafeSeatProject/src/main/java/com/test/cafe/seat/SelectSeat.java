@@ -8,11 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.test.cafe.seat.model.ReservationDTO;
-import com.test.cafe.seat.model.SeatReservationDTO;
-import com.test.cafe.seat.repository.SeatDAO;
 
 @WebServlet("/seat/selectseat.do")
 public class SelectSeat extends HttpServlet {

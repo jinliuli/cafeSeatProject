@@ -191,7 +191,7 @@
 	                          </tr>
 	                          <tr>
 	                              <th>비밀번호 확인</th>
-	                              <td><input type="password" name="checkPw" id="checkPw" placeholder="입력한 비밀번호와 동일한 비밀번호를 입력해주세요" required></td>
+	                              <td><input type="password" name="checkPw" id="checkPw" placeholder="위와 동일한 비밀번호를 입력해주세요" required></td>
 	                          </tr>
 	                      </table>
 	                  </div>
@@ -254,10 +254,6 @@
         <script src="/cafe/assets/js/main.js"></script>
 
         <script>
-
-            document.getElementById('loginButton').addEventListener('click', function() {
-                location.href = '/cafe/user/login.do#login'; // 버튼 클릭 시 해당 URL로 이동
-            });
 
 
             $('#btnCheck').click(() => {
