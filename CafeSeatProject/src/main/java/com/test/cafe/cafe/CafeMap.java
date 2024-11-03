@@ -20,7 +20,7 @@ public class CafeMap extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		CafeDAO dao = new CafeDAO();
+		CafeDAO dao = CafeDAO.getInstance();
 		
 		ArrayList<CafeDTO> list = dao.listCafe();
 		

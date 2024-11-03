@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
            	dto.setId(id);
             dto.setPw(pw);
 
-			AdminDAO dao = new AdminDAO();
+			AdminDAO dao = AdminDAO.getInstance();
 			AdminDTO result = dao.login(dto);
 		
 			if (result != null) {

@@ -26,21 +26,19 @@ public class UserDAO {
 		
 		//프로젝트 공용
 		this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234"); //데이터 베이스 연결
+		 
+		try {
 
-		
-		 try {
-			 
 			if (!conn.isClosed()) {
-				System.out.println("DB 연결 성공!");
+				System.out.println("UserDAO DB 연결 성공!");
 			} else {
-				System.out.println("DB 연결 실패!");
+				System.out.println("UserDAO DB 연결 실패!");
 			}
 
 		} catch (Exception e) {
 			System.out.println("UserDAO.UserDAO");
 			e.printStackTrace();
 		}
-		 
 	}
 	
 	public static UserDAO getInstance() {

@@ -22,7 +22,7 @@ public class MenuDAO {
 	private PreparedStatement pstat;
 	private ResultSet rs;
 	
-	public MenuDAO() {
+	private MenuDAO() {
 
 		//개인 테스트용은 cafe로 통일!
 		//this.conn = DBUtil.open("localhost", "cafe", "java1234");

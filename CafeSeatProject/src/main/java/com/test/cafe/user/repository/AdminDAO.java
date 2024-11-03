@@ -18,7 +18,7 @@ public class AdminDAO {
 	private PreparedStatement pstat;	//파라미터가 있는 SQL 쿼리 실행을 위한 객체
 	private ResultSet rs;				//쿼리 결과를 담을 객체
 	
-	public AdminDAO() {
+	private AdminDAO() {
 		
 		//개인 테스트용은 cafe로 통일!
 		//this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결

@@ -7,16 +7,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.test.cafe.cafe.model.CafeDTO;
+import com.test.cafe.user.repository.UserDAO;
 import com.test.util.DBUtil;
 
 public class CafeDAO {
+	
+	//정적 변수(자기 자신의 인스턴스를 담을 변수)
+	private static CafeDAO dao;
 	
 	private Connection conn;
 	private Statement stat;
 	private PreparedStatement pstat;
 	private ResultSet rs;
 	
-	public CafeDAO() {
+	private CafeDAO() {
 
 		//개인 테스트용은 cafe로 통일!
 		//this.conn = DBUtil.open("localhost", "cafe", "java1234");
@@ -26,10 +30,17 @@ public class CafeDAO {
 		
 	}
 	
-//	public static CafeDAO getInstance() {
-//		
-//		
-//	}
+	public static CafeDAO getInstance() {
+		
+			
+			if (dao == null) {
+				dao = new CafeDAO();	//인스턴스 없으면 생성
+			}
+			return dao; 				//이미 생성된 인스턴스를 반환
+			
+		
+		
+	}
 
 	public ArrayList<CafeDTO> listCafe() {
 		
