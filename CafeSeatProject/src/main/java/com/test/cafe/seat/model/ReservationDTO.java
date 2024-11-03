@@ -11,12 +11,9 @@ public class ReservationDTO {
 	
 	
 	private String seq;
-	private String sequser;
-	private String usedate;
-	private String timestart;
-	private String timeend;
-	private String seatNum;
-	private String person;
-	
+	private String seqUser;
+	private String useDate;
+	private String timeStart;
+	private String timeEnd;	
 
 }

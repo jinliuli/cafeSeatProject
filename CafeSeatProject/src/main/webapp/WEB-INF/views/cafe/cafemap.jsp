@@ -39,6 +39,26 @@
 				href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
 			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
 		</nav>
+		<div>
+			<table>
+				<tr>
+					<th>유저명</th>
+					<th>번호</th>
+					<th>이메일</th>
+					<th>상태</th>
+					<th>인증</th>
+					<th>권한</th>
+				</tr>
+				<tr>
+					<td>${user.name}</td>
+					<td>${user.tel}</td>
+					<td>${user.email}</td>
+					<td>${user.ing}</td>
+					<td>${auth}</td>
+					<td>${loginType}</td>
+				</tr>
+			</table>
+		</div>
 
 		<!-- Main -->
 		<div id="main">
@@ -72,8 +92,9 @@
 										<div class="info-title">
 											<h5>${dto.name}</h5>
 											<form method="POST" action="/cafe/cafe/cafemap.do">
-												<input type="hidden" id="cseq" name="cseq" value="${dto.cseq}">
-												<input type="submit" class="btntitle" value="예약">
+												<input type="hidden" id="cseq" name="cseq"
+													value="${dto.cseq}"> <input type="submit"
+													class="btntitle" value="예약">
 											</form>
 										</div>
 

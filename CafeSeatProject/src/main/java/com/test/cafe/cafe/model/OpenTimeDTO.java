@@ -7,7 +7,9 @@ import lombok.Setter;
 @Setter
 public class OpenTimeDTO {
 	
-	private String cseq;
+	private String seq;
+	private String seqCafe;
+	private String seqBusinessDay;
 	private String openDay;
 	private String openTime;
 	private String closeTime;

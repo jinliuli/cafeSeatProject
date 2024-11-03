@@ -61,7 +61,7 @@ public class MenuList extends HttpServlet {
 		seatdto.setSeqSeat(seqSeat);
 
 		ReservationDTO resdto = new ReservationDTO();
-		resdto.setSequser("1");
+		resdto.setSeqUser("1");
 		
 		PaymentDTO paydto = new PaymentDTO();
 		paydto.setSeqReservation(seqReservation);

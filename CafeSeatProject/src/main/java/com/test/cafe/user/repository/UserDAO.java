@@ -3,10 +3,8 @@ package com.test.cafe.user.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.test.cafe.user.model.AdminDTO;
 import com.test.cafe.user.model.UserDTO;
 import com.test.util.DBUtil;
 
@@ -21,13 +19,13 @@ public class UserDAO {
 	private ResultSet rs;				//쿼리 결과를 담을 객체
 	
 	
-	public UserDAO() {
+	private UserDAO() {
 
 		//개인 테스트용은 cafe로 통일!
-		this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결
+		//this.conn = DBUtil.open("localhost", "cafe", "java1234"); //데이터 베이스 연결
 		
 		//프로젝트 공용
-		//this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234"); //데이터 베이스 연결
+		this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234"); //데이터 베이스 연결
 
 		
 		 try {
@@ -57,6 +55,7 @@ public class UserDAO {
 	//로그인 메서드
 	public UserDTO login(UserDTO dto) {
 		
+		
 		try {
 			
 			String sql = "select * from tblUser where id = ? and pw = ?"; 
@@ -67,6 +66,7 @@ public class UserDAO {
 			
 			rs = pstat.executeQuery();
 			
+			//System.out.println(rs.getString("id")); //테스트
 			
 			if (rs.next()) { //결과가 있으면
 				
@@ -78,6 +78,10 @@ public class UserDAO {
 				result.setEmail(rs.getString("email"));
 				result.setIng(rs.getInt("ing"));
 				
+				System.out.println(rs.getString("id"));
+				System.out.println(rs.getString("name"));
+				System.out.println(rs.getString("tel"));
+				System.out.println(rs.getString("email"));
 				System.out.println("사용자 로그인 성공");
 				return result;	
 				

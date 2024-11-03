@@ -16,7 +16,7 @@
         <noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 
         <style>
-            @import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
+            @import url("/cafe/assets/css/paperlogy_font.css");
 
             body {
                 font-family: 'Paperlogy-8ExtraBold';
@@ -199,7 +199,6 @@
                     <c:if test="${empty auth}">
                         <h1 class="banner">사이트명</h1>
                         <div class="panel-content">
-                            <form method="post" action="/cafe/user/login.do#login">
                                 <div class="opt-login-form">
                                 	<input type="radio" id="user" class="opt-login" name="opt-login" value="user" checked>
                                     <label for="user" class="choice">사용자 로그인</label>
@@ -207,8 +206,8 @@
                                     <label for="admin" class="choice">관리자 로그인</label>    
                                 </div>
 
-                                <input type="hidden" name="loginType" id="loginType" value="user">
                                 
+                            <form method="post" action="/cafe/user/login.do">
                                 <div class="login-form">    
                                     <table class="login-table">
                                         <tr>
@@ -220,6 +219,7 @@
                                             <td><input type="password" name="pw" id="pw" placeholder="영문, 숫자, 특수문자 3가지 조합 9~16자" required></td>
                                         </tr>
                                     </table>
+	                                <input type="hidden" name="loginType" id="loginType" value="user">
                                 </div>
 
                                 <div class="btnLogin">

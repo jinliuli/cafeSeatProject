@@ -58,9 +58,10 @@ public class Login extends HttpServlet {
 				session.setAttribute("name", result.getName());
 				session.setAttribute("tel", result.getTel());
 				session.setAttribute("email", result.getEmail());
+				session.setAttribute("companyId",  result.getCompanyId());
 				session.setAttribute("ing", result.getIng());
 				
-				resp.sendRedirect("/cafe/cafe/cafemap.do#");
+				resp.sendRedirect("/cafe/cafe/cafemap.do");
 			
 			} else {
 				
@@ -75,7 +76,8 @@ public class Login extends HttpServlet {
 			 dto.setId(id);
 			 dto.setPw(pw);
 
-			 UserDAO dao = new UserDAO();
+			 
+			 UserDAO dao = UserDAO.getInstance();
 			 UserDTO result = dao.login(dto);
 		
 			 if (result != null) {
@@ -84,12 +86,14 @@ public class Login extends HttpServlet {
 				session.setAttribute("loginType", loginType);
 			
 				//회원 정보
-				session.setAttribute("name", result.getName());
-				session.setAttribute("tel", result.getTel());
-				session.setAttribute("email", result.getEmail());
-				session.setAttribute("ing", result.getIng());
+				
+				session.setAttribute("user", result);
+				//session.setAttribute("name", result.getName());
+				//session.setAttribute("tel", result.getTel());
+				//session.setAttribute("email", result.getEmail());
+				//session.setAttribute("ing", result.getIng());
 			
-				resp.sendRedirect("/cafe/cafe/cafemap.do#");
+				resp.sendRedirect("/cafe/cafe/cafemap.do");
 		
 			 } else {
 				
