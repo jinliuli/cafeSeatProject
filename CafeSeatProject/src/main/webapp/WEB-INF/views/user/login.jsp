@@ -168,7 +168,7 @@
  		
             <!-- Nav -->
             <nav id="nav">
-                <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
+                <a href="/cafe/cafe/cafemap.do" class="icon solid fa-map"><span>Map</span></a> 
                 <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
                 <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
@@ -177,23 +177,8 @@
 
             <!-- Main -->
             <div id="main">
-
-                <!-- Me -->
-                <article id="home" class="panel intro">
-                    
-                </article>
-
-                <!-- CafeSeat -->
-                <article id="cafeseat" class="panel">
-                    
-                </article>
-
-				<!-- Mypage -->
-                <article id="mypage" class="panel">
-                    
-                </article>
-									
-                <!-- Login -->
+            
+            	 <!-- Login -->
                 <article id="login" class="panel">
                     
                     <c:if test="${empty auth}">
@@ -315,7 +300,24 @@
                         </div>
                     </c:if>
 
-                </article>                    
+                </article>
+            
+                <!-- Me -->
+                <article id="home" class="panel intro">
+                    
+                </article>
+
+                <!-- CafeSeat -->
+                <article id="cafeseat" class="panel">
+                    
+                </article>
+
+				<!-- Mypage -->
+                <article id="mypage" class="panel">
+                    
+                </article>
+									
+                                   
             </div>
            
 

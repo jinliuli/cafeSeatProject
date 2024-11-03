@@ -20,6 +20,7 @@
 	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
 <body class="is-preload">
+<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 
 	<!-- Wrapper-->
 	<div id="wrapper">
@@ -37,30 +38,11 @@
 
 			<!-- 로그인 했을 때  -->
 			<c:if test="${not empty auth}">
-			<a href="/cafe/user/logout.do#logout" class="icon solid fa-user"><span>Logout</span></a>
+			<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
 			</c:if>
 			
 		</nav>
-		<div style="display: flex; justify-content: space-between; width: 1000px;">
-			<table>
-				<tr>
-					<th>이름</th>
-					<th>번호</th>
-					<th>메일</th>
-					<th>상태</th>
-					<th>인증</th>
-					<th>권한</th>
-				</tr>
-				<tr>
-					<td>${info.name}</td>
-					<td>${info.tel}</td>
-					<td>${info.email}</td>
-					<td>${info.ing}</td>
-					<td>${auth}</td>
-					<td>${loginType}</td>
-				</tr>
-			</table>
-		</div>
+		
 
 		<!-- Main -->
 		<div id="main">

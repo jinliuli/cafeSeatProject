@@ -20,9 +20,20 @@ public class Login extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user/login.jsp");
-		dispatcher.forward(req, resp);
+		
+		//getSession(false)는 현재 세션을 가져옴. 현재 세션이 없으면 null 값 반환
+		HttpSession session = req.getSession(false);
+		
+		//세션이 존재하고 사용자가 이미 로그인 되어 있는지 확인
+		if (session != null && session.getAttribute("auth") != null) {
+			
+			//사용자가 이미 로그인 되어있다면, 지도 페이지로 이동
+			resp.sendRedirect("/cafe/cafe/cafemap.do");
+		} else {
+			RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user/login.jsp");
+			dispatcher.forward(req, resp);		
+		}
+		
 	}
 	
 	@Override

@@ -11,12 +11,9 @@
 <head>
 <title>Astral by HTML5 UP</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="/cafe/assets/css/main.css" />
-<noscript>
-	<link rel="stylesheet" href="/cafe/assets/css/noscript.css" />
-</noscript>
+<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 
 <style>
 @import url("/cafe/assets/css/paperlogy_font.css");
@@ -171,7 +168,8 @@ body {
 		<!-- Nav -->
 		<nav id="nav">
 			<a href="/cafe/cafe/cafemap.do" class="icon solid fa-map"><span>Map</span></a>
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+			<a href="#" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+<!-- 			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a> -->
 			<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
 			<a href="/cafe/user/logout.do#logout" class="icon solid fa-user"><span>Logout</span></a>
 		</nav>

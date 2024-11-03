@@ -8,57 +8,58 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Astral by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+<head>
+	<title>Astral by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
-		<style>
-			.seat {}
-			.seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 5px solid #AF8F6F;; padding: 10px; box-sizing: Border-box; border-radius: 15px;}
-			.seat form input {width: 13.7142%; padding: 15px; margin-right: 1%; display: inline-block;background-color: rgb(221, 221, 221); color: #444; font-weight: bold; color: #999;}
-			.seat form input {margin-bottom: 10px; border-radius: 5px; box-shadow: 1px 1px 2px rgba(0,0,0,0.15);} 
-			.seat form input :nth-of-type(5n) {margin-right: 0;}
-			.seat form input:hover {background: #aaa; color: #444;}
+	<style>
+		.seat {}
+		.seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 5px solid #AF8F6F;; padding: 10px; box-sizing: Border-box; border-radius: 15px;}
+		.seat form input {width: 13.7142%; padding: 15px; margin-right: 1%; display: inline-block;background-color: rgb(221, 221, 221); color: #444; font-weight: bold; color: #999;}
+		.seat form input {margin-bottom: 10px; border-radius: 5px; box-shadow: 1px 1px 2px rgba(0,0,0,0.15);} 
+		.seat form input :nth-of-type(5n) {margin-right: 0;}
+		.seat form input:hover {background: #aaa; color: #444;}
+	
+		.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none;}
+		.seat form input.booked:hover {color: #999;}
+		.seat form input.blank {margin-right: 13.7142%;}
+		.seat form input:nth-child() {margin-bottom: 30px;}
+		.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
 		
-			.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none;}
-			.seat form input.booked:hover {color: #999;}
-			.seat form input.blank {margin-right: 13.7142%;}
-			.seat form input:nth-child() {margin-bottom: 30px;}
-			.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
-			
 
-			.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 4px solid #AF8F6F; padding-top: 25px;}
+		.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 4px solid #AF8F6F; padding-top: 25px;}
 
-			.bottom #selectMenu {width: 30%;}
-			.bottom #person {width: 20%;}
+		.bottom #selectMenu {width: 30%;}
+		.bottom #person {width: 20%;}
 
-			.storename{
-				font-size: 200%; font-weight: bold; text-align: center; 
-			}
-			.storeinfo{
-				padding-top: 10%;
-			}
-			@font-face {
-				font-family: 'Paperlogy-8ExtraBold';
-				src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
-				font-weight: 800;
-				font-style: normal;
-			}
-			body{
-				font-family: 'Paperlogy-8ExtraBold';
-			}
+		.storename{
+			font-size: 200%; font-weight: bold; text-align: center; 
+		}
+		.storeinfo{
+			padding-top: 10%;
+		}
+		@font-face {
+			font-family: 'Paperlogy-8ExtraBold';
+			src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+			font-weight: 800;
+			font-style: normal;
+		}
+		body{
+			font-family: 'Paperlogy-8ExtraBold';
+		}
 
-			.panel{
-				background-color: #F8F4E1;
-			}
+		.panel{
+			background-color: #F8F4E1;
+		}
 
 
-		</style>
-	</head>
-	<body class="is-preload">
+	</style>
+</head>
+<body class="is-preload">
+<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 
 		<!-- Wrapper-->
 			<div id="wrapper">
