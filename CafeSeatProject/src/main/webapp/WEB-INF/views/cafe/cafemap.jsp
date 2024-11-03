@@ -33,11 +33,20 @@
 
 		<!-- Nav -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-map"><span>Map</span></a> <a
-				href="/cafe/seat/selectseat.do#cafeseat"
-				class="icon solid fa-mug-hot"><span>CafeSeat</span></a> <a
-				href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+			<a href="#" class="icon solid fa-map"><span>Map</span></a>
+			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+			<a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+			
+			<!-- 로그인 안 했을 때 -->
+			<c:if test="${empty auth}">
 			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+			</c:if>
+
+			<!-- 로그인 했을 때  -->
+			<c:if test="${not empty auth}">
+			<a href="/cafe/user/logout.do#logout" class="icon solid fa-user"><span>Logout</span></a>
+			</c:if>
+			
 		</nav>
 		<div>
 			<table>
