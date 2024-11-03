@@ -9,22 +9,15 @@
 -->
 <html>
 <head>
-<title>Astral by HTML5 UP</title>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../assets/css/main.css" />
-<link rel="stylesheet" href="../assets/css/map.css" />
-<noscript>
-	<link rel="stylesheet" href="../assets/css/noscript.css" />
-</noscript>
-<script src="https://kit.fontawesome.com/1ddf83a78d.js"
-	crossorigin="anonymous"></script>
+	<title>Astral by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<link rel="stylesheet" href="../assets/css/map.css" />
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
 <body class="is-preload">
 
@@ -48,21 +41,21 @@
 			</c:if>
 			
 		</nav>
-		<div>
+		<div style="display: flex; justify-content: space-between; width: 1000px;">
 			<table>
 				<tr>
-					<th>유저명</th>
+					<th>이름</th>
 					<th>번호</th>
-					<th>이메일</th>
+					<th>메일</th>
 					<th>상태</th>
 					<th>인증</th>
 					<th>권한</th>
 				</tr>
 				<tr>
-					<td>${user.name}</td>
-					<td>${user.tel}</td>
-					<td>${user.email}</td>
-					<td>${user.ing}</td>
+					<td>${info.name}</td>
+					<td>${info.tel}</td>
+					<td>${info.email}</td>
+					<td>${info.ing}</td>
 					<td>${auth}</td>
 					<td>${loginType}</td>
 				</tr>

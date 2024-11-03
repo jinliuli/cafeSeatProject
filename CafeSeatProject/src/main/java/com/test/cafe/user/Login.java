@@ -55,11 +55,12 @@ public class Login extends HttpServlet {
 				session.setAttribute("loginType", loginType);
 				
 				//회원 정보
-				session.setAttribute("name", result.getName());
-				session.setAttribute("tel", result.getTel());
-				session.setAttribute("email", result.getEmail());
-				session.setAttribute("companyId",  result.getCompanyId());
-				session.setAttribute("ing", result.getIng());
+				session.setAttribute("info", result);
+				//session.setAttribute("name", result.getName());
+				//session.setAttribute("tel", result.getTel());
+				//session.setAttribute("email", result.getEmail());
+				//session.setAttribute("companyId",  result.getCompanyId());
+				//session.setAttribute("ing", result.getIng());
 				
 				resp.sendRedirect("/cafe/cafe/cafemap.do");
 			
@@ -87,7 +88,7 @@ public class Login extends HttpServlet {
 			
 				//회원 정보
 				
-				session.setAttribute("user", result);
+				session.setAttribute("info", result);
 				//session.setAttribute("name", result.getName());
 				//session.setAttribute("tel", result.getTel());
 				//session.setAttribute("email", result.getEmail());

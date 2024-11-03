@@ -10,11 +10,11 @@ SET DEFINE OFF;
 
 -- tblAdmin 관리자  계정 관리 -----------------------------------------------------------------------------------------------------------
 INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'admin', '1111', '관리자', '010-1234-5678', 'admin@gmail.com', '561-11-11111', 1);
-INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'X5y7Z8h', 'T3@h5!F2M1', '김유리', '010-7588-4561', 'X5y7Z8h@gmail.com', '561-12-34567', 1);
-INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'm3N4pQ9', 'N5^j1*Y6K4', '김유진', '010-2583-9645', 'm3N4pQ9@gmail.com', '561-23-45678', 1);
-INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'J2k5L8r', 'R8!k9&D1T2', '이우진', '010-1689-8724', 'J2k5L8r@gmail.com', '561-34-56789', 1);
-INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'b9T3gW6', 'C2^y1@H4M3', '장지윤', '010-1259-6522', 'b9T3gW6@gmail.com', '561-45-67890', 1);
-INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'qY1t2F5', 'D3!x5*P7K9', '전상수', '010-9155-8128', 'qY1t2F5@gmail.com', '561-56-78901', 1);
+INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'yuri', '1111', '김유리', '010-7588-4561', 'adminYuri@gmail.com', '561-12-34567', 1);
+INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'yujin', '1111', '김유진', '010-2583-9645', 'adminYujin@gmail.com', '561-23-45678', 1);
+INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'woojin', '1111', '이우진', '010-1689-8724', 'adminWoojin@gmail.com', '561-34-56789', 1);
+INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'jiyun', '1111', '장지윤', '010-1259-6522', 'adminJiyun@gmail.com', '561-45-67890', 1);
+INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'sangsoo', '1111', '전상수', '010-9155-8128', 'adminSangsoo@gmail.com', '561-56-78901', 1);
 INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'vK8e3R2', 'F5@h2^N8T1', '김승환', '010-7991-4958', 'vK8e3R2@gmail.com', '561-67-89012', 1);
 INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'Z6n4B7t', 'M1&j6*Y3K5', '김지래', '010-7742-6478', 'Z6n4B7t@gmail.com', '561-78-90123', 1);
 INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'P1j8Q3m', 'K4^g9!D2H7', '전인군', '010-2669-9377', 'P1j8Q3m@gmail.com', '561-89-01234', 1);
@@ -119,14 +119,13 @@ INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAd
 INSERT INTO tblAdmin(seq, id, pw, name, tel, email, companyId, ing) VALUES(seqAdmin.nextVal, 'aH3k6F2', 'B5!k8^F4N3', '손수주', '010-4045-3139', 'aH3k6F2@yahoo.com', '561-14-78901', 1);
 
 
-
 -- tblUser 사용자 계정 관리 ---------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'user', '1111', '사용자', '010-1234-5678', 'user@gmail.com', 1);
-INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'sJ5t8N1', 'k1@E3g#D9', '김진인', '010-7317-7850', 'sJ5t8N1@gmail.com', 1);
-INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'K6m9qR2', 'y5^B8c!T4N', '김최연', '010-7739-5442', 'K6m9qR2@gmail.com', 1);
-INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'cH3n4V7', 'R2#q7*J1eF', '이효산', '010-7540-9483', 'cH3n4V7@gmail.com', 1);
-INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'jF1y6B3', 'a9!K5h&Q8d', '이어윤', '010-4858-4523', 'jF1y6B3@gmail.com', 1);
-INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'M2b8kN4', 'X4^g3@B2mD', '홍성수', '010-4849-3362', 'M2b8kN4@gmail.com', 1);
+INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'yuri', '1111', '김유리', '010-7317-7850', 'userYuri@gmail.com', 1);
+INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'yujin', '1111', '김유진', '010-7739-5442', 'userYujin@gmail.com', 1);
+INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'woojin', '1111', '이우진', '010-7540-9483', 'userWoojin@gmail.com', 1);
+INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'jiyun', '1111', '장지윤', '010-4858-4523', 'userJiyun@gmail.com', 1);
+INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'sangsoo', '1111', '전상수', '010-4849-3362', 'userSangsoo@gmail.com', 1);
 INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'rT5g2P8', 'Z8@j6*P1tH', '김소원', '010-5190-5659', 'rT5g2P8@gmail.com', 1);
 INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'wL1x4K6', 'n7$K2g!J5x', '윤승은', '010-5128-2875', 'wL1x4K6@gmail.com', 1);
 INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 'yV7j3F2', 'D3@h9*B4kV', '최저민', '010-5177-1283', 'yV7j3F2@gmail.com', 1);

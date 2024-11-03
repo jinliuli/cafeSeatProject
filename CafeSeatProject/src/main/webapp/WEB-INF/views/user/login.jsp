@@ -227,24 +227,92 @@
                                 </div>
                             </form>
                             
+                            <!-- 빠른 로그인을 위한 원클릭 로그인 버튼: 테스트 후 삭제 예정 -->
+							<div style="font-size: .8em;">사용자 계정</div>
+							<div style="display: flex;">
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="user">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="사용자">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="yuri">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="김유리">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="yujin">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="김유진">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="woojin">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="이우진">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="jiyun">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="장지윤">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="sangsoo">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="user">
+									<input type="submit" value="전상수">
+								</form>
+							</div>
+							<div style="font-size: .8em;">관리자 계정</div>
+							<div style="display: flex;">
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="admin">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="관리자">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="yuri">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="김유리">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="yujin">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="김유진">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="woojin">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="이우진">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="jiyun">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="장지윤">
+								</form>
+								<form method="POST" action="/cafe/user/login.do">
+									<input type="hidden" name="id" value="sangsoo">
+									<input type="hidden" name="pw" value="1111">
+									<input type="hidden" name="loginType" value="admin">
+									<input type="submit" value="전상수">
+								</form>
+							</div>
+
                             <div class="link">
                                 <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
                                 <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
                                 <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
                             </div>       
                         </div>
-                    </c:if>
-                    
-                    <c:if test="${not empty auth}">
-                    	<div class="logout-form">
-	                        <div class="logout">
-	                            로그아웃 하시겠습니까?
-	                        </div>
-	                        <div>
-	                            <button type="button" id="btnBack" onclick="location.href='/cafe/cafe/cafemap.do#';">뒤로가기</button>
-	                            <button type="button" id="btnLogout" onclick="location.href='/cafe/user/logout.do#logout';">로그아웃</button>
-	                        </div>
-	                    </div>
                     </c:if>
 
                 </article>                    

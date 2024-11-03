@@ -28,7 +28,7 @@ public class Logout extends HttpServlet {
 		
 		session.invalidate();
 		
-		resp.sendRedirect("/cafe/cafe/cafemap.do#");
+		resp.sendRedirect("/cafe/cafe/cafemap.do");
 		
 	}
 }
