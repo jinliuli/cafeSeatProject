@@ -146,10 +146,10 @@
 
             <!-- Nav -->
             <nav id="nav">
-                <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
-                <a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
+                <a href="#" class="icon solid fa-map"><span>Map</span></a> 
+                <a href="#" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-                <a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+                <a href="#login" class="icon solid fa-user"><span>Login</span></a>
             </nav>
             
             <!-- Main -->
