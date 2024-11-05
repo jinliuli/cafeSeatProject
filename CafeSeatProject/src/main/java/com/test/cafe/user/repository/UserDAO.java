@@ -18,7 +18,6 @@ public class UserDAO {
 	private PreparedStatement pstat;	//파라미터가 있는 SQL 쿼리 실행을 위한 객체
 	private ResultSet rs;				//쿼리 결과를 담을 객체
 	
-	
 	private UserDAO() {
 
 		//개인 테스트용은 cafe로 통일!

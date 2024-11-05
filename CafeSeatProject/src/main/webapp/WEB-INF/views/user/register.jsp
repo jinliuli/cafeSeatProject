@@ -149,7 +149,7 @@
                 <a href="#" class="icon solid fa-map"><span>Map</span></a> 
                 <a href="#" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
                 <a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-                <a href="#login" class="icon solid fa-user"><span>Login</span></a>
+                <a href="#register" class="icon solid fa-user"><span>Register</span></a>
             </nav>
             
             <!-- Main -->
@@ -172,9 +172,10 @@
                            
                            
                <!-- Login -->
-               <article id="login" class="panel">
+               <!-- 아이디 중복체크는 server -> AjaxTest -> Ex05 시리즈 참조 -->
+               <article id="register" class="panel">
 	              <form method="post" action="/cafe/user/register.do">
-	                  <h1>로그인 정보</h1>
+	                  <h1>회원가입 정보</h1>
 	                  <div class="login-info">
 	                      <table class="login-info-table">
 	                          <tr>
