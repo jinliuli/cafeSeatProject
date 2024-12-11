@@ -194,19 +194,22 @@
 
 					$('.seatButton').click(function() {
 						const seatValue = $(this).val();
-						const selectColor = 'rgb(255, 200, 100)'; // 선택했을 때 색
+						const selectColor = '#543310'; // 선택했을 때 색
 						const selected = '5px 5px 10px -5px inset'; // 선택했을 때 그림자
+						const selectedFont = 'white'; // 선택했을 떄 글자 색
 
 
 						if (selectedSeats.includes(seatValue)) {
 							selectedSeats = selectedSeats.filter(seat => seat !== seatValue); // 배열에서 제거
 							$(this).css('background-color', ''); // 원래 배경색으로 돌아감
 							$(this).css('box-shadow', ''); // 원래 그림자로 돌아감
+							$(this).css('color', ''); //원래 글자 색
 						} else {
 							if (selectedSeats.length < maxSeats) { // 선택한 좌석 수가 최대 좌석 수보다 적은 경우
 								selectedSeats.push(seatValue);
 								$(this).css('background-color', selectColor); // 선택 시 배경색 변경
 								$(this).css('box-shadow', selected); // 선택 시 그림자 변경
+								$(this).css('color', selectedFont); // 선택 시 글자색 변경
 							} else {
 								alert("최대 " + maxSeats + " 개의 좌석만 선택할 수 있습니다."); // 최대 좌석 수 초과 알림
 							}
