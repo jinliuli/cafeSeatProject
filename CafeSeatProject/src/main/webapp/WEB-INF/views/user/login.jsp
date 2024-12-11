@@ -21,7 +21,7 @@
             body {
                 font-family: 'Paperlogy-8ExtraBold';
             }
-
+            
             #login {
                 display: float;
                 justify-content: center;
@@ -44,65 +44,72 @@
 
             .opt-login-form {
                 display: flex;
-                justify-content: space-between; 
-                margin-top: 20px;
-                margin-bottom: 20px; 
+                flex-direction: row; /* 세로 정렬 */
+			    justify-content: center; /* 세로 가운데 정렬 */
+			    align-items: center;
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px; 
+                gap: 20px;
             }
 
             .choice {
-                font-family: 'Paperlogy-8ExtraBold';
-                border: 2px solid #ddd;
-                width: 185px;
-                height: 55px;
+                font-family: 'Paperlogy-7Bold';
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                float: left;
-                font-size: 22px;
-				margin-bottom: 5px;
-                margin-right: 18px;
+                background-color: #F8F4E1;
+               	color: #74512D;
+                border: none;
+                width: 30%;
+                height: 65px;
+                font-size: 28px;
+               	border-radius: 10px;
+				margin-bottom: 15px;
             }
 
             /* 라디오 버튼 label > 커서 올렸을 때 */
             .choice:hover {
-                color: rgb(37, 92, 193);
+            	background-color: #AF8F6F;
+             	color: #F8F4E1;
                 cursor: pointer;
             }
-
-            .opt-login:checked + label {
-                color: rgb(37, 92, 193);
+            
+           	 .opt-login:checked + label {
+                background-color: #AF8F6F;
+             	color: #F8F4E1;
             }
 
             .login-table th {
+            	font-family: 'Paperlogy-8ExtraBold';
                 display: flex;
                 align-items: center;
                 text-align: center;
-                font-size: 20px;
+                color: #74512D;
+                font-size: 25px;
             }
 
             .login-table td {
-                text-align: center;
+                font-family: 'Paperlogy-8ExtraBold';
+                font-size: 25px;
                 display: flex;
+                text-align: center;
                 align-items: center;
-                margin-bottom: 10px;
+                margin-bottom: 30px;
             }
-
-            #id, #pw {
-                background: #f4f4f4;
-                border: none; 
-                width: 400px;
-                height: 50px;
-                margin-top: 5px;
-                margin-bottom: 15px;
-                padding-left: 10px; 
-            }
-
-			.login-table {
-				display: flex;
-				flex-direction: column; 
-				align-items: center; 
+            
+            .login-table #id, .login-table #pw {
+            	font-family: 'Paperlogy-6SemiBold';
+            	border-radius: 10px;
+            	background-color: #F8F4E1;
+            	color: #74512D;
+            	font-size: 22px;
+				border: none; 
+                width: 500px;
+	            height: 60px; 
+	            padding-left: 25px;   
 			}
-
+            
 			.btnLogin {
                 font-size: 40px; 
                 width: auto; 
@@ -113,25 +120,44 @@
                 margin-top: -20px;
             }
 
-            .btnLogin button {
-                width: 346px;
-                height: 28px;
-                font-size: 18px;
+            .loginBtn {
+            	font-family: 'Paperlogy-7Bold';
+            	background-color: #74512D;
+             	color: #F8F4E1;
+                width: 90%;
+                height: 30px;
+                font-size: 24px;
                 margin-bottom: 20px; 
+                border-radius: 10px;
+            }
+            
+            .loginBtn:hover {
+            	background-color: #AF8F6F;
+             	color: #F8F4E1;
             }
 
             .link {
+            	font-family: 'Paperlogy-7Bold';
                 display: flex;
                 justify-content: space-between;
                 width: 50%;
             }
 
-            .link a {
-                font-size: 20px;
+			.register,
+            .findId,
+            .findPw {
+                font-size: 22px;
                 text-align: center;
                 white-space: nowrap; /* 글씨를 한 줄로 표시 */
 				margin-bottom: 10px;
+				color: #777777;
 			}
+			
+			.register:hover,
+            .findId:hover,
+            .findPw:hover {
+            	color: #74512D;
+            }
 
 			.logout-form {
 			 	text-align: center;
@@ -178,14 +204,13 @@
                     <c:if test="${empty auth}">
                         <h1 class="banner">사이트명</h1>
                         <div class="panel-content">
-                                <div class="opt-login-form">
-                                	<input type="radio" id="user" class="opt-login" name="opt-login" value="user" checked>
-                                    <label for="user" class="choice">사용자 로그인</label>
-                                    <input type="radio" id="admin" class="opt-login" name="opt-login" value="admin">
-                                    <label for="admin" class="choice">관리자 로그인</label>    
-                                </div>
-
-                                
+                        	<div class="opt-login-form">
+                             	<input type="radio" id="user" class="opt-login" name="opt-login" value="user" checked>
+                                 <label for="user" class="choice">사용자 로그인</label>
+                                 <input type="radio" id="admin" class="opt-login" name="opt-login" value="admin">
+                                 <label for="admin" class="choice">관리자 로그인</label>    
+                             </div>
+   
                             <form method="post" action="/cafe/user/login.do">
                                 <div class="login-form">    
                                     <table class="login-table">
@@ -202,7 +227,7 @@
                                 </div>
 
                                 <div class="btnLogin">
-                                    <button type="submit">로그인</button>
+                                    <button class="loginBtn" type="submit">로그인</button>
                                 </div>
                             </form>
                             
@@ -287,9 +312,9 @@
 							</div>
 
                             <div class="link">
-                                <a href="#" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
-                                <a href="#" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
-                                <a href="#" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
+                                <a href="#" class="register" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
+                                <a href="#" class="findId" onclick="alert('아이디 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findId.do';">아이디 찾기</a>
+                                <a href="#" class="findPw" onclick="alert('비밀번호 찾기 페이지로 이동합니다!'); location.href='/cafe/user/findPw.do';">비밀번호 찾기</a>
                             </div>       
                         </div>
                     </c:if>
