@@ -16,160 +16,172 @@
         <noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 
         <style>
-            @import url("/cafe/assets/css/paperlogy_font.css");
+@import url("/cafe/assets/css/paperlogy_font.css");
 
-            body {
-                font-family: 'Paperlogy-8ExtraBold';
-            }
-            
-            #login {
-                display: float;
-                justify-content: center;
-            }
+body {
+	font-family: 'Paperlogy-8ExtraBold';
+}
 
-            .panel-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
+#login {
+	display: float;
+	justify-content: center;
+}
 
-            .banner {
-                text-align: center;
-                font-family: 'Paperlogy-8ExtraBold';
-                font-size: 60px; 
-                margin-top: 30px;
-				margin-bottom: 35px;
-            }
+.panel-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-left: -14.5px;
+}
 
-            .opt-login-form {
-                display: flex;
-                flex-direction: row; /* 세로 정렬 */
-			    justify-content: center; /* 세로 가운데 정렬 */
-			    align-items: center;
-                width: 100%;
-                margin-top: 30px;
-                margin-bottom: 30px; 
-                gap: 20px;
-            }
+.logo {
+	text-align: center;
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 70px;
+	margin-bottom: 30px;
+}
 
-            .choice {
-                font-family: 'Paperlogy-7Bold';
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #F8F4E1;
-               	color: #74512D;
-                border: none;
-                width: 30%;
-                height: 65px;
-                font-size: 28px;
-               	border-radius: 10px;
-				margin-bottom: 15px;
-            }
+.opt-login-form {
+	display: flex;
+	flex-direction: row; /* 세로 정렬 */
+	justify-content: center; /* 세로 가운데 정렬 */
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	gap: 20px;
+}
 
-            /* 라디오 버튼 label > 커서 올렸을 때 */
-            .choice:hover {
-            	background-color: #AF8F6F;
-             	color: #F8F4E1;
-                cursor: pointer;
-            }
-            
-           	 .opt-login:checked + label {
-                background-color: #AF8F6F;
-             	color: #F8F4E1;
-            }
+.choice {
+	font-family: 'Paperlogy-7Bold';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #F8F4E1;
+	color: #74512D;
+	border: none;
+	width: 30%;
+	height: 65px;
+	font-size: 28px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
 
-            .login-table th {
-            	font-family: 'Paperlogy-8ExtraBold';
-                display: flex;
-                align-items: center;
-                text-align: center;
-                color: #74512D;
-                font-size: 25px;
-            }
+/* 라디오 버튼 label > 커서 올렸을 때 */
+.choice:hover {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+	cursor: pointer;
+}
 
-            .login-table td {
-                font-family: 'Paperlogy-8ExtraBold';
-                font-size: 25px;
-                display: flex;
-                text-align: center;
-                align-items: center;
-                margin-bottom: 30px;
-            }
-            
-            .login-table #id, .login-table #pw {
-            	font-family: 'Paperlogy-6SemiBold';
-            	border-radius: 10px;
-            	background-color: #F8F4E1;
-            	color: #74512D;
-            	font-size: 22px;
-				border: none; 
-                width: 500px;
-	            height: 60px; 
-	            padding-left: 25px;   
-			}
-            
-			.btnLogin {
-                font-size: 40px; 
-                width: auto; 
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                box-sizing: content-box;
-                margin-top: -20px;
-            }
+.opt-login:checked+label {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+}
 
-            .loginBtn {
-            	font-family: 'Paperlogy-7Bold';
-            	background-color: #74512D;
-             	color: #F8F4E1;
-                width: 90%;
-                height: 30px;
-                font-size: 24px;
-                margin-bottom: 20px; 
-                border-radius: 10px;
-            }
-            
-            .loginBtn:hover {
-            	background-color: #AF8F6F;
-             	color: #F8F4E1;
-            }
+.login-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 40px;
+}
 
-            .link {
-            	font-family: 'Paperlogy-7Bold';
-                display: flex;
-                justify-content: space-between;
-                width: 50%;
-            }
+.login-table th {
+	font-family: 'Paperlogy-8ExtraBold';
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #74512D;
+	font-size: 25px;
+}
 
-			.register,
-            .findId,
-            .findPw {
-                font-size: 22px;
-                text-align: center;
-                white-space: nowrap; /* 글씨를 한 줄로 표시 */
-				margin-bottom: 10px;
-				color: #777777;
-			}
-			
-			.register:hover,
-            .findId:hover,
-            .findPw:hover {
-            	color: #74512D;
-            }
+.login-table td {
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 25px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
 
-			.logout-form {
-			 	text-align: center;
-			 	justify-content: center;
-                align-content: center;	 
-			}
-			
-			.logout {
-				margin-bottom: 20px;
-			}
-         
-			/* #nav .nav-button {
+.login-table #id, .login-table #pw {
+	font-family: 'Paperlogy-6SemiBold';
+	border-radius: 10px;
+	background-color: #F8F4E1;
+	color: #74512D;
+	font-size: 22px;
+	border: none;
+	width: 600px;
+	height: 60px;
+	/*padding-left: 30px;*/
+}
+
+.btnLogin {
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	box-sizing: content-box;
+	margin-top: -20px;
+}
+
+.loginBtn {
+	font-family: 'Paperlogy-7Bold';
+	background-color: #74512D;
+	color: #F8F4E1;
+	width: 530px;
+	height: 30px;
+	font-size: 24px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	margin-left: 40px;
+}
+
+.loginBtn:hover {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+}
+
+.link {
+	/*
+	font-family: 'Paperlogy-7Bold';
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	margin: 0 auto;
+	*/
+
+	font-family: 'Paperlogy-7Bold';
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	margin-left: 30px;
+}
+
+.register, .findId, .findPw {
+	font-size: 22px;
+	text-align: center;
+	white-space: nowrap; /* 글씨를 한 줄로 표시 */
+	margin-bottom: 10px;
+	color: #777777;
+}
+
+.register:hover, .findId:hover, .findPw:hover {
+	color: #74512D;
+}
+
+.logout-form {
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.logout {
+	margin-bottom: 20px;
+}
+
+/* #nav .nav-button {
                 background-color: rgb(48, 102, 204); 
                 border: none; 
                 border-radius: 2px; 
@@ -183,8 +195,7 @@
                 background-color: #ffffff; 
                
             } */
-
-        </style>
+</style>
     </head>
     <body class="is-preload">
 
@@ -202,8 +213,13 @@
                 <article id="login" class="panel">
                     
                     <c:if test="${empty auth}">
-                        <h1 class="banner">사이트명</h1>
-                        <div class="panel-content">
+
+					<div class="logo">
+						<a href="/cafe/cafe/cafemap.do" style="opacity: 1;"> <img
+							src="../images/Logo-Dark.png" alt="Logo">
+						</a>
+					</div>
+					<div class="panel-content">
                         	<div class="opt-login-form">
                              	<input type="radio" id="user" class="opt-login" name="opt-login" value="user" checked>
                                  <label for="user" class="choice">사용자 로그인</label>
@@ -309,7 +325,7 @@
 									<input type="hidden" name="loginType" value="admin">
 									<input type="submit" value="전상수">
 								</form>
-							</div>
+							</div> 
 
                             <div class="link">
                                 <a href="#" class="register" onclick="alert('회원가입 페이지로 이동합니다!'); location.href='/cafe/user/register.do#login';">회원가입</a>
