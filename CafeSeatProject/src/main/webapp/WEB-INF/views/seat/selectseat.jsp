@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-	<title>Astral by HTML5 UP</title>
+	<title>CafeSeat</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -65,58 +65,31 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-				
-				<nav id="nav">
-		            <a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a>  
-					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-					<a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-					<!-- 로그인 안 했을 때 -->
-					<c:if test="${empty auth}">
-					<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-					</c:if>
-				
-					<!-- 로그인 했을 때  -->
-					<c:if test="${not empty auth}">
-						<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
-					</c:if>
-				</nav>
+				<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Me -->
 							<article id="home" class="panel intro">
-								<!-- <header>
-									<h1>Jane Doe</h1>
-									<p>Senior Astral Projectionist</p>
-								</header>
-								<a href="#work" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a> -->
+
 							</article>
 
 						<!-- CafeSeat -->
 							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
-								<c:forEach items="${list}" var="dto">
-									<h1 class="storename">${dto.name}</h1>
-								</c:forEach>
+								<h1 class="storename">${dto.name}</h1>
 
 								<div class="storeinfo">
-									<p>
-										서울 강남구 테헤란로 138 1층 투썸플레이스<br>
+									<h4>${dto.name}</h4>
+									<h4>${dto.tel}</h4>
+									<h4>${dto.address}</h4>
+									<h4>${dto.lotAddress}</h4>
+									<br><br>
 
-											지번 | 역삼동 736<br>
 
-											영업 중<br>
-											영업시간
-											월~금 07:00 ~ 22:00
-											토,일 08:00 ~ 22:00<br>
 
-											02-508-2388
 
-									</p>
 								</div>
 
 										<!-- 좌석 선택 -->
@@ -193,11 +166,7 @@
 					
 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
+					<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 			</div>
 
@@ -256,36 +225,7 @@
 					
 				});
 
-
-
-
-
-
-
-			 	/*
-			 	$('#seatForm').submit(function(event){
-			 	event.preventDefault(); // 기본 폼 제출 방지
-			 	if (selectedSeats.length > 0) {
-			 		$.ajax({
-			 			url: '서버url', // 실제 서버 URL로 변경해야함
-			 			type: 'POST',
-			 			data: {
-			 				seats: selectedSeats,
-			 				count: $('#person').val()
-			 			},
-			 			success: function(response) {
-			 				alert('전송완료: ' + response);
-						
-			 			},
-			 			error: function(jqXhr, textStatus, errorThrown) {
-			 				alert('전송오류: ' + textStatus);
-			 			}
-			 		});
-			 	} else {
-			 		alert('좌석을 선택해주세요.');
-			 	}
-			 }); 
-			 	*/
+			 
 
 			</script>
 

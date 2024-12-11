@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.test.cafe.cafe.model.CafeDTO;
+import com.test.cafe.seat.repository.SeatDAO;
+
 @WebServlet("/seat/selectseat.do")
 public class SelectSeat extends HttpServlet {
 
@@ -20,6 +23,12 @@ public class SelectSeat extends HttpServlet {
 		
 		String cseq = (String) session.getAttribute("cseq");
 		
+		SeatDAO dao = SeatDAO.getInstance();
+		
+		CafeDTO dto = dao.selectCafe(cseq);
+		
+		req.setAttribute("dto", dto);
+		
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/seat/selectseat.jsp");
@@ -27,32 +36,11 @@ public class SelectSeat extends HttpServlet {
 	}
 	
 	
-	
 //	@Override
 //	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		
-////		req.setCharacterEncoding("UTF-8");
-////		
-////		String selectedSeats = req.getParameter("seats");
-////		String person = req.getParameter("count");
-////		
-////		System.out.println(selectedSeats);
-////		System.out.println(person);
-////		
-////		
-////		ReservationDTO dto = new ReservationDTO();
-////		dto.setSeq(selectedSeats);
-////		dto.setPerson(person);
-////		
-////		
-////		SeatDAO dao = SeatDAO.getInstance();
-////		int result = dao.reservation(dto);
-//		
-//		
-//		
-//		
-//		
 //		
 //	}
+	
 	
 }

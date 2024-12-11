@@ -43,6 +43,7 @@ public class CafeMap extends HttpServlet {
 		//카페번호 세션에 입력
 		session.setAttribute("cseq", cseq);
 		
+		System.out.println("카페번호: " + cseq);
 		
 		//resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
 		resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
