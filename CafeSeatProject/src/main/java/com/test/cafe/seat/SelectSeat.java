@@ -1,6 +1,9 @@
 package com.test.cafe.seat;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,8 +29,23 @@ public class SelectSeat extends HttpServlet {
 		SeatDAO dao = SeatDAO.getInstance();
 		
 		CafeDTO dto = dao.selectCafe(cseq);
-		
 		req.setAttribute("dto", dto);
+		
+		List<Map<String, Object>> seatDetails = dao.getSeatInfo(cseq);
+		
+		
+		// 디버깅: 모든 좌석 정보 출력
+        System.out.println("Seat Details Size: " + seatDetails.size());
+        for (Map<String, Object> seat : seatDetails) {
+            System.out.println("Seat: " + seat);
+        }
+		
+		
+		req.setAttribute("seatDetails", seatDetails);
+		
+		
+		
+		
 		
 		
 		

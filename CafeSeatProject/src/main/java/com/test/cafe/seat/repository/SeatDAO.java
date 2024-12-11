@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.test.cafe.cafe.model.CafeDTO;
 import com.test.util.DBUtil;
@@ -70,6 +74,37 @@ public class SeatDAO {
 		
 		return null;
 		
+	}
+	
+	
+	public List<Map<String, Object>> getSeatInfo(String cseq){
+		try {
+					
+					String sql = "select distinct s.numSeat as seatId, COALESCE(s.attrOutlet, 0) AS outlet, CASE WHEN COALESCE(r.isCompleted, 'Y') = 'N' THEN 'booked' ELSE 'available' END as status from tblSeat s left join tblSeatReservation sr ON s.seq = sr.seqSeat left join tblReservation r ON sr.seqReservation = r.seq where s.seqCafe = ? order by s.numSeat";
+					
+					List<Map<String, Object>> seatDetails = new ArrayList<>();
+					
+					pstat = conn.prepareStatement(sql);
+					pstat.setString(1, cseq);
+					rs = pstat.executeQuery();
+	
+					while (rs.next()) {
+						Map<String, Object> seat = new HashMap<>();
+						seat.put("seatId", rs.getInt("seatId"));
+						seat.put("outlet", rs.getInt("outlet"));
+						seat.put("status", rs.getString("status"));
+						seatDetails.add(seat);
+						
+								
+					}	
+					
+					return seatDetails;
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		
+			return null;
 	}
 	
 	
