@@ -45,8 +45,8 @@ public class CafeMap extends HttpServlet {
 		
 		System.out.println("카페번호: " + cseq);
 		
-		resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
-		//resp.sendRedirect("/cafe/seat/selectseat.do");
+		//resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
+		resp.sendRedirect("/cafe/seat/selectseat.do");
 		
 
 

@@ -62,7 +62,7 @@
 
 										<div class="info-title">
 											<h5>${dto.name}</h5>
-											<form method="POST" action="/cafe/cafe/cafemap.do">
+											<form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">
 												<input type="hidden" id="cseq" name="cseq"
 													value="${dto.cseq}"> <input type="submit"
 													class="btntitle" value="예약">

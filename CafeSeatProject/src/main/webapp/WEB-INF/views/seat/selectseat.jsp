@@ -59,7 +59,7 @@
 	</style>
 </head>
 <body class="is-preload">
-<%@ include file="/WEB-INF/views/inc/header.jsp" %>
+<%-- <%@ include file="/WEB-INF/views/inc/header.jsp" %> --%>
 
 		<!-- Wrapper-->
 			<div id="wrapper">
@@ -71,36 +71,25 @@
 
 						<!-- Me -->
 							<article id="home" class="panel intro">
-								<!-- <header>
-									<h1>Jane Doe</h1>
-									<p>Senior Astral Projectionist</p>
-								</header>
-								<a href="#work" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a> -->
+
 							</article>
 
 						<!-- CafeSeat -->
 							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
-								<h1 class="storename">투썸플레이스 역삼성흥타워점</h1>
+								<h1 class="storename">${dto.name}</h1>
 
 								<div class="storeinfo">
-									<p>
-										서울 강남구 테헤란로 138 1층 투썸플레이스<br>
+									<h4>${dto.name}</h4>
+									<h4>${dto.tel}</h4>
+									<h4>${dto.address}</h4>
+									<h4>${dto.lotAddress}</h4>
+									<br><br>
 
-											지번 | 역삼동 736<br>
 
-											영업 중<br>
-											영업시간
-											월~금 07:00 ~ 22:00
-											토,일 08:00 ~ 22:00<br>
 
-											02-508-2388
 
-									</p>
 								</div>
 
 										<!-- 좌석 선택 -->
@@ -236,36 +225,7 @@
 					
 				});
 
-
-
-
-
-
-
-			 	/*
-			 	$('#seatForm').submit(function(event){
-			 	event.preventDefault(); // 기본 폼 제출 방지
-			 	if (selectedSeats.length > 0) {
-			 		$.ajax({
-			 			url: '서버url', // 실제 서버 URL로 변경해야함
-			 			type: 'POST',
-			 			data: {
-			 				seats: selectedSeats,
-			 				count: $('#person').val()
-			 			},
-			 			success: function(response) {
-			 				alert('전송완료: ' + response);
-						
-			 			},
-			 			error: function(jqXhr, textStatus, errorThrown) {
-			 				alert('전송오류: ' + textStatus);
-			 			}
-			 		});
-			 	} else {
-			 		alert('좌석을 선택해주세요.');
-			 	}
-			 }); 
-			 	*/
+			 
 
 			</script>
 
