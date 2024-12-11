@@ -16,12 +16,12 @@
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link rel="stylesheet" href="../assets/css/main.css" />
 	<link rel="stylesheet" href="../assets/css/map.css" />
-	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	<!-- <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript> -->
 	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
 <body class="is-preload">
 
-<%@ include file="/WEB-INF/views/inc/header.jsp" %>
+<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
 
 	<!-- Wrapper-->
 	<div id="wrapper">

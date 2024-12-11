@@ -59,7 +59,7 @@
 	</style>
 </head>
 <body class="is-preload">
-<%@ include file="/WEB-INF/views/inc/header.jsp" %>
+<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
 
 		<!-- Wrapper-->
 			<div id="wrapper">

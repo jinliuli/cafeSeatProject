@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<link rel="stylesheet" href="../assets/css/dev.css" />
 <header>
 	<div style="position: sticky; top: 0;">
-		<table style="display: flex; justify-content: space-between; padding-left: 30px; border: 1px solid #CCC; width: 1000px;">
+		<table>
 				<tr>
 					<th>이름</th>
 					<th>번호</th>
