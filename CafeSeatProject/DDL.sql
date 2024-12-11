@@ -10,7 +10,11 @@
 --tblFavorite > addDate         : Default + sysdate로 수정
 --tblCoupons usedDate NULL 허용에서 NOT NULL + DEFAULT SYSDATE -1 로 수정
 
+
 --1009_수정사항은 노션으로 확인바람.
+
+--1103 수정사항
+--tblAdmin 관리자용 2차 비밀번호 컬럼 삭제
 
 --대체 변수 기능 끄기
 SET DEFINE OFF;
