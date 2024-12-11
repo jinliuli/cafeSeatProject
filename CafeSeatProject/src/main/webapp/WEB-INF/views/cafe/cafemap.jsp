@@ -2,14 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
-<!--
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
-	<title>Astral by HTML5 UP</title>
+	<title>CafeSeat</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -19,31 +14,25 @@
 	<!-- <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript> -->
 	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
+<style>
+	@import url("/cafe/assets/css/paperlogy_font.css");
+	
+	body {
+		font-family: 'Paperlogy-8ExtraBold';
+	}
+</style>
 <body class="is-preload">
 
+<<<<<<< HEAD
 <%@ include file="/WEB-INF/views/inc/dev.jsp" %>
 
+=======
+>>>>>>> 02aeb8a4827e0a0eb8b3ffa1b2dcfd09dffce49d
 	<!-- Wrapper-->
 	<div id="wrapper">
-
+	
 		<!-- Nav -->
-		<nav id="nav">
-			<a href="#" class="icon solid fa-map"><span>Map</span></a>
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-			<a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-			
-			<!-- 로그인 안 했을 때 -->
-			<c:if test="${empty auth}">
-			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-			</c:if>
-
-			<!-- 로그인 했을 때  -->
-			<c:if test="${not empty auth}">
-			<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
-			</c:if>
-			
-		</nav>
-		
+		<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 
 		<!-- Main -->
 		<div id="main">
@@ -57,9 +46,9 @@
 						<div class="option">
 							<div>
 
-								<form onsubmit="searchPlaces(); return false;">
+								<form action="/cafe/cafemap.do" method="GET">
 									<div id="search-box">
-										<input type="text" value="역삼역" id="keyword" size="15">
+										<input type="text" value="${keyword}" name="keyword" id="keyword" size="15"  placeholder="검색어를 입력하세요">
 										<button type="submit" id="search-btn">
 											<i class="fa-solid fa-magnifying-glass"></i>
 										</button>
@@ -70,13 +59,13 @@
 						</div>
 						<hr>
 						<ul id="placesList">
-							<c:forEach items="${list}" var="dto">
+							<%-- <c:forEach items="${list}" var="dto">
 								<li class=item><span class="markerbg marker_${dto.cseq}"></span>
 									<div class="info">
 
 										<div class="info-title">
 											<h5>${dto.name}</h5>
-											<form method="POST" action="/cafe/cafe/cafemap.do">
+											<form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">
 												<input type="hidden" id="cseq" name="cseq"
 													value="${dto.cseq}"> <input type="submit"
 													class="btntitle" value="예약">
@@ -84,7 +73,7 @@
 										</div>
 
 
-										<%--
+										
 										기존에 카페 선택 페이지에서 좌석 선택 페이지로 갈 때 
 										GET방식으로 카페 번호를 query string에 입력해서 보내 줬는데,
 										이걸 세션으로 넘겨주는 방식으로 수정. 이에 맞게 예약 버튼을 누르면
@@ -96,12 +85,12 @@
 												class="btntitle" value="예약" data-value="${dto.cseq}">
 										</div> 
 										
---%>
+
 										<span>${dto.address}</span> <span class="jibun gray">${dto.lotAddress}</span>
 										<span class="tel">${dto.tel}</span>
 									</div></li>
 
-							</c:forEach>
+							</c:forEach> --%>
 						</ul>
 						<div id="pagination"></div>
 					</div>
@@ -123,12 +112,7 @@
 
 
 		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+		<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 	</div>
 
@@ -144,56 +128,163 @@
 
 	<script>
 
-	var markers = [];
+	var markers = []; // 마커를 저장할 배열
 
-	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		mapOption = {
-			center: new kakao.maps.LatLng(37.499312, 127.033228), // 지도의 중심좌표
-			level: 3 // 지도의 확대 레벨
-		};
+	// 지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+	var mapContainer = document.getElementById('map'),
+	    mapOption = {
+	        center: new kakao.maps.LatLng(37.499312, 127.033228), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };
 
-	// 지도를 생성합니다    
-	var map = new kakao.maps.Map(mapContainer, mapOption);
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
 
-	// 장소 검색 객체를 생성합니다
-	var ps = new kakao.maps.services.Places();
+	// 마커 이미지 설정
+	var imageSrc = "../images/location-pointer.png"; // 마커 이미지 경로
+	var imageSize = new kakao.maps.Size(36, 36); // 마커 이미지 크기
+	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); // 마커 이미지 생성
 
-	/* // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-	var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 }); */
-	
-	// 마커 이미지의 이미지 주소입니다
-	var imageSrc = "../images/location-pointer.png"; 
-	// 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(36, 36); 
- 	// 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-	
- 	
- 	
-	//지도에 마커표시--------------------------------------
-	<c:forEach items="${list}" var="dto" varStatus="status">
-				//${status.count} 숫자 세주는 코드!
-		const m${status.count} = new kakao.maps.Marker({
-			position: new kakao.maps.LatLng(${dto.lat},${dto.lng}),
-			image : markerImage // 마커 이미지 
-				});
-		m${status.count}.setMap(map);
+	// 인포윈도우 생성
+	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+	var cafeList = []; // 카페 데이터를 저장할 배열
+
+	// 서버에서 받아온 카페 데이터를 cafeList에 저장
+	<c:forEach items="${list}" var="dto">
+	    cafeList.push({
+	        name: "${dto.name}",
+	        lat: "${dto.lat}",
+	        lng: "${dto.lng}",
+	        address: "${dto.address}",
+	        lotAddress: "${dto.lotAddress}",
+	        tel: "${dto.tel}",
+	        cseq: "${dto.cseq}"
+	    });
 	</c:forEach>
+
+	// 지도 중심을 부드럽게 이동시키는 함수
+	function panTo(lat, lng) {
+	    var moveLatLon = new kakao.maps.LatLng(lat, lng);
+	    map.panTo(moveLatLon); // 지도 중심을 부드럽게 이동
+	}
+
+	// 초기 마커 표시 및 검색 함수
+	function displayCafes(cafes) {
+	    removeMarkers(); // 기존 마커 제거
+
+	    var bounds = new kakao.maps.LatLngBounds();
+
+	    for (var i = 0; i < cafes.length; i++) {
+	        var cafe = cafes[i];
+	        var position = new kakao.maps.LatLng(cafe.lat, cafe.lng);
+
+	        var marker = new kakao.maps.Marker({
+	            map: map,
+	            position: position,
+	            image: markerImage
+	        });
+
+	        markers.push(marker);
+	        bounds.extend(position);
+
+	        // 마커 클릭 이벤트
+	        kakao.maps.event.addListener(marker, 'click', (function(cafe) {
+	            return function() {
+	                displayInfowindow(this, cafe);
+	                panTo(cafe.lat, cafe.lng); // 클릭한 마커로 지도 중심 이동
+	            };
+	        })(cafe));
+	    }
+
+	    map.setBounds(bounds); // 모든 마커가 보이도록 지도 범위 재설정
+	}
+
+	// 인포윈도우를 표시하는 함수
+	function displayInfowindow(marker, cafe) {
+	    var content = '<div style="padding:5px;z-index:1;">' +
+	                    '<h5>' + cafe.name + '</h5>' +
+	                  '</div>';
+
+	    infowindow.setContent(content);
+	    infowindow.open(map, marker);
+	}
+
+	// 마커를 제거하는 함수
+	function removeMarkers() {
+	    for (var i = 0; i < markers.length; i++) {
+	        markers[i].setMap(null);
+	    }
+	    markers = [];
+	}
 	
+	// 검색 결과 목록을 표시하는 함수
+	function displayPlaces(cafes) {
+	    var listEl = document.getElementById('placesList'),
+	    fragment = document.createDocumentFragment();
+
+	    removeAllChildNodes(listEl); // 기존 검색 결과 제거
+
+	    for (var i = 0; i < cafes.length; i++) {
+	        var itemEl = getListItem(i, cafes[i]);
+	        fragment.appendChild(itemEl);
+	    }
+
+	    listEl.appendChild(fragment);
+	}
 	
-	
-	//예약버튼 보기btntitle
-	
-/* 	
-	for (let i = 0; i <= 108; i++) {
-	
-		$(document).on('click', '#btntitle' + i, function() {
-			//alert($('#btntitle' + i).data('value'));
-			location.href="/cafe/seat/selectseat.do?cafe="+$('#btntitle' + i).data('value')+"#cafeseat";
-		});
-	} 
-*/
-	
+	// 검색결과 항목을 Element로 반환하는 함수
+	function getListItem(index, cafe) {
+	    var el = document.createElement('li'),
+	    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
+	                '<div class="info">' +
+	                '   <div class="info-title">' +
+	                '       <h5>' + cafe.name + '</h5>' +
+	                '       <form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">' +
+	                '           <input type="hidden" name="cseq" value="' + cafe.cseq + '">' +
+	                '           <input onclick="reserveSeat(' + cafe.cseq + ')" type="submit" class="btntitle" value="예약">' +
+	                '       </form>' +
+	                '   </div>' +
+	                '   <span>' + cafe.address + '</span>' +
+	                '   <span class="jibun gray">' + cafe.lotAddress + '</span>' +
+	                '   <span class="tel">' + cafe.tel + '</span>' +
+	                '</div>';
+
+	    el.innerHTML = itemStr;
+	    el.className = 'item';
+
+	    // 목록 항목 클릭 이벤트
+	    el.onclick = function() {
+	        displayInfowindow(markers[index], cafe);
+	        panTo(cafe.lat, cafe.lng); // 클릭한 항목으로 지도 중심 이동
+	    };
+
+	    return el;
+	}
+
+	// 검색결과 목록의 자식 Element를 제거하는 함수
+	function removeAllChildNodes(el) {   
+	    while (el.hasChildNodes()) {
+	        el.removeChild (el.lastChild);
+	    }
+	}
+
+	// 검색 기능
+	document.getElementById('search-btn').addEventListener('click', function(e) {
+	    e.preventDefault();
+	    var keyword = document.getElementById('keyword').value.toLowerCase();
+	    var filteredCafes = cafeList.filter(function(cafe) {
+	        return cafe.name.toLowerCase().includes(keyword) || 
+	               cafe.address.toLowerCase().includes(keyword);
+	    });
+	    displayCafes(filteredCafes);
+	    displayPlaces(filteredCafes); // 검색 결과 목록 표시 추가
+	});
+
+	// 페이지 로드 시 모든 카페 표시
+	window.onload = function() {
+	    displayCafes(cafeList);
+	    displayPlaces(cafeList); // 초기 목록 표시 추가
+	};
 	
 	</script>
 

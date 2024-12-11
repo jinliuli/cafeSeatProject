@@ -237,11 +237,13 @@
 	width: 140px;
 }
 
+/* 예약버튼 */
 #placesList .item .btntitle {
-	width: 30px;
-	height: 20px;
+	width: 40px;
+	height: 25px;
 	padding: 0;
-	font-size: 10px;
+	font-size: 12px;
+	font-family: 'Paperlogy-5Medium';
 	background-color: #AF8F6F;
 	color: #F8F4E1;
 	margin-left: 15px;

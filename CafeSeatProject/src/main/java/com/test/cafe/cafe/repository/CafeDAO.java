@@ -26,7 +26,8 @@ public class CafeDAO {
 		this.conn = DBUtil.open("localhost", "cafe", "java1234");
 		
 		//프로젝트 공용
-//		this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234");
+		//this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234");
+
 		
 	}
 	
@@ -76,6 +77,42 @@ public class CafeDAO {
 		}
 		
 		return null;
+	}
+
+	public ArrayList<CafeDTO> searchCafes(String keyword) {
+		ArrayList<CafeDTO> list = new ArrayList<>();
+	    
+	    try {
+	        String sql = "SELECT * FROM vwCafeInfo WHERE name LIKE ? OR address LIKE ? OR lotAddress LIKE ?";
+	        PreparedStatement pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, "%" + keyword + "%");
+	        pstmt.setString(2, "%" + keyword + "%");
+	        pstmt.setString(3, "%" + keyword + "%");
+	        
+	        ResultSet rs = pstmt.executeQuery();
+	        
+	        while (rs.next()) {
+	            CafeDTO dto = new CafeDTO();
+	            dto.setCseq(rs.getString("cseq"));
+	            dto.setAdseq(rs.getString("adseq"));
+	            dto.setName(rs.getString("name"));
+	            dto.setTel(rs.getString("tel"));
+	            dto.setIsOpen(rs.getString("isOpen"));
+	            dto.setAddress(rs.getString("address"));
+	            dto.setLotAddress(rs.getString("lotAddress"));
+	            dto.setLat(rs.getString("lat"));
+	            dto.setLng(rs.getString("lng"));
+	            list.add(dto);
+	        }
+	        
+	        rs.close();
+	        pstmt.close();
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return list;
 	}
 
 }

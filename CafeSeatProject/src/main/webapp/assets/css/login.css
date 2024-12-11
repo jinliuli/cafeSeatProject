@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@import url("paperlogy_font.css");
+
+#login {
+	display: float;
+	justify-content: center;
+}
+
+.panel-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-left: -14.5px;
+}
+
+.banner {
+	text-align: center;
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 70px;
+	margin-bottom: 30px;
+}
+
+.opt-login-form {
+	display: flex;
+	flex-direction: row; /* 세로 정렬 */
+	justify-content: center; /* 세로 가운데 정렬 */
+	align-items: center;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	gap: 20px;
+}
+
+.choice {
+	font-family: 'Paperlogy-7Bold';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #F8F4E1;
+	color: #74512D;
+	border: none;
+	width: 30%;
+	height: 65px;
+	font-size: 28px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+/* 라디오 버튼 label > 커서 올렸을 때 */
+.choice:hover {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+	cursor: pointer;
+}
+
+.opt-login:checked+label {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+}
+
+.login-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 40px;
+}
+
+.login-table th {
+	font-family: 'Paperlogy-8ExtraBold';
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #74512D;
+	font-size: 25px;
+}
+
+.login-table td {
+	font-family: 'Paperlogy-8ExtraBold';
+	font-size: 25px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.login-table #id, .login-table #pw {
+	font-family: 'Paperlogy-6SemiBold';
+	border-radius: 10px;
+	background-color: #F8F4E1;
+	color: #74512D;
+	font-size: 22px;
+	border: none;
+	width: 600px;
+	height: 60px;
+	/*padding-left: 30px;*/
+}
+
+.btnLogin {
+	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	box-sizing: content-box;
+	margin-top: -20px;
+}
+
+.loginBtn {
+	font-family: 'Paperlogy-7Bold';
+	background-color: #74512D;
+	color: #F8F4E1;
+	width: 530px;
+	height: 30px;
+	font-size: 24px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	margin-left: 40px;
+}
+
+.loginBtn:hover {
+	background-color: #AF8F6F;
+	color: #F8F4E1;
+}
+
+.link {
+	font-family: 'Paperlogy-7Bold';
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	margin-left: 30px;
+}
+
+.register, .findId, .findPw {
+	font-size: 22px;
+	text-align: center;
+	white-space: nowrap; /* 글씨를 한 줄로 표시 */
+	margin-bottom: 10px;
+	color: #777777;
+}
+
+.register:hover, .findId:hover, .findPw:hover {
+	color: #74512D;
+}
+
+.logout-form {
+	text-align: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.logout {
+	margin-bottom: 20px;
+}
+
+/* #nav .nav-button {
+                background-color: rgb(48, 102, 204); 
+                border: none; 
+                border-radius: 2px; 
+                padding: 10px 20px; 
+                font-size: 18px; 
+                margin-left: 20px; 
+                cursor: pointer; 
+            }
+
+            #nav .nav-button:hover {
+                background-color: #ffffff; 
+               
+            } */

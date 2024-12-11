@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>Astral by HTML5 UP</title>
+<title>CafeSeat</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -24,7 +24,12 @@
 </noscript>
 </head>
 <style>
-@import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
+@import url("/cafe/assets/css/paperlogy_font.css");
+
+body {
+	font-family: 'Paperlogy-8ExtraBold';
+}
+
 #mypage h1 {
 	border: 5px solid #AF8F6F;
 	background-color: #AF8F6F;
@@ -59,18 +64,18 @@
 	color: #AF8F6F;
 }
 
-#fevorite-box {
+#content-box {
 	border: 3px solid #543310;
 	padding: 40px;
 	border-radius: 20px;
 	margin-left: 80px;
 	margin-right: 80px;
 	width: auto;
-	height: 620px;
+	height: auto;
 	background-color: #74512D;
 }
 
-#mypage div .fevorite-info {
+#mypage div .content-info {
 	border: 5px solid #74512D;
 	margin: 30px;
 	border-radius: 20px;
@@ -78,14 +83,14 @@
 	font-family: 'Paperlogy-5Medium';
 }
 
-#mypage div .fevorite-info:hover {
+#mypage div .content-info:hover {
 	border: 5px solid##74512D;
 	margin: 30px;
 	border-radius: 20px;
 	background-color: #F8F4E1;
 }
 
-#mypage .fevorite-info span:nth-child(1) {
+#mypage .content-info span:nth-child(1) {
 	display: block;
 	text-align: left;
 	padding-left: 30px;
@@ -94,7 +99,15 @@
 	color: #543310;
 }
 
-#mypage .fevorite-info span:nth-child(2) {
+#mypage .content-info span:nth-child(2) {
+	display: block;
+	text-align: right;
+	padding-right: 30px;
+	margin-bottom: 20px;
+	color: #AF8F6F;
+}
+
+#mypage .content-info span:nth-child(3) {
 	display: block;
 	text-align: right;
 	padding-right: 30px;
@@ -108,51 +121,39 @@
 	<div id="wrapper">
 
 		<!-- Nav -->
-		<nav id="nav">
-			<a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-			<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-		</nav>
+		<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 		
 		<!-- Main -->
 		<div id="main">
 
-			<!-- map -->
-			<article id="map" class="panel intro"></article>
+<!-- 			<!-- map -- >
+			<article id="home" class="panel intro"></article>
 
 
-			<!-- cafeseat -->
-			<article id="cafeseat" class="panel"></article>
+			
+			<article id="cafeseat" class="panel"></article>-->
 
 
-			<!-- mypage -->
-			<article id="mypage" class="panel">
+		
+			<article id="mypage" class="panel"> 
 				<h1>MYPAGE</h1>
 				<div>
-					<input type="button" class="btn btn-outline-primary btn-lg"
-						value="예약내역"></input> <input type="button"
-						class="btn btn-outline-primary btn-lg" id="btn-fevorite"
-						value="즐겨찾기"></input> <input type="button"
-						class="btn btn-outline-primary btn-lg" value="쿠폰함"></input> <input
-						type="button" class="btn btn-outline-primary btn-lg" value="내정보"></input>
+				    <input type="button" class="btn btn-outline-primary btn-lg" id="btn-reservation" value="예약내역">
+				    <input type="button" class="btn btn-outline-primary btn-lg" id="btn-favorite" value="즐겨찾기">
+				    <input type="button" class="btn btn-outline-primary btn-lg" id="btn-coupon" value="쿠폰함">
+				    <input type="button" class="btn btn-outline-primary btn-lg" id="btn-myinfo" value="내정보">
 				</div>
 				<div id="content"></div>
 			</article>
+<!-- 
 
-
-			<!-- login -->
+			login
 			<article id="login" class="panel"></article>
 		</div>
-
+ -->
 
 		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+		<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 	</div>
 
@@ -162,29 +163,80 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="..//assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+	
 	<script>
-		$("#btn-fevorite").off('click').on('click', function() { 
-		// $('#fevorite-box').remove();
-		$('#content').empty();
-		$('#content').append(`
-			<div id="fevorite-box">
-				<div class="fevorite-info">
-					<span>투썸플레이스 역삼성홍타워점</span>
-					<span>좌석수: 20석</span>
-				</div>
-				<div class="fevorite-info">
-					<span>투썸플레이스 강남대륭타워점</span>
-					<span>좌석수: 20석</span>
-				</div>
-				<div class="fevorite-info">
-						<span>스타벅스 강남R점</span>
-						<span>좌석수: 20석</span>
-				</div>
-			</div>
-			`);
-					
-		});
-			
+	$(document).ready(function() {
+	    var currentContent = '';
+
+	    function toggleContent(buttonId, content) {
+	        if (currentContent === buttonId) {
+	            $('#content').empty();
+	            currentContent = '';
+	        } else {
+	            $('#content').empty().append(content);
+	            currentContent = buttonId;
+	        }
+	    }
+
+	    $("#btn-favorite").click(function() {
+	        var favoriteContent = `
+	            <div id="content-box">
+	                <div class="content-info">
+	                    <span>투썸플레이스 역삼성홍타워점</span>
+	                    <span>남은좌석수: 20석</span>
+	                </div>
+	                <div class="content-info">
+	                    <span>투썸플레이스 강남대륭타워점</span>
+	                    <span>남은좌석수: 20석</span>
+	                </div>
+	                <div class="content-info">
+	                    <span>스타벅스 강남R점</span>
+	                    <span>남은좌석수: 20석</span>
+	                </div>
+	            </div>
+	        `;
+	        toggleContent('favorite', favoriteContent);
+	    });
+
+	    $("#btn-reservation").click(function() {
+	        var reservationContent = `
+	            <div id="content-box">
+	                <div class="content-info">
+	                    <span>투썸플레이스 역삼성홍타워점</span>
+	                    <span>예약좌석: 00</span>
+	                    <span>예약날짜: 2024-12-11</span>
+	                </div>
+	            </div>
+	        `;
+	        toggleContent('reservation', reservationContent);
+	    });
+
+	    $("#btn-coupon").click(function() {
+	        var couponContent = `
+	            <div id="content-box">
+	                <div class="content-info">
+	                    <span>아메리카노 1잔 무료</span>
+	                    <span>유효기간: 2024-12-31</span>
+	                </div>
+	            </div>
+	        `;
+	        toggleContent('coupon', couponContent);
+	    });
+
+	    $("#btn-myinfo").click(function() {
+	        var myInfoContent = `
+	            <div id="content-box">
+	                <div class="content-info">
+	                    <span>이름: 홍길동</span>
+	                    <span>이메일: hong@example.com</span>
+	                    <span>전화번호: 010-1234-5678</span>
+	                </div>
+	            </div>
+	        `;
+	        toggleContent('myinfo', myInfoContent);
+	    });
+	});
+		
 	</script>
 
 </body>

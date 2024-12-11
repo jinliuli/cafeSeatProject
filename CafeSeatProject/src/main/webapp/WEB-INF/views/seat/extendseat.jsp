@@ -9,7 +9,7 @@
 -->
 <html>
 	<head>
-		<title>Astral by HTML5 UP</title>
+		<title>CafeSeat</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/cafe/assets/css/main.css" />
@@ -61,12 +61,7 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
-						<a href="#Twitter" class="icon brands fa-twitter"><span>Twitter</span></a>
-					</nav>
+				<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 
 				<!-- Main -->
 					<div id="main">
@@ -177,11 +172,7 @@
 					
 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
+					<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 			</div>
 

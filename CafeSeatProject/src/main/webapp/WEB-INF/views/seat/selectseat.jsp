@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.*" %>
+
 <!DOCTYPE HTML>
 <!--
 	Astral by HTML5 UP
@@ -9,26 +11,37 @@
 -->
 <html>
 <head>
-	<title>Astral by HTML5 UP</title>
+	<title>CafeSeat</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 	<style>
-		.seat {}
-		.seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 5px solid #AF8F6F;; padding: 10px; box-sizing: Border-box; border-radius: 15px;}
-		.seat form input {width: 13.7142%; padding: 15px; margin-right: 1%; display: inline-block;background-color: rgb(221, 221, 221); color: #444; font-weight: bold; color: #999;}
+		.seat {display: flex;
+        flex-wrap: wrap; /* 여러 줄로 나눔 */
+        justify-content: center; /* 가운데 정렬 */
+        gap: 10px; /* 좌석 간 간격 */
+        max-width: 1000px; /* 한 줄에 최대 5개 배치 */
+        margin: 0 auto; /* 가운데 정렬 */
+        padding: 20px;
+        border: 2px solid #AF8F6F; /* 외곽선 추가 */
+        border-radius: 10px;
+        background-color: #F8F4E1; /* 배경색 */}
+        
+		/* .seat form {width:90%; margin:0 auto; display: flex; flex-wrap: wrap; border: 5px solid #AF8F6F;; padding: 10px; box-sizing: Border-box; border-radius: 15px;} */
+		.seat form input {width: 17.7142%; padding: 15px; margin-right: 1%; display: inline-block;background-color: burlywood; color: #444; font-weight: bold; color: #999;}
 		.seat form input {margin-bottom: 10px; border-radius: 5px; box-shadow: 1px 1px 2px rgba(0,0,0,0.15);} 
 		.seat form input :nth-of-type(5n) {margin-right: 0;}
-		.seat form input:hover {background: #aaa; color: #444;}
+		.seat form input:hover {background-color: #543310; color: white;}
+		
 	
 		.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none;}
 		.seat form input.booked:hover {color: #999;}
 		.seat form input.blank {margin-right: 13.7142%;}
 		.seat form input:nth-child() {margin-bottom: 30px;}
-		.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom;}
-		
+		.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom; background-color: burlywood;}
+		.seat form input.plug:hover {background-color: #543310; color: white;}
 
 		.bottom {width: 90%; margin: 20px auto; margin-top: 50px; display: flex; justify-content: space-between; border-top: 4px solid #AF8F6F; padding-top: 25px;}
 
@@ -59,90 +72,60 @@
 	</style>
 </head>
 <body class="is-preload">
+<<<<<<< HEAD
 <%@ include file="/WEB-INF/views/inc/dev.jsp" %>
+=======
+<%-- <%@ include file="/WEB-INF/views/inc/header.jsp" %> --%>
+>>>>>>> 02aeb8a4827e0a0eb8b3ffa1b2dcfd09dffce49d
 
 		<!-- Wrapper-->
 			<div id="wrapper">
 
 				<!-- Nav -->
-				
-				<nav id="nav">
-					<a href="#" class="icon solid fa-map"><span>Map</span></a> 
-					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-					<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-					
-					<!-- 로그인 안 했을 때 -->
-					<c:if test="${empty auth}">
-					<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-					</c:if>
-		
-					<!-- 로그인 했을 때  -->
-					<c:if test="${not empty auth}">
-					<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
-					</c:if>
-				</nav>
+				<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Me -->
 							<article id="home" class="panel intro">
-								<!-- <header>
-									<h1>Jane Doe</h1>
-									<p>Senior Astral Projectionist</p>
-								</header>
-								<a href="#work" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a> -->
+
 							</article>
 
 						<!-- CafeSeat -->
 							<article id="cafeseat" class="panel">
 								
 									<!-- 상단부 -->
-								<h1 class="storename">투썸플레이스 역삼성흥타워점</h1>
+								<h1 class="storename">${dto.name}</h1>
 
 								<div class="storeinfo">
-									<p>
-										서울 강남구 테헤란로 138 1층 투썸플레이스<br>
+									<h4>${dto.name}</h4>
+									<h4>${dto.tel}</h4>
+									<h4>${dto.address}</h4>
+									<h4>${dto.lotAddress}</h4>
+									<br><br>
 
-											지번 | 역삼동 736<br>
 
-											영업 중<br>
-											영업시간
-											월~금 07:00 ~ 22:00
-											토,일 08:00 ~ 22:00<br>
 
-											02-508-2388
 
-									</p>
 								</div>
 
 										<!-- 좌석 선택 -->
 								<div class="seat"> 
 									<form id="seatForm" method="GET" action="/cafe/menu/menulist.do#cafeseat">
-										<input type="button" value="1" class="booked seatButton">
-										<input type="button" value="2" class="plug seatButton">
-										<input type="button" value="3" class="blank seatButton">
-										<input type="button" value="4" class="blank plug seatButton">
-										<input type="button" value="5" class="plug seatButton">
-										<input type="button" value="6" class="seatButton">
-										<input type="button" value="7" class="seatButton">
-										<input type="button" value="8" class="blank seatButton">
-										<input type="button" value="9" class="blank seatButton">
-										<input type="button" value="10" class="seatButton">
-
-										<hr style="width:100%; border:0;" >
-										<input type="button" value="11" class="seatButton">
-										<input type="button" value="12" class="blank seatButton">
-										<input type="button" value="13" class="seatButton">
-										<input type="button" value="14" class="blank seatButton">
-										<input type="button" value="15" class="seatButton">
-										<input type="button" value="16" class="plug seatButton">
-										<input type="button" value="17" class="blank seatButton">
-										<input type="button" value="18" class="plug seatButton">
-										<input type="button" value="19" class="blank seatButton">
-										<input type="button" value="20" class="plug seatButton">
+										<%
+							                List<Map<String, Object>> seatDetails = (List<Map<String, Object>>) request.getAttribute("seatDetails");
+							                if (seatDetails != null) {
+							                    for (Map<String, Object> seat : seatDetails) {
+							                        int seatId = (int) seat.get("seatId");
+							                        String statusClass = (String) seat.get("status"); // 예약 상태(booked/available)
+							                        boolean hasOutlet = (int) seat.get("outlet") == 1; // 콘센트 여부
+							                        String outletClass = hasOutlet ? "plug" : "";
+							            %>
+							                        <input type="button" value="<%= seatId %>" class="seatButton <%= statusClass %> <%= outletClass %>" <%= "booked".equals(statusClass) ? "disabled" : "" %> />
+							            <%
+							                    }
+							                }
+							            %>
 									
 											<!-- 하단부 -->
 										<div class="bottom">
@@ -192,11 +175,7 @@
 					
 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
+					<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 			</div>
 
@@ -219,20 +198,22 @@
 
 					$('.seatButton').click(function() {
 						const seatValue = $(this).val();
-						const selectColor = 'rgb(255, 200, 100)'; // 선택했을 때 색
+						const selectColor = '#543310'; // 선택했을 때 색
 						const selected = '5px 5px 10px -5px inset'; // 선택했을 때 그림자
+						const selectedFont = 'white'; // 선택했을 떄 글자 색
 
-						alert("선택한 좌석: " + seatValue);
 
 						if (selectedSeats.includes(seatValue)) {
 							selectedSeats = selectedSeats.filter(seat => seat !== seatValue); // 배열에서 제거
 							$(this).css('background-color', ''); // 원래 배경색으로 돌아감
 							$(this).css('box-shadow', ''); // 원래 그림자로 돌아감
+							$(this).css('color', ''); //원래 글자 색
 						} else {
 							if (selectedSeats.length < maxSeats) { // 선택한 좌석 수가 최대 좌석 수보다 적은 경우
 								selectedSeats.push(seatValue);
 								$(this).css('background-color', selectColor); // 선택 시 배경색 변경
 								$(this).css('box-shadow', selected); // 선택 시 그림자 변경
+								$(this).css('color', selectedFont); // 선택 시 글자색 변경
 							} else {
 								alert("최대 " + maxSeats + " 개의 좌석만 선택할 수 있습니다."); // 최대 좌석 수 초과 알림
 							}
@@ -255,36 +236,7 @@
 					
 				});
 
-
-
-
-
-
-
-			 	/*
-			 	$('#seatForm').submit(function(event){
-			 	event.preventDefault(); // 기본 폼 제출 방지
-			 	if (selectedSeats.length > 0) {
-			 		$.ajax({
-			 			url: '서버url', // 실제 서버 URL로 변경해야함
-			 			type: 'POST',
-			 			data: {
-			 				seats: selectedSeats,
-			 				count: $('#person').val()
-			 			},
-			 			success: function(response) {
-			 				alert('전송완료: ' + response);
-						
-			 			},
-			 			error: function(jqXhr, textStatus, errorThrown) {
-			 				alert('전송오류: ' + textStatus);
-			 			}
-			 		});
-			 	} else {
-			 		alert('좌석을 선택해주세요.');
-			 	}
-			 }); 
-			 	*/
+			 
 
 			</script>
 

@@ -69,12 +69,14 @@ public class UserDAO {
 				
 				UserDTO result = new UserDTO();	//결과를 담을 UserDTO 객체 생성
 				
+				result.setSeq(rs.getString("seq"));
 				result.setId(rs.getString("id"));
 				result.setName(rs.getString("name"));
 				result.setTel(rs.getString("tel"));
 				result.setEmail(rs.getString("email"));
 				result.setIng(rs.getInt("ing"));
 				
+				System.out.println(rs.getString("seq"));
 				System.out.println(rs.getString("id"));
 				System.out.println(rs.getString("name"));
 				System.out.println(rs.getString("tel"));

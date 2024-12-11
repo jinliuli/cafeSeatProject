@@ -14,5 +14,11 @@ public class OrderDTO {
 	private String seqProduct;
 	private String seqOptions;
 	private String totalCount;
+
+	private String sequser;
+	private String seqReservation;
+	private String totalPrice;
+	private String seqSeat;
+	
 	
 }
