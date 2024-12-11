@@ -40,7 +40,6 @@
 			<c:if test="${not empty auth}">
 			<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
 			</c:if>
-			
 		</nav>
 		
 

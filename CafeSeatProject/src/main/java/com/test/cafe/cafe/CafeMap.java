@@ -45,7 +45,7 @@ public class CafeMap extends HttpServlet {
 		
 		
 		//resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
-		resp.sendRedirect("/cafe/seat/selectseat.do");
+		resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
 		
 
 

@@ -133,7 +133,7 @@
 	text-align: center;
 }
 
-#order #orderDetail #orderName, #orderCount{
+#order #orderDetail #orderName, #orderCount, #orderPrice{
     font-family: 'Paperlogy-5Medium';
 	border: none;
 	font-size: 17px;
@@ -216,5 +216,9 @@
 	background-color: #AF8F6F;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
 	cursor: pointer;
+}
+
+form input[type="text"] {
+	background-color: #ffffff;
 }
 		

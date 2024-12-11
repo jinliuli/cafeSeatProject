@@ -14,7 +14,7 @@
 	<style>
 
 	</style>
-	<body class="is-preload">
+	<body class="is-preload" style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
 
 		<!-- Wrapper-->
 			<div id="wrapper">
@@ -86,37 +86,31 @@
 								</div>
 								<hr>
 								
-								<% String temperature = request.getParameter("temperature");%>
-								<% String size = request.getParameter("size");%>
-								<% String iceamount = request.getParameter("iceamount");%>
-								<% String shotadd = request.getParameter("shotadd");%>
-								<% String totalCount = request.getParameter("totalCount");%>
-								<% String totalPrice = request.getParameter("price");%>
-								<% String seqProduct = request.getParameter("seq");%>
-								
 								<div id="order">
 								
-								<!-- <form method="POST" action="/cafe/menu/menulist.do"> -->
+								<form method="POST" action="/cafe/menu/menulist.do">
 								<table id="orderDetail">
 									<tr>
 										<th>메뉴명</th>
 										<th>수량</th>
+										<th>금액</th>
 									</tr>
 									<tr>
-										<td><input type="text" id="orderName" name="orderName" value="복숭아 아샷추" readonly></td>
-										<td><input type="text" id="orderCount" name="orderCount" value="1" readonly></td>
+										<td><input type="text" id="orderName" name="orderName" value="" readonly></td>
+										<td><input type="text" id="orderCount" name="orderCount" value="" readonly></td>
+										<td><input type="text" id="orderPrice" name="orderPrice" value="" readonly></td>
 									</tr>
 								</table>
 								
 								<div id="payType">
 									<div id="price">
-										<input type="text" id="totalPrice" name="totalPrice" value="Total Price: 5,500원" readonly>
+										<input type="text" id="totalPrice" name="totalPrice" value="" readonly>
 									</div>
 									<button type="submit" id="kakaopay"><img src="/cafe/assets/pic/payment/kakao.jpg" alt=""></button>
 									<button type="submit" id="tosspay"><img src="/cafe/assets/pic/payment/tosspay.png" alt=""></button>
 									<button type="submit" id="payETC">기타 결제</button>
 								</div>
-								<!-- </form> -->
+								</form>
 							</div>															
 						</article>
 						
@@ -164,31 +158,34 @@
 						});
 					});
 				});
+ 				
+ 				
+ 			    // 페이지 로드 시 URL에서 totalCount 값을 가져와서 orderCount에 설정하는 함수
+ 			    function getQueryParam(name) {
+ 			        const urlParams = new URLSearchParams(window.location.search);
+ 			        return urlParams.get(name);
+ 			    }
+
+ 			    // totalCount 값을 가져와서 orderCount에 출력
+ 			    window.onload = function() {
+ 			       const menuName = getQueryParam('seq');
+ 			       const totalCount = getQueryParam('totalCount');
+ 			       const price = getQueryParam('price');
+ 			        if (totalCount) {
+ 			            document.getElementById('orderCount').value = totalCount;  // totalCount 값을 orderCount에 설정
+ 			        }
+ 			        if (menuName) {
+ 			        	document.getElementById('orderName').value = menuName;
+ 			        }
+ 			        if (price) {
+ 			        	const totalPrice = price*totalCount;
+ 			        	const formattedPrice = totalPrice.toLocaleString();
+ 			        	document.getElementById('totalPrice').value = '총 금액: ' + formattedPrice + '원';
+ 			        	document.getElementById('orderPrice').value = formattedPrice + '원';
+ 			        }
+ 			    };
 			
  				
- 				document.querySelectorAll('.menuImg').forEach(imgButton => {
- 				    imgButton.addEventListener('click', function() {
- 				        const menuName = this.previousElementSibling.previousElementSibling.textContent; // 메뉴 이름 가져오기
- 				        document.getElementById('orderName').value = menuName; // 주문 이름에 설정
- 				    });
- 				});
- 				
- 				<c:if test="">
- 					document.getElementById("orderName").value = "${dto.name}";
- 				</c:if>
- 				
-/*
- 				$(input[name='category']).click(() => {			
-					alert(input[name='category'].value);
-				});
-				$('.menuImg').click(function() {	
-					console.log(this);		
-					alert($(this).data("price"));
-				});
-				
-				$('.menuImg').click(() => {
-					
-				}); */
 
 			</script>
 
