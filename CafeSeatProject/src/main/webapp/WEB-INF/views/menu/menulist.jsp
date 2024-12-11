@@ -75,18 +75,23 @@
 								
 								<div id="order">
 								
-								<form method="POST" action="/cafe/menu/menulist.do">
+								<form method="POST" action="/cafe/menu/menulist.do#cafeseat">
 								<table id="orderDetail">
 									<tr>
 										<th>메뉴명</th>
 										<th>수량</th>
 										<th>금액</th>
 									</tr>
+								<c:forEach items="${cart}" var="dto">
 									<tr>
-										<td><input type="text" id="orderName" name="orderName" value="" readonly></td>
-										<td><input type="text" id="orderCount" name="orderCount" value="" readonly></td>
-										<td><input type="text" id="orderPrice" name="orderPrice" value="" readonly></td>
+										<td><input type="text" id="orderName" name="orderName" value="${dto.seqProduct}" readonly></td>
+										<td><input type="text" id="orderCount" name="orderCount" value="${dto.totalCount}" readonly></td>
+										<td><input type="text" id="orderPrice" name="orderPrice" value="${dto.totalCount}" readonly></td>
 									</tr>
+<%-- 										<td><input type="text" id="orderName" name="orderName" value="${dto.seqProduct}" readonly></td>
+										<td><input type="text" id="orderCount" name="orderCount" value="${dto.totalCount}" readonly></td>
+										<td><input type="text" id="orderPrice" name="orderPrice" value="${dto.totalCount}" readonly></td> --%>
+								</c:forEach>
 								</table>
 								
 								<div id="payType">
@@ -126,6 +131,7 @@
 
 			<script>
 
+			
  				document.querySelectorAll('input[name="category"]').forEach(radio => {
 					radio.addEventListener('change', function() {
 						const selectedCategory = this.value;
@@ -167,7 +173,7 @@
  			        	document.getElementById('orderPrice').value = formattedPrice + '원';
  			        }
  			    };
-			
+
  				
 
 			</script>

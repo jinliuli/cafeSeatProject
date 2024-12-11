@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import com.test.cafe.menu.model.OrderDTO;
 import com.test.util.DBUtil;
 
 public class OrderDAO {
@@ -34,6 +35,12 @@ public class OrderDAO {
 
 		return dao;
 
+	}
+
+	public OrderDTO get(String string) {
+
+		queryparamdtoreturn
+		return null;
 	}
 
 }

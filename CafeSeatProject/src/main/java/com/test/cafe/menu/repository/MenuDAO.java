@@ -121,7 +121,7 @@ public class MenuDAO {
 			int resultSeat = seatAdd(seatdto, resultRes);
 			int resultPay = payAdd(paydto, resultRes);
 			
-			String sql = "INSERT INTO tblOrder(seq, seqPayment, seqProduct, seqOptions, totalCount) VALUES(seqOrder.nextVal, ?, ?, 1, ?)";
+			String sql = "INSERT INTO tblOrder(seq, seqPayment, seqProduct, seqOptions, totalCount) VALUES(seqOrder.nextVal, ?, ?, 1000, ?)";
 
 			pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, resultPay);
@@ -143,11 +143,11 @@ public class MenuDAO {
 
 		try {
 			
-			String sql = "INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, ?, '간편결제', '카카오페이', ?, '2024-11-02')";
+			String sql = "INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, ?, '간편결제', '카카오페이', '5000', '2024-11-02')";
 
 			pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, resultRes);
-			pstat.setString(2, paydto.getTotalPrice());
+//			pstat.setString(2, paydto.getTotalPrice());
 
 			if (pstat.executeUpdate() == 1) {
 				sql = "select max(seq) from tblPayment";
