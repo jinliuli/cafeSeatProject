@@ -1,10 +1,12 @@
 @charset "UTF-8";
 @import url("paperlogy_font.css");
 
+/*
 #login {
 	display: float;
 	justify-content: center;
 }
+*/
 
 .panel-content {
 	display: flex;
@@ -40,8 +42,8 @@
 	background-color: #F8F4E1;
 	color: #74512D;
 	border: none;
-	width: 30%;
-	height: 65px;
+	width: 28%;
+	height: 70px;
 	font-size: 28px;
 	border-radius: 10px;
 	margin-bottom: 15px;
@@ -96,7 +98,7 @@
 	/*padding-left: 30px;*/
 }
 
-.btnLogin {
+.login-button {
 	font-size: 40px;
 	display: flex;
 	justify-content: center;
@@ -105,7 +107,7 @@
 	margin-top: -20px;
 }
 
-.loginBtn {
+.btnLogin {
 	font-family: 'Paperlogy-7Bold';
 	background-color: #74512D;
 	color: #F8F4E1;
@@ -117,7 +119,7 @@
 	margin-left: 40px;
 }
 
-.loginBtn:hover {
+.btnLogin:hover {
 	background-color: #AF8F6F;
 	color: #F8F4E1;
 }

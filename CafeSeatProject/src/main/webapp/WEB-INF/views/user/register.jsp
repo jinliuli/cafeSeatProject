@@ -2,143 +2,23 @@
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
-<!--
-    Astral by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-    <head>
-        <title>CafeSeat</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="/cafe/assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
+<head>
+    <title>CafeSeat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/cafe/assets/css/main.css" />
+    <link rel="stylesheet" href="/cafe/assets/css/register.css" />
+    <noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
+</head>
+<style>
+@import url("/cafe/assets/css/paperlogy_font.css");
 
-        <style>
-            @import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
-
-            body {
-                font-family: 'Paperlogy-8ExtraBold';
-            }
-
-            #login {
-                display: float;
-                justify-content: center;
-            }
-
-            .panel-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            h1 {
-                text-align: center;
-                font-size: 40px;
-                padding-top: 10px;
-                padding-bottom: 30px;
-                font-weight: bold;
-            }
-
-            .login-info-table {
-                margin-bottom: 80px;
-            }
-
-            .login-info-table th {
-                display: flex;
-                align-items: center;
-                text-align: center;
-                height: 40px;
-            }
-
-            .login-info-table td {
-                text-align: center;
-                display: flex;
-                align-items: center;
-                width: 490px;
-                margin-bottom: 15px;
-            }
-
-            #btnCheck {
-                height: 35px;
-                text-align: center;
-                box-sizing: content-box;
-                font-size: 15px;
-            }
-
-            .member-info-table {
-                margin-left: 59px;
-            }
-
-            .choice {
-                font-family: 'Paperlogy-8ExtraBold';
-                border: 2px solid #ddd;
-                width: 180px;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                float: left;
-                font-size: 20px;
-                margin-bottom: 0px;
-            }
-
-            /* 라디오 버튼 label > 커서 올렸을 때 */
-            .choice:hover {
-                color: rgb(37, 92, 193);
-                cursor: pointer;
-            }
-
-            .opt-member:checked + label {
-                color: rgb(37, 92, 193);
-            }
-
-            .member-info-table th {
-                display: flex;
-                align-items: center;
-                text-align: center;
-            }
-
-            .member-info-table td {
-                text-align: center;
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-
-            .additional-info td {
-                text-align: center;
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-
-            #name, #tel, #email, #adminPw, #companyId {
-                display: inline-block;
-                width: 368px;
-                margin-bottom: 10px;
-            }
-
-            #btnSignup {
-                font-size: 40px; 
-                width: auto; 
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                box-sizing: content-box;
-                margin: auto;
-            }
-
-            #btnSignup button {
-                height: 25px; 
-                width: 314px; 
-                font-size: 18px; 
-            }
-                
-        </style>
-    </head>
+body {
+    font-family: 'Paperlogy-8ExtraBold';
+}
+</style>          
+  
     <body class="is-preload">
 
         <!-- Wrapper-->
@@ -150,23 +30,23 @@
             <!-- Main -->
             <div id="main">
 
-               <!-- Me -->
-               <article id="home" class="panel intro">
-                    
-               </article>
+            <!-- Me -->
+            <article id="home" class="panel intro">
+                 
+            </article>
 
-               <!-- CafeSeat -->
-               <article id="cafeseat" class="panel">
-                   
-               </article>
+            <!-- CafeSeat -->
+            <article id="cafeseat" class="panel">
+                
+            </article>
 
-               <!-- Mypage -->
-               <article id="mypage" class="panel">
-                   
-               </article>
+            <!-- Mypage -->
+            <article id="mypage" class="panel">
+                
+            </article>
                            
                            
-               <!-- Login -->
+               <!-- Register -->
                <!-- 아이디 중복체크는 server -> AjaxTest -> Ex05 시리즈 참조 -->
                <article id="register" class="panel">
 	              <form method="post" action="/cafe/user/register.do">

@@ -3,6 +3,6 @@
 <div id="footer">
 	<ul class="copyright">
 		<li>&copy; SIST-SideProject</li>
-		<li>MEMBER : 김유진 김유리 이우진 장지윤 정상수</li>
+		<li>MEMBER : 김유진 김유리 이우진 장지윤 전상수</li>
 	</ul>
 </div>
