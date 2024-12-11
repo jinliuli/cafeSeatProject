@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-	<title>Astral by HTML5 UP</title>
+	<title>CafeSeat</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
@@ -65,22 +65,7 @@
 			<div id="wrapper">
 
 				<!-- Nav -->
-				
-				<nav id="nav">
-					<a href="#" class="icon solid fa-map"><span>Map</span></a> 
-					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-					<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-					
-					<!-- 로그인 안 했을 때 -->
-					<c:if test="${empty auth}">
-					<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-					</c:if>
-		
-					<!-- 로그인 했을 때  -->
-					<c:if test="${not empty auth}">
-					<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
-					</c:if>
-				</nav>
+				<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 				<!-- Main -->
 					<div id="main">
 
@@ -192,11 +177,7 @@
 					
 
 				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
+					<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 			</div>
 

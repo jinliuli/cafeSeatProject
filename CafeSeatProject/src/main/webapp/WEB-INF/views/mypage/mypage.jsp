@@ -9,7 +9,7 @@
 -->
 <html>
 <head>
-<title>Astral by HTML5 UP</title>
+<title>CafeSeat</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -24,7 +24,12 @@
 </noscript>
 </head>
 <style>
-@import url("/CafeSeatProject/src/main/webapp/assets/css/paperlogy_font.css");
+@import url("/cafe/assets/css/paperlogy_font.css");
+
+body {
+	font-family: 'Paperlogy-8ExtraBold';
+}
+
 #mypage h1 {
 	border: 5px solid #AF8F6F;
 	background-color: #AF8F6F;
@@ -108,18 +113,13 @@
 	<div id="wrapper">
 
 		<!-- Nav -->
-		<nav id="nav">
-			<a href="/cafe/cafe/cafemap.do#" class="icon solid fa-map"><span>Map</span></a> 
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-			<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-		</nav>
+		<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 		
 		<!-- Main -->
 		<div id="main">
 
 			<!-- map -->
-			<article id="map" class="panel intro"></article>
+			<article id="home" class="panel intro"></article>
 
 
 			<!-- cafeseat -->
@@ -147,12 +147,7 @@
 
 
 		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+		<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 	</div>
 

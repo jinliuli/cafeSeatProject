@@ -2,14 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
-<!--
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
-	<title>Astral by HTML5 UP</title>
+	<title>CafeSeat</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -19,31 +14,22 @@
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
+<style>
+	@import url("/cafe/assets/css/paperlogy_font.css");
+	
+	body {
+		font-family: 'Paperlogy-8ExtraBold';
+	}
+</style>
 <body class="is-preload">
 
 <%@ include file="/WEB-INF/views/inc/header.jsp" %>
 
 	<!-- Wrapper-->
 	<div id="wrapper">
-
+	
 		<!-- Nav -->
-		<nav id="nav">
-			<a href="#" class="icon solid fa-map"><span>Map</span></a>
-			<a href="/cafe/seat/selectseat.do#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
-			<a href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-			
-			<!-- 로그인 안 했을 때 -->
-			<c:if test="${empty auth}">
-			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
-			</c:if>
-
-			<!-- 로그인 했을 때  -->
-			<c:if test="${not empty auth}">
-			<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
-			</c:if>
-			
-		</nav>
-		
+		<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
 
 		<!-- Main -->
 		<div id="main">
@@ -123,12 +109,7 @@
 
 
 		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+		<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
 
 	</div>
 
