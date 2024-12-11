@@ -145,29 +145,32 @@
 #order #orderDetail 
 
 /* 결제 --------------------------------------- */
-#order #price {
+
+
+#payType #price {
 	width: 350px;
 	float: right;
 	text-align: center;
 }
 
-#order #price #totalPrice {
+#payType #price #totalPrice {
 	border: none; 
 	text-align: center;
     font-family: 'Paperlogy-8ExtraBold';
 	font-size: 23px;
 	letter-spacing: 0.5px;
 	cursor: inherit;
-	margin-left: 30px;
 	outline: none;
 	color: tomato;
+	margin-right: 30px;
+	width: 300px;
 } 
 
 #order #payType {
 	float: right;
 	width: 250px;
 	height: 270px;
-	margin-right: 60px;
+	margin-bottom: 60px;
 } 
 
 #order #payType #kakaopay {

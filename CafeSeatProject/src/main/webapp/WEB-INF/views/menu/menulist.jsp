@@ -96,36 +96,27 @@
 								
 								<div id="order">
 								
-								<form method="POST" action="/cafe/menu/menulist.do">
+								<!-- <form method="POST" action="/cafe/menu/menulist.do"> -->
 								<table id="orderDetail">
 									<tr>
 										<th>메뉴명</th>
 										<th>수량</th>
 									</tr>
 									<tr>
-										<td><input type="text" id="orderName" name="orderName" value="${dto.name}" readonly></td>
-										<td><input type="text" id="orderCount" name="orderCount" value="<%= totalCount %>" readonly></td>
+										<td><input type="text" id="orderName" name="orderName" value="복숭아 아샷추" readonly></td>
+										<td><input type="text" id="orderCount" name="orderCount" value="1" readonly></td>
 									</tr>
 								</table>
 								
-								<input type="hidden" name="menutemperature" value="<%= temperature %>">
-								<input type="hidden" name="menusize" value="<%= size %>">
-								<input type="hidden" name="menuiceamount" value="<%= iceamount %>">
-								<input type="hidden" name="menushotadd" value="<%= shotadd %>">
-								<input type="hidden" name="seqProduct" value="<%= seqProduct %>">
-								<input type="hidden" name="totalPrice" value="<%= totalPrice %>">
-								<input type="hidden" name="selectedSeats" value="selectedSeats">
-							 	<input type="hidden" name="totalCount" value="<%= totalCount %>">
-								
-								<div id="price">
-									<input type="text" id="totalPrice" name="totalPrice" value="Total Price: 13,000원" readonly>
-								</div>
 								<div id="payType">
+									<div id="price">
+										<input type="text" id="totalPrice" name="totalPrice" value="Total Price: 5,500원" readonly>
+									</div>
 									<button type="submit" id="kakaopay"><img src="/cafe/assets/pic/payment/kakao.jpg" alt=""></button>
 									<button type="submit" id="tosspay"><img src="/cafe/assets/pic/payment/tosspay.png" alt=""></button>
 									<button type="submit" id="payETC">기타 결제</button>
 								</div>
-								</form>
+								<!-- </form> -->
 							</div>															
 						</article>
 						

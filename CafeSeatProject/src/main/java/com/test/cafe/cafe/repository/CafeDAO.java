@@ -27,6 +27,7 @@ public class CafeDAO {
 		
 		//프로젝트 공용
 		//this.conn = DBUtil.open("52.78.251.201", "cafe", "java1234");
+
 		
 	}
 	

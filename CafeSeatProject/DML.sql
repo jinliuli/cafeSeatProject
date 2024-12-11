@@ -1,3 +1,4 @@
+-- 11/04 tblAdmin, tblUser 테스트용 로그인 버튼을 위해 seq=2 부터 seq=6까지 사용자/관리자 버전 계정 조원들 이름 및 비번 1111로 단순화
 -- 11/03 tblAdmin 관리자용 2차 비밀번호 컬럼 삭제
 -- 11/02 tblOrder에 seqOptions 값 바뀐 tblOptions 값에 맞게 수정
 -- 11/02 tblOptions 기본키 sequence에서 다른 컬럼값을 조합한 값으로 수정

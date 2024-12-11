@@ -20,7 +20,7 @@
 	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
 </head>
 <body class="is-preload">
-<%@ include file="/WEB-INF/views/inc/header.jsp" %>
+<%-- <%@ include file="/WEB-INF/views/inc/header.jsp" %> --%>
 
 	<!-- Wrapper-->
 	<div id="wrapper">
