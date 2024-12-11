@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header>
-	<div style="position: sticky; top: 0;">
+	<%-- <div style="position: sticky; top: 0;">
 		<table style="display: flex; justify-content: space-between; padding-left: 30px; border: 1px solid #CCC; width: 1000px;">
 				<tr>
 					<th>이름</th>
@@ -22,5 +22,5 @@
 					<td>${loginType}</td>
 				</tr>
 		</table>
-	</div>
+	</div> --%>
 </header>
