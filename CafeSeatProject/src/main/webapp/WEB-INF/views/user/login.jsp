@@ -10,9 +10,7 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/cafe/assets/css/main.css" />
 	<link rel="stylesheet" href="../assets/css/login.css" />
-	<noscript>
-		<link rel="stylesheet" href="/cafe/assets/css/noscript.css" />
-	</noscript>
+	<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 </head>
 <style>
 @import url("/cafe/assets/css/paperlogy_font.css");
@@ -195,7 +193,7 @@ body {
 		        document.getElementById('loginType').value = radio.value; // 히든 필드에 라디오 버튼 값 설정
 		    });
 		});
-   </script>
+   	</script>
 
 </body>
 </html>

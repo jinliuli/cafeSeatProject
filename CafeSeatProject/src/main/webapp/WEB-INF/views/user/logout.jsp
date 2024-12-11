@@ -2,19 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
-<!--
-    Astral by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
 <title>CafeSeat</title>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="/cafe/assets/css/main.css" />
-<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/cafe/assets/css/main.css" />
+	<link rel="stylesheet" href="../assets/css/logout.css" />
+	<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
+</head>
 <style>
 @import url("/cafe/assets/css/paperlogy_font.css");
 
@@ -120,6 +116,11 @@ body {
 	margin-bottom: 20px;
 }
 
+#btnBack, #btnLogout {
+	font-family: 'Paperlogy-7Bold';
+	background-color: #F8F4E1;
+	color: #74512D;
+}
 .link {
 	display: flex;
 	justify-content: space-between;
@@ -140,8 +141,11 @@ body {
 }
 
 .logout {
+	font-family: 'Paperlogy-6SemiBold';
+	font-size: 35px;
 	margin-bottom: 20px;
 }
+
 
 /* #nav .nav-button {
                 background-color: rgb(48, 102, 204); 
@@ -158,9 +162,7 @@ body {
                
             } */
 </style>
-</head>
 <body class="is-preload">
-
 
 	<!-- Wrapper-->
 	<div id="wrapper">
@@ -170,7 +172,6 @@ body {
 
 		<!-- Main -->
 		<div id="main">
-
 
 			<!-- Login -->
 			<article id="logout" class="panel">
@@ -202,10 +203,6 @@ body {
 	<script src="/cafe/assets/js/breakpoints.min.js"></script>
 	<script src="/cafe/assets/js/util.js"></script>
 	<script src="/cafe/assets/js/main.js"></script>
-
-	<script>
-		
-	</script>
 
 </body>
 </html>
