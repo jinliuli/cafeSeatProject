@@ -59,7 +59,7 @@
 	</style>
 </head>
 <body class="is-preload">
-<%-- <%@ include file="/WEB-INF/views/inc/header.jsp" %> --%>
+<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 
 		<!-- Wrapper-->
 			<div id="wrapper">
@@ -70,8 +70,16 @@
 					<a href="#" class="icon solid fa-map"><span>Map</span></a> 
 					<a href="#cafeseat" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>
 					<a href="#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
-					<a href="#login" class="icon solid fa-user"><span>Login</span></a>
-					<button id="loginButton" class="nav-button">로그인</button>
+					
+					<!-- 로그인 안 했을 때 -->
+					<c:if test="${empty auth}">
+					<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+					</c:if>
+		
+					<!-- 로그인 했을 때  -->
+					<c:if test="${not empty auth}">
+					<a href="/cafe/user/logout.do" class="icon solid fa-user"><span>Logout</span></a>
+					</c:if>
 				</nav>
 				<!-- Main -->
 					<div id="main">
