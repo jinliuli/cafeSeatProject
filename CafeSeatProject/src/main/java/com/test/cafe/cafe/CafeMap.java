@@ -19,12 +19,19 @@ public class CafeMap extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		CafeDAO dao = CafeDAO.getInstance();
-		
-		ArrayList<CafeDTO> list = dao.listCafe();
-		
-		req.setAttribute("list", list);
+		String keyword = req.getParameter("keyword");
+        CafeDAO dao = CafeDAO.getInstance();
+        
+        ArrayList<CafeDTO> list;
+        
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            list = dao.searchCafes(keyword);
+        } else {
+            list = dao.listCafe();
+        }
+        
+        req.setAttribute("list", list);
+        req.setAttribute("keyword", keyword);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/cafe/cafemap.jsp");
 		dispatcher.forward(req, resp);

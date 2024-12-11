@@ -1,3 +1,4 @@
+-- 12/11 tblCafe, tblCafeLoca 데이터 수정
 -- 11/04 tblAdmin, tblUser 테스트용 로그인 버튼을 위해 seq=2 부터 seq=6까지 사용자/관리자 버전 계정 조원들 이름 및 비번 1111로 단순화
 -- 11/03 tblAdmin 관리자용 2차 비밀번호 컬럼 삭제
 -- 11/02 tblOrder에 seqOptions 값 바뀐 tblOptions 값에 맞게 수정
@@ -424,7 +425,7 @@ INSERT INTO tblUser(seq, id, pw, name, tel, email, ing) VALUES(seqUser.nextVal, 
 
 
 -- tblCafeLoca 카페위치  관리 ------------------------------------------------------------------------------------------
-INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'논현로 419' ,'역삼동 746' ,'PMK빌딩 1층' ,37.4975089,127.0380919);
+INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'논현로 419' ,'역삼동 746' ,'PMK빌딩 1층' ,37.4996424,127.0342691); -- 데이터수정---------------------
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'강남대로 362' ,'역삼동 826-20' ,'1층' ,37.4953381,127.0295533);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'강남대로 382' ,'역삼동 825-11' ,'1층' ,37.4974507,127.0287938);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'강남대로 390' ,'역삼동 825' ,'미진프라자 1층101호' ,37.4978461,127.0286372);
@@ -483,7 +484,7 @@ INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCa
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 129' ,'역삼동 648-9' ,'강남N타워 1층' ,37.4997777,127.0324107);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 129' ,'역삼동 648-9' ,'강남N타워지하 1층2,3호' ,37.4997777,127.0324107);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 134' ,'역삼동 735-3' ,'포스코타워역삼 1층' ,37.4994113,127.0337342);
-INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 138' ,'역삼동 736' ,'1층' ,37.4996424,127.0342691);
+INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 20길' ,'역삼동' ,'양화타워 5 10층' ,37.499455,127.034348); -- 데이터수정---------------------
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 142' ,'역삼동 736-1' ,'아크플레이스 1층' ,37.4997419,127.0348105);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 143' ,'역삼동 646-18' ,'고운빌딩 1층' ,37.5005739,127.0349155);
 INSERT INTO tblCafeLoca(seq,city,district,street,lot,detail,lat,lng)VALUES(seqCafeLoca.nextVal, '서울' ,'강남구' ,'테헤란로 151' ,'역삼동 642-19' ,'역삼하이츠빌딩 1층' ,37.5009452,127.0361278);
@@ -595,7 +596,7 @@ INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.next
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,57,57,'블루 보틀 역삼 카페','1533-6906',1);
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,58,58,'수수커피 강남N타워점','02-6250-0925',1);
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,59,59,'스타벅스 역삼포스코점','1522-3232',1);
-INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,60,60,'투썸플레이스 역삼성홍타워점','02-508-2388',1);
+INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,60,60,'파리바게뜨 역삼포스틸점','02-552-8563',1); -- 데이터수정---------------------
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,61,61,'스타벅스 아크플레이스점','1522-3232',1);
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,62,62,'커피빈 역삼역4번출구점','02-508-1137',1);
 INSERT INTO tblCafe(seq,seqAdmin,seqCafeLoca,name,tel,isOpen)VALUES(seqCafe.nextVal,63,63,'파스쿠찌 역삼테헤란점','02-552-8497',1);
@@ -1841,4 +1842,35 @@ INSERT INTO tblCoupons(seq, seqUser, createdDate, usedDate, status) VALUES(seqCo
 -- tblFavorite 즐겨찾기  관리 ------------------------------------------------------------------------------------------
 INSERT INTO tblFavorite(seq,seqUser,seqCafe,addDate)VALUES(seqFavorite.nextVal,1,1,TO_DATE('2024-10-01', 'YYYY:MM:DD'));
 
+UPDATE tblCafeLoca
+SET 
+    city = '서울',
+    district = '강남구',
+    street = '논현로 419',
+    lot = '역삼동 746',
+    detail = 'PMK빌딩 1층',
+    lat = 37.4996424,
+    lng = 127.0342691
+WHERE seq = 1;  -- 업데이트할 seq 값
 
+UPDATE tblCafe
+SET 
+    seqAdmin = 60,
+    seqCafeLoca = 60,
+    name = '파리바게뜨 역삼포스틸점',
+    tel = '02-552-8563',
+    isOpen = 1
+WHERE seq = 60;  -- 업데이트할 seq 값
+
+UPDATE tblCafeLoca
+SET 
+    city = '서울',
+    district = '강남구',
+    street = '테헤란로20길',
+    lot = '역삼동',
+    detail = '양화타워 5 10층',
+    lat = 37.499455,
+    lng = 127.034348
+WHERE seq = 60;  -- 업데이트할 seq 값
+
+commit;
