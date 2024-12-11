@@ -4,20 +4,19 @@
 
 <nav id="nav"
 	style="display: flex; align-items: center; justify-content: space-between;">
-	<div class="logo" style="margin-right: 750px;">
+	<div class="logo" style="margin-right: 850px;">
 		<a href="/cafe/cafe/cafemap.do" style="opacity: 1;"> <img src="../images/Logo.png"
 			style="width: 350px; height: 100px;" alt="Logo">
 		</a>
 	</div>
 	<div style="flex: 1; display: flex; justify-content: center;">
-		<a href="/cafe/cafe/cafemap.do#home" class="icon solid fa-map"><span>Map</span></a>
-		<a href="/cafe/seat/selectseat.do#cafeseat"
-			class="icon solid fa-mug-hot"><span>CafeSeat</span></a> <a
-			href="/cafe/mypage/mypage.do#mypage" class="icon solid fa-heart"><span>MyPage</span></a>
+		<a href="/cafe/cafe/cafemap.do" class="icon solid fa-map"><span>Map</span></a>
+		<!-- <a href="/cafe/seat/selectseat.do" class="icon solid fa-mug-hot"><span>CafeSeat</span></a>  -->
+		<a href="/cafe/mypage/mypage.do" class="icon solid fa-heart"><span>MyPage</span></a>
 
 		<!-- 로그인 안 했을 때 -->
 		<c:if test="${empty auth}">
-			<a href="/cafe/user/login.do#login" class="icon solid fa-user"><span>Login</span></a>
+			<a href="/cafe/user/login.do" class="icon solid fa-user"><span>Login</span></a>
 		</c:if>
 
 		<!-- 로그인 했을 때  -->
