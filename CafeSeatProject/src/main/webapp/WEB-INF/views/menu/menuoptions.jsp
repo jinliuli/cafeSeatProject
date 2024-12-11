@@ -44,7 +44,7 @@
 								</div>
 								<input type="hidden" name="seq" value="${dto.seq}">
 								
-								<form method="POST" action="/cafe/menu/menulist.do#cafeseat">
+								<form method="POST" action="/cafe/menu/menulist.do">
 								<div id="option">
 									<div class="optionName">1. 온도(ICE or HOT)</div>
 										<div class="radio_temperature">
@@ -100,9 +100,10 @@
 								<div id="select">
 
 									<input type="number" name="totalCount" id="totalCount" min="1" max="10" placeholder="수량">
-									<button type="button" class="options">선택</button>
+									<button type="submit" class="options">선택</button>
 									<button type="button" class="back" onclick="location.href='/cafe/menu/menulist.do#cafeseat';">취소</button>
 								</div>
+<!-- <input type="hidden" id="seqOptions" name="seqOptions" value=""> -->
 								</form>												
 							</article>
 						<article id="mypage" class="'panel">
@@ -128,13 +129,24 @@
 			<script src="/cafe/assets/js/main.js"></script>
 
 			<script>
-			
+
+/* 			
 				document.querySelector('.options').addEventListener('click', function() {
 				    
-					const temperature = document.querySelector('input[name="temperature"]:checked').value;
-				    const size = document.querySelector('input[name="size"]:checked').value;
-				    const iceamount = document.querySelector('input[name="iceamount"]:checked').value;
-				    const shotadd = document.querySelector('input[name="shotadd"]:checked').value;
+					const temperature = document.querySelector('input[name="temperature"]:checked')?.value;
+				    const size = document.querySelector('input[name="size"]:checked')?.value;
+				    const iceamount = document.querySelector('input[name="iceamount"]:checked')?.value;
+				    const shotadd = document.querySelector('input[name="shotadd"]:checked')?.value;
+				    const seqOptions = document.getElementById('seqOptions');
+				    
+				    if (seqOptions) {
+				    	console.log(seqOptions.value);
+				    } else {
+				    	console.log("seqOptions 없음!");
+				    }
+				    
+				    const seqOptionsValue = `${temperature}${size}${iceamount}${shotadd}`;
+				    
 				    
 				    const totalCount = document.getElementById('totalCount').value || 1; // 기본값을 1로 설정
 				    
@@ -160,17 +172,22 @@
 				        return; // 샷 추가를 선택하지 않았으면 종료
 				    }
 				    
+
+				    seqOptions.value = seqOptionsValue;
+
+				    
 				    url = `/cafe/menu/menulist.do?seq=${dto.name}&price=${dto.price}&temperature=\${temperature}&size=\${size}&iceamount=\${iceamount}&shotadd=\${shotadd}&totalCount=\${totalCount}#cafeseat`;
 				    
 				    // 이동
 				    location.href = url;
 	
-				});
+				}); */
 				
 				const temperature = $('input:radio[name="temperature"]:checked').val();
 			    const size = $('input:radio[name="size"]:checked').val();
 			    const iceamount = $('input:radio[name="iceamount"]:checked').val();
 			    const shotadd = $('input:radio[name="shotadd"]:checked').val();
+			    const seqOptions = $('input:hidden[name="seqOptions"]').val();
 			    
 			    const totalCount = document.getElementById('totalCount').value || 1; // 기본값을 1로 설정
 			    
