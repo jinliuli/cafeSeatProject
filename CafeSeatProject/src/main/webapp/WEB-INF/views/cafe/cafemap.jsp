@@ -4,35 +4,36 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>CafeSeat</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<link rel="stylesheet" href="../assets/css/map.css" />
-	<!-- <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript> -->
-	<script src="https://kit.fontawesome.com/1ddf83a78d.js" crossorigin="anonymous"></script>
+<title>CafeSeat</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/map.css" />
+<!-- <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript> -->
+<script src="https://kit.fontawesome.com/1ddf83a78d.js"
+	crossorigin="anonymous"></script>
 </head>
 <style>
-	@import url("/cafe/assets/css/paperlogy_font.css");
-	
-	body {
-		font-family: 'Paperlogy-8ExtraBold';
-	}
+@import url("/cafe/assets/css/paperlogy_font.css");
+
+body {
+	font-family: 'Paperlogy-8ExtraBold';
+}
 </style>
 <body class="is-preload">
 
-<<<<<<< HEAD
-<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
-
-=======
->>>>>>> 02aeb8a4827e0a0eb8b3ffa1b2dcfd09dffce49d
+	<%@ include file="/WEB-INF/views/inc/dev.jsp"%>
 	<!-- Wrapper-->
 	<div id="wrapper">
-	
+
 		<!-- Nav -->
-		<%@ include file="/WEB-INF/views/inc/nav.jsp" %>
+		<%@ include file="/WEB-INF/views/inc/nav.jsp"%>
 
 		<!-- Main -->
 		<div id="main">
@@ -48,7 +49,8 @@
 
 								<form action="/cafe/cafemap.do" method="GET">
 									<div id="search-box">
-										<input type="text" value="${keyword}" name="keyword" id="keyword" size="15"  placeholder="검색어를 입력하세요">
+										<input type="text" value="${cseq}" name="cseq" id="cseq"
+											size="15" placeholder="검색어를 입력하세요">
 										<button type="submit" id="search-btn">
 											<i class="fa-solid fa-magnifying-glass"></i>
 										</button>
@@ -112,7 +114,7 @@
 
 
 		<!-- Footer -->
-		<%@ include file="/WEB-INF/views/inc/footer.jsp" %>
+		<%@ include file="/WEB-INF/views/inc/footer.jsp"%>
 
 	</div>
 
@@ -127,165 +129,179 @@
 	<!-- <script src="../assets/js/cafe/map.js"></script> -->
 
 	<script>
+		var markers = []; // 마커를 저장할 배열
 
-	var markers = []; // 마커를 저장할 배열
+		// 지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+		var mapContainer = document.getElementById('map'), mapOption = {
+			center : new kakao.maps.LatLng(37.499312, 127.033228), // 지도의 중심좌표
+			level : 3
+		// 지도의 확대 레벨
+		};
 
-	// 지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
-	var mapContainer = document.getElementById('map'),
-	    mapOption = {
-	        center: new kakao.maps.LatLng(37.499312, 127.033228), // 지도의 중심좌표
-	        level: 3 // 지도의 확대 레벨
-	    };
+		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
 
-	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+		// 마커 이미지 설정
+		var imageSrc = "../images/location-pointer.png"; // 마커 이미지 경로
+		var imageSize = new kakao.maps.Size(36, 36); // 마커 이미지 크기
+		var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); // 마커 이미지 생성
 
-	// 마커 이미지 설정
-	var imageSrc = "../images/location-pointer.png"; // 마커 이미지 경로
-	var imageSize = new kakao.maps.Size(36, 36); // 마커 이미지 크기
-	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); // 마커 이미지 생성
+		// 인포윈도우 생성
+		var infowindow = new kakao.maps.InfoWindow({
+			zIndex : 1
+		});
 
-	// 인포윈도우 생성
-	var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+		var cafeList = []; // 카페 데이터를 저장할 배열
 
-	var cafeList = []; // 카페 데이터를 저장할 배열
+		// 서버에서 받아온 카페 데이터를 cafeList에 저장
+		<c:forEach items="${list}" var="dto">
+		cafeList.push({
+			name : "${dto.name}",
+			lat : "${dto.lat}",
+			lng : "${dto.lng}",
+			address : "${dto.address}",
+			lotAddress : "${dto.lotAddress}",
+			tel : "${dto.tel}",
+			cseq : "${dto.cseq}"
+		});
+		</c:forEach>
 
-	// 서버에서 받아온 카페 데이터를 cafeList에 저장
-	<c:forEach items="${list}" var="dto">
-	    cafeList.push({
-	        name: "${dto.name}",
-	        lat: "${dto.lat}",
-	        lng: "${dto.lng}",
-	        address: "${dto.address}",
-	        lotAddress: "${dto.lotAddress}",
-	        tel: "${dto.tel}",
-	        cseq: "${dto.cseq}"
-	    });
-	</c:forEach>
+		// 지도 중심을 부드럽게 이동시키는 함수
+		function panTo(lat, lng) {
+			var moveLatLon = new kakao.maps.LatLng(lat, lng);
+			map.panTo(moveLatLon); // 지도 중심을 부드럽게 이동
+		}
 
-	// 지도 중심을 부드럽게 이동시키는 함수
-	function panTo(lat, lng) {
-	    var moveLatLon = new kakao.maps.LatLng(lat, lng);
-	    map.panTo(moveLatLon); // 지도 중심을 부드럽게 이동
-	}
+		// 초기 마커 표시 및 검색 함수
+		function displayCafes(cafes) {
+			removeMarkers(); // 기존 마커 제거
 
-	// 초기 마커 표시 및 검색 함수
-	function displayCafes(cafes) {
-	    removeMarkers(); // 기존 마커 제거
+			var bounds = new kakao.maps.LatLngBounds();
 
-	    var bounds = new kakao.maps.LatLngBounds();
+			for (var i = 0; i < cafes.length; i++) {
+				var cafe = cafes[i];
+				var position = new kakao.maps.LatLng(cafe.lat, cafe.lng);
 
-	    for (var i = 0; i < cafes.length; i++) {
-	        var cafe = cafes[i];
-	        var position = new kakao.maps.LatLng(cafe.lat, cafe.lng);
+				var marker = new kakao.maps.Marker({
+					map : map,
+					position : position,
+					image : markerImage
+				});
 
-	        var marker = new kakao.maps.Marker({
-	            map: map,
-	            position: position,
-	            image: markerImage
-	        });
+				markers.push(marker);
+				bounds.extend(position);
 
-	        markers.push(marker);
-	        bounds.extend(position);
+				// 마커 클릭 이벤트
+				kakao.maps.event.addListener(marker, 'click', (function(cafe) {
+					return function() {
+						displayInfowindow(this, cafe);
+						panTo(cafe.lat, cafe.lng); // 클릭한 마커로 지도 중심 이동
+					};
+				})(cafe));
+			}
 
-	        // 마커 클릭 이벤트
-	        kakao.maps.event.addListener(marker, 'click', (function(cafe) {
-	            return function() {
-	                displayInfowindow(this, cafe);
-	                panTo(cafe.lat, cafe.lng); // 클릭한 마커로 지도 중심 이동
-	            };
-	        })(cafe));
-	    }
+			map.setBounds(bounds); // 모든 마커가 보이도록 지도 범위 재설정
+		}
 
-	    map.setBounds(bounds); // 모든 마커가 보이도록 지도 범위 재설정
-	}
+		// 인포윈도우를 표시하는 함수
+		function displayInfowindow(marker, cafe) {
+			var content = '<div style="padding:5px;z-index:1;">' + '<h5>'
+					+ cafe.name + '</h5>' + '</div>';
 
-	// 인포윈도우를 표시하는 함수
-	function displayInfowindow(marker, cafe) {
-	    var content = '<div style="padding:5px;z-index:1;">' +
-	                    '<h5>' + cafe.name + '</h5>' +
-	                  '</div>';
+			infowindow.setContent(content);
+			infowindow.open(map, marker);
+		}
 
-	    infowindow.setContent(content);
-	    infowindow.open(map, marker);
-	}
+		// 마커를 제거하는 함수
+		function removeMarkers() {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
+			markers = [];
+		}
 
-	// 마커를 제거하는 함수
-	function removeMarkers() {
-	    for (var i = 0; i < markers.length; i++) {
-	        markers[i].setMap(null);
-	    }
-	    markers = [];
-	}
-	
-	// 검색 결과 목록을 표시하는 함수
-	function displayPlaces(cafes) {
-	    var listEl = document.getElementById('placesList'),
-	    fragment = document.createDocumentFragment();
+		// 검색 결과 목록을 표시하는 함수
+		function displayPlaces(cafes) {
+			var listEl = document.getElementById('placesList'), fragment = document
+					.createDocumentFragment();
 
-	    removeAllChildNodes(listEl); // 기존 검색 결과 제거
+			removeAllChildNodes(listEl); // 기존 검색 결과 제거
 
-	    for (var i = 0; i < cafes.length; i++) {
-	        var itemEl = getListItem(i, cafes[i]);
-	        fragment.appendChild(itemEl);
-	    }
+			for (var i = 0; i < cafes.length; i++) {
+				var itemEl = getListItem(i, cafes[i]);
+				fragment.appendChild(itemEl);
+			}
 
-	    listEl.appendChild(fragment);
-	}
-	
-	// 검색결과 항목을 Element로 반환하는 함수
-	function getListItem(index, cafe) {
-	    var el = document.createElement('li'),
-	    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-	                '<div class="info">' +
-	                '   <div class="info-title">' +
-	                '       <h5>' + cafe.name + '</h5>' +
-	                '       <form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">' +
-	                '           <input type="hidden" name="cseq" value="' + cafe.cseq + '">' +
-	                '           <input onclick="reserveSeat(' + cafe.cseq + ')" type="submit" class="btntitle" value="예약">' +
-	                '       </form>' +
-	                '   </div>' +
-	                '   <span>' + cafe.address + '</span>' +
-	                '   <span class="jibun gray">' + cafe.lotAddress + '</span>' +
-	                '   <span class="tel">' + cafe.tel + '</span>' +
-	                '</div>';
+			listEl.appendChild(fragment);
+		}
 
-	    el.innerHTML = itemStr;
-	    el.className = 'item';
+		// 검색결과 항목을 Element로 반환하는 함수
+		function getListItem(index, cafe) {
+			var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
+					+ (index + 1)
+					+ '"></span>'
+					+ '<div class="info">'
+					+ '   <div class="info-title">'
+					+ '       <h5>'
+					+ cafe.name
+					+ '</h5>'
+					+ '       <form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">'
+					+ '           <input type="hidden" name="cseq" value="' + cafe.cseq + '">'
+					+ '           <input onclick="reserveSeat('
+					+ cafe.cseq
+					+ ')" type="submit" class="btntitle" value="예약">'
+					+ '       </form>'
+					+ '   </div>'
+					+ '   <span>'
+					+ cafe.address
+					+ '</span>'
+					+ '   <span class="jibun gray">'
+					+ cafe.lotAddress
+					+ '</span>'
+					+ '   <span class="tel">'
+					+ cafe.tel + '</span>' + '</div>';
 
-	    // 목록 항목 클릭 이벤트
-	    el.onclick = function() {
-	        displayInfowindow(markers[index], cafe);
-	        panTo(cafe.lat, cafe.lng); // 클릭한 항목으로 지도 중심 이동
-	    };
+			el.innerHTML = itemStr;
+			el.className = 'item';
 
-	    return el;
-	}
+			// 목록 항목 클릭 이벤트
+			el.onclick = function() {
+				displayInfowindow(markers[index], cafe);
+				panTo(cafe.lat, cafe.lng); // 클릭한 항목으로 지도 중심 이동
+			};
 
-	// 검색결과 목록의 자식 Element를 제거하는 함수
-	function removeAllChildNodes(el) {   
-	    while (el.hasChildNodes()) {
-	        el.removeChild (el.lastChild);
-	    }
-	}
+			return el;
+		}
 
-	// 검색 기능
-	document.getElementById('search-btn').addEventListener('click', function(e) {
-	    e.preventDefault();
-	    var keyword = document.getElementById('keyword').value.toLowerCase();
-	    var filteredCafes = cafeList.filter(function(cafe) {
-	        return cafe.name.toLowerCase().includes(keyword) || 
-	               cafe.address.toLowerCase().includes(keyword);
-	    });
-	    displayCafes(filteredCafes);
-	    displayPlaces(filteredCafes); // 검색 결과 목록 표시 추가
-	});
+		// 검색결과 목록의 자식 Element를 제거하는 함수
+		function removeAllChildNodes(el) {
+			while (el.hasChildNodes()) {
+				el.removeChild(el.lastChild);
+			}
+		}
 
-	// 페이지 로드 시 모든 카페 표시
-	window.onload = function() {
-	    displayCafes(cafeList);
-	    displayPlaces(cafeList); // 초기 목록 표시 추가
-	};
-	
+		// 검색 기능
+		document.getElementById('search-btn').addEventListener(
+				'click',
+				function(e) {
+					e.preventDefault();
+					var cseq = document.getElementById('cseq').value
+							.toLowerCase();
+					var filteredCafes = cafeList
+							.filter(function(cafe) {
+								return cafe.name.toLowerCase()
+										.includes(cseq)
+										|| cafe.address.toLowerCase().includes(
+												cseq);
+							});
+					displayCafes(filteredCafes);
+					displayPlaces(filteredCafes); // 검색 결과 목록 표시 추가
+				});
+
+		// 페이지 로드 시 모든 카페 표시
+		window.onload = function() {
+			displayCafes(cafeList);
+			displayPlaces(cafeList); // 초기 목록 표시 추가
+		};
 	</script>
 
 </body>

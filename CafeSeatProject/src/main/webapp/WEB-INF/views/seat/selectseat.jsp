@@ -72,11 +72,8 @@
 	</style>
 </head>
 <body class="is-preload">
-<<<<<<< HEAD
 <%@ include file="/WEB-INF/views/inc/dev.jsp" %>
-=======
-<%-- <%@ include file="/WEB-INF/views/inc/header.jsp" %> --%>
->>>>>>> 02aeb8a4827e0a0eb8b3ffa1b2dcfd09dffce49d
+
 
 		<!-- Wrapper-->
 			<div id="wrapper">

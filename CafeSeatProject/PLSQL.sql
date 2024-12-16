@@ -88,3 +88,15 @@
         INNER JOIN tblProduct pr
             ON ct.seq = pr.seqCategory;
     /
+
+-- 변경 내용
+-- 12/11/24
+-- 예약 테이블에 종료된 예약인지 아닌지 알려주는 컬럼 추가
+ALTER TABLE tblReservation
+ADD isCompleted CHAR(1) DEFAULT 'N' NOT NULL; -- 'N'이면 미완료, 'Y'이면 완료
+
+ update tblreservation set iscompleted = 'Y';
+
+
+ALTER TABLE tblReservation
+MODIFY timeEnd DATE NULL; -- 기존의 NOT NULL 제약을 제거
