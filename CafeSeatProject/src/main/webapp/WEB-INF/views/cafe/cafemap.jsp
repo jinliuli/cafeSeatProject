@@ -61,7 +61,7 @@ body {
 						</div>
 						<hr>
 						<ul id="placesList">
-							<%-- <c:forEach items="${list}" var="dto">
+							<c:forEach items="${list}" var="dto">
 								<li class=item><span class="markerbg marker_${dto.cseq}"></span>
 									<div class="info">
 
@@ -92,7 +92,7 @@ body {
 										<span class="tel">${dto.tel}</span>
 									</div></li>
 
-							</c:forEach> --%>
+							</c:forEach>
 						</ul>
 						<div id="pagination"></div>
 					</div>

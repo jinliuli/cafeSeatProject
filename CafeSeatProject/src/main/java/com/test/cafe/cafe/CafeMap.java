@@ -37,25 +37,23 @@ public class CafeMap extends HttpServlet {
 		dispatcher.forward(req, resp);
 	}
 	
-	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		//세션 만들기
-		HttpSession session = req.getSession();
-		
-		//POST로 받은 카페번호 스트링 cseq에 담기
+		//POST로 받은 카페번호를 스트링 변수 cseq에 담기
 		String cseq = req.getParameter("cseq");
-		
-		//카페번호 세션에 입력
-		session.setAttribute("cseq", cseq);
-		
+
+		//카페번호가 문자열 변수 cseq에 잘담겼는지 콘솔 출력 테스트
 		System.out.println("카페번호: " + cseq);
 		
-		//resp.sendRedirect("/cafe/seat/selectseat.do?cseq=" + cseq);
-		resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
+		//카페번호를 담을 세션 만들기
+		HttpSession session = req.getSession();
 		
-
+		//카페번호를 세션에 담기
+		session.setAttribute("cseq", cseq);
+		
+		//좌석 선택 페이지로 이동
+		resp.sendRedirect("/cafe/seat/selectseat.do#cafeseat");
 
 	}
 }

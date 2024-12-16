@@ -1,3 +1,4 @@
+--12/17 tblOrder에서 컬럼 seqOptions을 NOT NULL에서 NULL 허용으로 변경: 케익 같은 디저트에 옵션이 붙지 않을 것을 고려해서...
 --1010수정_ 각자 테이블 확인 다시 해보기!!
 --tblCafe > isOpen	            : Default로 수정
 --tblUserLoca > locaTime        : Default + sysdate로 수정
@@ -199,8 +200,8 @@ CREATE TABLE tblProduct (
 CREATE TABLE tblOptions (
 	seq	NUMBER	PRIMARY KEY,
 	temperature	NUMBER	NOT NULL,
-	ice	NUMBER	NOT NULL,
 	cupSize	NUMBER	NOT NULL,
+	ice	NUMBER	NOT NULL,
 	shot	NUMBER	NOT NULL
 );
 
@@ -220,7 +221,7 @@ CREATE TABLE tblOrder (
 	seq	NUMBER	PRIMARY KEY,
 	seqPayment	NUMBER	NOT NULL, --FK결제번호
 	seqProduct	NUMBER	NOT NULL, --FK상품번호
-	seqOptions	NUMBER	NOT NULL, --FK옵션번호
+	seqOptions	NUMBER	NULL, 	--FK옵션번호
 	totalCount	NUMBER	NOT NULL
 
     ,CONSTRAINT FK_Payment_Order FOREIGN KEY (seqPayment)

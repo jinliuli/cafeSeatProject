@@ -57,8 +57,8 @@
         , ct.name as 카테고리
         , pr.name as 상품명
         , op.temperature as 온도
-        , op.ice as 얼음양
         , op.cupSize as 사이즈
+        , op.ice as 얼음양
         , op.shot as 샷추가
         , o.totalCount as 수량
         , pa.payType as 결제방식
