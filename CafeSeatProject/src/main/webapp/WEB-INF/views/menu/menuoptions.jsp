@@ -54,39 +54,39 @@
 												
 											<div class="optionName">2. 사이즈(Size)</div>
 												<div class="radio_cupsize">
-													<input id="size_regular" type="radio" class="size" name="size" value="0" required>
+													<input id="size_regular" type="radio" class="size" name="size" value="1" required>
 													<label for="size_regular">기본(R)</label>
 												</div>
 												<div class="radio_cupsize">
-													<input id="size_large" type="radio" class="size" name="size" value="1">
+													<input id="size_large" type="radio" class="size" name="size" value="2">
 													<label for="size_large">라지(L)</label>
 												</div>
 												<div class="radio_cupsize">
-													<input id="size_max" type="radio" class="size" name="size" value="2">
+													<input id="size_max" type="radio" class="size" name="size" value="3">
 													<label for="size_max">맥스(M)</label>
 												</div>
 												
 											<div class="optionName">3. 얼음 양(Ice Amount)</div>
 												<div class="radio_iceamount">
-													<input id="icefew" type="radio" class="iceamount" name="iceamount" value="0" required>
+													<input id="icefew" type="radio" class="iceamount" name="iceamount" value="1" required>
 													<label for="icefew">얼음 적게</label>
 												</div>
 												<div class="radio_iceamount">
-													<input id="icebasic" type="radio" class="iceamount" name="iceamount" value="1">
+													<input id="icebasic" type="radio" class="iceamount" name="iceamount" value="2">
 													<label for="icebasic">기본</label>
 												</div>
 												<div class="radio_iceamount">
-													<input id="icelots" type="radio" class="iceamount" name="iceamount" value="2">
+													<input id="icelots" type="radio" class="iceamount" name="iceamount" value="3">
 													<label for="icelots">얼음 많이</label>
 												</div>
 												
 											<div class="optionName">4. 샷 추가(Shot)</div>
 												<div class="radio_shotadd">
-													<input id="noshot" type="radio" class="shotadd" name="shotadd" value="0" required>
+													<input id="noshot" type="radio" class="shotadd" name="shotadd" value="1" required>
 													<label for="noshot">기본</label>
 												</div>
 												<div class="radio_shotadd">
-													<input id="shot" type="radio" class="shotadd" name="shotadd" value="1">
+													<input id="shot" type="radio" class="shotadd" name="shotadd" value="2">
 													<label for="shot">샷 추가</label>
 												</div>
 										</div>
