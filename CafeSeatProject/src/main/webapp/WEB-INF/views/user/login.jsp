@@ -172,6 +172,7 @@ body {
 
 			<!-- Mypage -->
 			<article id="mypage" class="panel"></article>
+			
 		</div>
 
 		<!-- Footer -->
