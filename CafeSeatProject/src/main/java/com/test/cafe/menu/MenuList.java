@@ -53,6 +53,19 @@ public class MenuList extends HttpServlet {
         	System.out.println("제품: " + item.getSeqProduct() + ", 옵션번호: " + item.getSeqOptions() + ", 수량: " + item.getTotalCount());
         }
         
+        String[] selectedSeats = (String[]) session.getAttribute("selectedSeats");
+        
+        if (selectedSeats != null) {
+        	for (String seat: selectedSeats) {
+        		if (seat != null && !seat.isEmpty()) {
+        			System.out.println("좌석: " + seat);
+        		}
+        	}
+        } else {
+        	System.out.println("선택된 좌석 없음");
+        }
+        
+        
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/menu/menulist.jsp");
 		dispatcher.forward(req, resp);
 
@@ -66,11 +79,6 @@ public class MenuList extends HttpServlet {
 		
 		List<OrderDTO> cart = (List<OrderDTO>) session.getAttribute("cart");
 		
-		for (OrderDTO item : cart) {
-			
-		}
-		
-	    
 		
 		OrderDTO dto = cart.get(0);
 		
