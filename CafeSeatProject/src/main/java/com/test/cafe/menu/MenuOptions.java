@@ -83,6 +83,10 @@ public class MenuOptions extends HttpServlet {
 			System.out.println("제품: " + item.getSeqProduct() + ", 옵션번호: " + item.getSeqOptions() + ", 수량: " + item.getTotalCount() + ", 단위 가격: " + item.getPrice());
 		}
 		
+		
+		
+		
+		
 		// 제품을 장바구니에 추가
 		cart.add(order);
 		

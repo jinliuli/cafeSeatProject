@@ -82,11 +82,11 @@
 												
 											<div class="optionName">4. 샷 추가(Shot)</div>
 												<div class="radio_shotadd">
-													<input id="noshot" type="radio" class="shotadd" name="shotadd" value="1" required>
+													<input id="noshot" type="radio" class="shotadd" name="shotadd" value="0" required>
 													<label for="noshot">기본</label>
 												</div>
 												<div class="radio_shotadd">
-													<input id="shot" type="radio" class="shotadd" name="shotadd" value="2">
+													<input id="shot" type="radio" class="shotadd" name="shotadd" value="1">
 													<label for="shot">샷 추가</label>
 												</div>
 										</div>

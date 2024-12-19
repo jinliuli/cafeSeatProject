@@ -53,6 +53,15 @@ public class MenuList extends HttpServlet {
         	System.out.println("제품: " + item.getSeqProduct() + ", 옵션번호: " + item.getSeqOptions() + ", 수량: " + item.getTotalCount());
         }
         
+       String[] selectedSeats = (String[]) session.getAttribute("selectedSeats");
+        
+       for (String seats : selectedSeats) {
+    	   System.out.println("좌석: " + seats);
+       }
+       
+       
+       
+        
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/menu/menulist.jsp");
 		dispatcher.forward(req, resp);
 
@@ -75,6 +84,9 @@ public class MenuList extends HttpServlet {
 		OrderDTO dto = cart.get(0);
 		
 		String seqProduct = dto.getSeqProduct();
+		String seqOptions = dto.getSeqOptions();
+		String totalCount = dto.getTotalCount();
+		
 		
 		
 		//1.
@@ -93,12 +105,8 @@ public class MenuList extends HttpServlet {
 
 		OrderDTO orderdto = new OrderDTO();
 		orderdto.setSeqProduct(seqProduct);
-//		orderdto.setSeqOptions(seqOptions);
-//		orderdto.setTotalCount(totalCount);
-		
-//		orderdto.setSeqProduct(seqProduct);
-//		orderdto.setSeqOptions(seqOptions);
-//		orderdto.setTotalCount(totalCount);
+		orderdto.setSeqOptions(seqOptions);
+		orderdto.setTotalCount(totalCount);
 		
 		SeatReservationDTO seatdto = new SeatReservationDTO();
 		seatdto.setSeqSeat(seqSeat);

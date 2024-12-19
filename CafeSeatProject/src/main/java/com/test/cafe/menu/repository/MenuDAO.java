@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import com.test.cafe.menu.model.MenuDTO;
 import com.test.cafe.menu.model.OrderDTO;
 import com.test.cafe.menu.model.PaymentDTO;
@@ -111,6 +113,7 @@ public class MenuDAO {
 	}//get -------------------------------------------
 	
 	
+	
 	public int orderAdd(OrderDTO orderdto, ReservationDTO resdto, PaymentDTO paydto, SeatReservationDTO seatdto) {
 		
 		try {
@@ -119,13 +122,15 @@ public class MenuDAO {
 			int resultSeat = seatAdd(seatdto, resultRes);
 			int resultPay = payAdd(paydto, resultRes);
 			
-			String sql = "INSERT INTO tblOrder(seq, seqPayment, seqProduct, seqOptions, totalCount) VALUES(seqOrder.nextVal, ?, ?, 1000, ?)";
-
+			System.out.println("상품번호(DAO): " + orderdto.getSeqProduct() + "옵션번호(DAO): " + orderdto.getSeqOptions() + "상품수량(DAO): " + orderdto.getTotalCount());
+			
+			String sql = "INSERT INTO tblOrder(seq, seqPayment, seqProduct, seqOptions, totalCount) VALUES(seqOrder.nextVal, ?, ?, ?, ?)";
+			
 			pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, resultPay);
 			pstat.setString(2, orderdto.getSeqProduct());
-			/* pstat.setString(2, orderdto.getSeqOptions()); */
-			pstat.setString(3, orderdto.getTotalCount());
+			pstat.setString(3, orderdto.getSeqOptions());
+			pstat.setString(4, orderdto.getTotalCount());
 
 			return pstat.executeUpdate();		
 			
@@ -141,7 +146,7 @@ public class MenuDAO {
 
 		try {
 			
-			String sql = "INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, ?, '간편결제', '카카오페이', '5000', '2024-11-02')";
+			String sql = "INSERT INTO tblPayment(seq, seqReservation, payType, cardBrand, totalPrice, payDate) VALUES(seqPayment.nextVal, ?, '간편결제', '카카오페이', '5000', sysdate)";
 
 			pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, resultRes);
@@ -168,7 +173,7 @@ public class MenuDAO {
 		
 		try {
 			
-			String sql = "INSERT INTO tblReservation(seq,seqUser,useDate,timeStart,timeEnd) VALUES(seqReservation.nextVal,1,TO_DATE('2024-11-02', 'YYYY-MM-DD'),default, default)";
+			String sql = "INSERT INTO tblReservation(seq,seqUser,useDate,timeStart,timeEnd) VALUES(seqReservation.nextVal,1,sysdate,default, default)";
 
 			pstat = conn.prepareStatement(sql);
 			/* pstat.setString(1, resdto.getSequser()); */
@@ -194,6 +199,7 @@ public class MenuDAO {
 	public int seatAdd(SeatReservationDTO seatdto, int resultRes) {
 	
 		try {
+			
 			
 			String sql = "INSERT INTO tblSeatReservation(seq,seqReservation,seqSeat) VALUES(seqSeatReservation.nextVal,?,?)";
 
