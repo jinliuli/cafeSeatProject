@@ -86,7 +86,7 @@ public class MenuList extends HttpServlet {
 		String seqProduct = dto.getSeqProduct();
 		String seqOptions = dto.getSeqOptions();
 		String totalCount = dto.getTotalCount();
-		String selectedSeats = (String) session.getAttribute("selectedSeatsString");
+		String[] selectedSeats = (String[]) session.getAttribute("selectedSeats");
 		UserDTO userInfo = (UserDTO) session.getAttribute("info");
 		
 		
@@ -109,10 +109,10 @@ public class MenuList extends HttpServlet {
 		orderdto.setTotalCount(totalCount);
 		
 		SeatReservationDTO seatdto = new SeatReservationDTO();
-		seatdto.setSeqSeat(selectedSeats);
+		seatdto.setSelectedSeats(selectedSeats);
 
 		ReservationDTO resdto = new ReservationDTO();
-		resdto.setSeqUser("1");
+		resdto.setSeqUser(userInfo.getSeq());
 		
 		PaymentDTO paydto = new PaymentDTO();
 		

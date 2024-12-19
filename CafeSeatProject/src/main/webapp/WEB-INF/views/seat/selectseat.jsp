@@ -90,7 +90,7 @@
 	</style>
 </head>
 <body class="is-preload">
-	<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
+	<%-- <%@ include file="/WEB-INF/views/inc/dev.jsp" %> --%>
 
 
 		<!-- Wrapper-->

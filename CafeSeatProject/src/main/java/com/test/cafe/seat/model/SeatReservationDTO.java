@@ -12,5 +12,7 @@ public class SeatReservationDTO {
 	private String seq;
 	private String seqReservation;
 	private String seqSeat;
+	
+	private String[] selectedSeats;
 
 }

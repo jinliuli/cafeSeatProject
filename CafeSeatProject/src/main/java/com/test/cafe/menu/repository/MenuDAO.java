@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.test.cafe.menu.model.MenuDTO;
 import com.test.cafe.menu.model.OrderDTO;
@@ -178,13 +179,15 @@ public class MenuDAO {
 			pstat.setString(1, user.getSeq());
 
 			if (pstat.executeUpdate() == 1) {
-				sql = "select max(seq) from tblReservation";
+				sql = "select max(seq) as seq from tblReservation";
 				pstat = conn.prepareStatement(sql);
 				
-				return pstat.executeUpdate();
-			} else {
-				return 0;
-			}
+				  try (ResultSet rs = pstat.executeQuery()) { // executeQuery() 사용
+				        if (rs.next()) {
+				            return rs.getInt("seq"); // max(seq) 값을 반환
+				        }
+				    }
+				} 
 			
 			
 		} catch (Exception e) {
@@ -199,14 +202,24 @@ public class MenuDAO {
 	
 		try {
 			
+			String[] selectedSeats = seatdto.getSelectedSeats();
 			
 			String sql = "INSERT INTO tblSeatReservation(seq,seqReservation,seqSeat) VALUES(seqSeatReservation.nextVal,?,?)";
 
 			pstat = conn.prepareStatement(sql);
 			pstat.setInt(1, resultRes);
-			pstat.setString(2, seatdto.getSeqSeat());
-
-			return pstat.executeUpdate();		
+			
+			int n = 0;
+			for(String seat : selectedSeats) {
+				
+			pstat.setString(2, seat);
+			
+			pstat.executeUpdate();	
+			
+			n++;
+			}
+			
+			return n;
 			
 		} catch (Exception e) {
 			e.printStackTrace();

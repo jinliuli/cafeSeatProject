@@ -60,6 +60,8 @@ public class SelectSeat extends HttpServlet {
 		String cseq = (String) session.getAttribute("cseq");
 		String selectedSeatsString = req.getParameter("selectedSeats"); //선택된 좌석들 정보를 받아옴
 		
+		session.setAttribute("selectedSeatsString", selectedSeatsString);
+		
 		//좌석 정보가 null이 아닐 시에
 		if (selectedSeatsString != null && !selectedSeatsString.isEmpty()) {
 			
