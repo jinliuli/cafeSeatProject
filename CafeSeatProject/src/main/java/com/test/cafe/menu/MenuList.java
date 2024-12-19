@@ -18,6 +18,7 @@ import com.test.cafe.menu.model.PaymentDTO;
 import com.test.cafe.menu.repository.MenuDAO;
 import com.test.cafe.seat.model.ReservationDTO;
 import com.test.cafe.seat.model.SeatReservationDTO;
+import com.test.cafe.user.model.UserDTO;
 
 @WebServlet("/menu/menulist.do")
 public class MenuList extends HttpServlet {
@@ -85,14 +86,14 @@ public class MenuList extends HttpServlet {
 		String seqProduct = dto.getSeqProduct();
 		String seqOptions = dto.getSeqOptions();
 		String totalCount = dto.getTotalCount();
-		
+		String selectedSeats = (String) session.getAttribute("selectedSeatsString");
+		UserDTO userInfo = (UserDTO) session.getAttribute("info");
 		
 		
 		//1.
 		//String sequser = session.getId();
-		String seqReservation = "500";
+//		String seqReservation = "500";
 		//String totalPrice = "5000";
-		String seqSeat = "5";
 
 //		String seqProduct = (String) session.getAttribute("seqProduct");
 //		String seqOptions = "1000";
@@ -108,15 +109,17 @@ public class MenuList extends HttpServlet {
 		orderdto.setTotalCount(totalCount);
 		
 		SeatReservationDTO seatdto = new SeatReservationDTO();
-		seatdto.setSeqSeat(seqSeat);
+		seatdto.setSeqSeat(selectedSeats);
 
 		ReservationDTO resdto = new ReservationDTO();
 		resdto.setSeqUser("1");
 		
 		PaymentDTO paydto = new PaymentDTO();
-		paydto.setSeqReservation(seqReservation);
 		
-		int result = dao.orderAdd(orderdto, resdto, paydto, seatdto);
+		UserDTO userdto = new UserDTO();
+		userdto.setSeq(userInfo.getSeq());
+		
+		int result = dao.orderAdd(orderdto, resdto, paydto, seatdto, userdto);
 		
 		//3.
 		if (result == 1) {

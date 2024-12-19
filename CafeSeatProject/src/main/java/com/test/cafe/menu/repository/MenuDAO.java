@@ -6,13 +6,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpSession;
-
 import com.test.cafe.menu.model.MenuDTO;
 import com.test.cafe.menu.model.OrderDTO;
 import com.test.cafe.menu.model.PaymentDTO;
 import com.test.cafe.seat.model.ReservationDTO;
 import com.test.cafe.seat.model.SeatReservationDTO;
+import com.test.cafe.user.model.UserDTO;
 import com.test.util.DBUtil;
 
 public class MenuDAO {
@@ -114,11 +113,11 @@ public class MenuDAO {
 	
 	
 	
-	public int orderAdd(OrderDTO orderdto, ReservationDTO resdto, PaymentDTO paydto, SeatReservationDTO seatdto) {
+	public int orderAdd(OrderDTO orderdto, ReservationDTO resdto, PaymentDTO paydto, SeatReservationDTO seatdto, UserDTO user) {
 		
 		try {
 			
-			int resultRes = resAdd(resdto);
+			int resultRes = resAdd(resdto, user);
 			int resultSeat = seatAdd(seatdto, resultRes);
 			int resultPay = payAdd(paydto, resultRes);
 			
@@ -169,14 +168,14 @@ public class MenuDAO {
 		return 0;
 	}// ----------------------------------------------------------------------------------------------------------------------------
 	
-	public int resAdd(ReservationDTO resdto) {
+	public int resAdd(ReservationDTO resdto, UserDTO user) {
 		
 		try {
 			
-			String sql = "INSERT INTO tblReservation(seq,seqUser,useDate,timeStart,timeEnd) VALUES(seqReservation.nextVal,1,sysdate,default, default)";
+			String sql = "INSERT INTO tblReservation(seq,seqUser,useDate,timeStart,timeEnd) VALUES(seqReservation.nextVal,?,sysdate,default, default)";
 
 			pstat = conn.prepareStatement(sql);
-			/* pstat.setString(1, resdto.getSequser()); */
+			pstat.setString(1, user.getSeq());
 
 			if (pstat.executeUpdate() == 1) {
 				sql = "select max(seq) from tblReservation";
