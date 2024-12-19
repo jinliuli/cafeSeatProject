@@ -43,9 +43,9 @@
 		.seat form input:hover {background-color: #543310; color: white;}
 		
 	
-		.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none;}
+		.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none; color: gray;}
 		.seat form input.booked:hover {color: #999;}
-		.seat form input.booked.plug {cursor:not-allowed; background-color: #666; pointer-events: none;}
+		.seat form input.booked.plug {cursor:not-allowed; background-color: #666; pointer-events: none; color: gray;}
 		.seat form input.booked.plug:hover {color: #999;}
 		.seat form input.blank {margin-right: 13.7142%;}
 		.seat form input:nth-child() {margin-bottom: 30px;}
