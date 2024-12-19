@@ -1,3 +1,4 @@
+-- 12/19 tblOptoins에 조합 가능한 옵션 수 기존에 24개 였는데 사실 계산 잘못해서 총 37개 제대로 입력 (디저트는 옵션 번호 9999) + 옵션 기본값 일괄적으로 1에서 시작하게 변경. 기존에 각 옵션마다 1에서 시작하거나 0에서 시작하는 등 달라서 혼란의 여지가 있었음
 -- 12/11 tblCafe, tblCafeLoca 데이터 수정
 -- 11/04 tblAdmin, tblUser 테스트용 로그인 버튼을 위해 seq=2 부터 seq=6까지 사용자/관리자 버전 계정 조원들 이름 및 비번 1111로 단순화
 -- 11/03 tblAdmin 관리자용 2차 비밀번호 컬럼 삭제
@@ -1431,6 +1432,7 @@ INSERT INTO tblOptions(seq, temperature, cupsize, ice, shot) VALUES('2321', 2, 3
 INSERT INTO tblOptions(seq, temperature, cupsize, ice, shot) VALUES('2322', 2, 3, 2, 2);
 INSERT INTO tblOptions(seq, temperature, cupsize, ice, shot) VALUES('2331', 2, 3, 3, 1);
 INSERT INTO tblOptions(seq, temperature, cupsize, ice, shot) VALUES('2332', 2, 3, 3, 2);
+INSERT INTO tblOptions(seq, temperature, cupsize, ice, shot) VALUES('9999', 9, 9, 9, 9);
 
 
 -- tblPayment 결제 관리 ----------------------------------------------------------------------------------
