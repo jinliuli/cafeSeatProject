@@ -81,32 +81,24 @@ public class MenuList extends HttpServlet {
 		List<OrderDTO> cart = (List<OrderDTO>) session.getAttribute("cart");
 		
 		
-		OrderDTO dto = cart.get(0);
+//		OrderDTO dto = cart.get(0);
+//		
+//		String seqProduct = dto.getSeqProduct();
+//		String seqOptions = dto.getSeqOptions();
+//		String totalCount = dto.getTotalCount();
 		
-		String seqProduct = dto.getSeqProduct();
-		String seqOptions = dto.getSeqOptions();
-		String totalCount = dto.getTotalCount();
 		String[] selectedSeats = (String[]) session.getAttribute("selectedSeats");
 		UserDTO userInfo = (UserDTO) session.getAttribute("info");
 		
-		
-		//1.
-		//String sequser = session.getId();
-//		String seqReservation = "500";
-		//String totalPrice = "5000";
-
-//		String seqProduct = (String) session.getAttribute("seqProduct");
-//		String seqOptions = "1000";
-//		String totalCount = "13240";
 		
 		//2.
 		MenuDAO dao = MenuDAO.getInstance();
 		
 
-		OrderDTO orderdto = new OrderDTO();
-		orderdto.setSeqProduct(seqProduct);
-		orderdto.setSeqOptions(seqOptions);
-		orderdto.setTotalCount(totalCount);
+//		OrderDTO orderdto = new OrderDTO();
+//		orderdto.setSeqProduct(seqProduct);
+//		orderdto.setSeqOptions(seqOptions);
+//		orderdto.setTotalCount(totalCount);
 		
 		SeatReservationDTO seatdto = new SeatReservationDTO();
 		seatdto.setSelectedSeats(selectedSeats);
@@ -119,10 +111,10 @@ public class MenuList extends HttpServlet {
 		UserDTO userdto = new UserDTO();
 		userdto.setSeq(userInfo.getSeq());
 		
-		int result = dao.orderAdd(orderdto, resdto, paydto, seatdto, userdto);
+		int result = dao.orderAdd(cart, resdto, paydto, seatdto, userdto);
 		
 		//3.
-		if (result == 1) {
+		if (result > 0) {
 			resp.sendRedirect("/cafe/cafe/cafemap.do#");
 		} else {
 			System.out.println("DB 실패");
