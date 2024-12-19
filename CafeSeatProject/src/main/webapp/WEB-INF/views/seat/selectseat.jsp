@@ -32,7 +32,7 @@
             margin-right: 1%;
             display: inline-block;
             background-color: burlywood;
-            color: #999;
+            color: black;
             font-weight: bold;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -45,6 +45,8 @@
 	
 		.seat form input.booked {cursor:not-allowed; background-color: #666; pointer-events: none;}
 		.seat form input.booked:hover {color: #999;}
+		.seat form input.booked.plug {cursor:not-allowed; background-color: #666; pointer-events: none;}
+		.seat form input.booked.plug:hover {color: #999;}
 		.seat form input.blank {margin-right: 13.7142%;}
 		.seat form input:nth-child() {margin-bottom: 30px;}
 		.seat form input.plug {background: url(../images/plug.png) no-repeat; background-size: 40%; background-position-x: right; background-position-y: bottom; background-color: burlywood;}
@@ -90,7 +92,7 @@
 	</style>
 </head>
 <body class="is-preload">
-	<%-- <%@ include file="/WEB-INF/views/inc/dev.jsp" %> --%>
+	<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
 
 
 		<!-- Wrapper-->
@@ -121,8 +123,8 @@
 	                        <c:forEach var="seat" items="${seatDetails}">
 	                            <input type="button" 
 	                                   value="${seat.seatId}" 
-	                                   class="seatButton ${seat.status} ${seat.outlet == 1 ? 'plug' : ''}" 
-	                                   ${seat.status == 'booked' ? 'disabled' : ''} />
+	                                   class="seatButton ${seat.status} ${seat.status == 'booked' ? 'disabled' : ''} ${seat.outlet == 1 ? 'plug' : ''}" 
+	                                   />
 	                        </c:forEach>
 	
 	                        <!-- 하단부 -->

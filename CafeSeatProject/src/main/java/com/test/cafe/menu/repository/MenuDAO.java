@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.test.cafe.menu.model.MenuDTO;
 import com.test.cafe.menu.model.OrderDTO;
@@ -114,13 +115,16 @@ public class MenuDAO {
 	
 	
 	
-	public int orderAdd(OrderDTO orderdto, ReservationDTO resdto, PaymentDTO paydto, SeatReservationDTO seatdto, UserDTO user) {
+	public int orderAdd(List<OrderDTO> cart, ReservationDTO resdto, PaymentDTO paydto, SeatReservationDTO seatdto, UserDTO user) {
 		
 		try {
 			
 			int resultRes = resAdd(resdto, user);
 			int resultSeat = seatAdd(seatdto, resultRes);
 			int resultPay = payAdd(paydto, resultRes);
+			int n = 0;
+			
+			for(OrderDTO orderdto : cart) {
 			
 			System.out.println("상품번호(DAO): " + orderdto.getSeqProduct() + "옵션번호(DAO): " + orderdto.getSeqOptions() + "상품수량(DAO): " + orderdto.getTotalCount());
 			
@@ -131,8 +135,14 @@ public class MenuDAO {
 			pstat.setString(2, orderdto.getSeqProduct());
 			pstat.setString(3, orderdto.getSeqOptions());
 			pstat.setString(4, orderdto.getTotalCount());
-
-			return pstat.executeUpdate();		
+			
+			if(pstat.executeUpdate() == 1) {
+				n++;
+			}
+			
+			}
+			
+			return n;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -227,6 +237,7 @@ public class MenuDAO {
 		
 		return 0;
 	}// ----------------------------------------------------------------------------------------------------------------------------
+
 	
 }
 	
