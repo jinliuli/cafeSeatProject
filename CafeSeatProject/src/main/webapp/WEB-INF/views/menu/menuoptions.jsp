@@ -12,7 +12,11 @@
 		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
-		
+		@import url("/cafe/assets/css/paperlogy_font.css");
+
+body {
+	font-family: 'Paperlogy-8ExtraBold';
+}
 	</style>
 	<body class="is-preload" style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
 
