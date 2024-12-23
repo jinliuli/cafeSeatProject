@@ -28,7 +28,7 @@ body {
 </style>
 <body class="is-preload">
 
-	<%@ include file="/WEB-INF/views/inc/dev.jsp"%>
+	<%-- <%@ include file="/WEB-INF/views/inc/dev.jsp"%> --%>
 	<!-- Wrapper-->
 	<div id="wrapper">
 
@@ -48,10 +48,9 @@ body {
 							<div>
 
 								<form action="/cafe/cafemap.do" method="GET">
-									<div id="search-box">
-										<input type="text" value="${cseq}" name="cseq" id="cseq"
-											size="15" placeholder="검색어를 입력하세요">
-										<button type="submit" id="search-btn">
+									<div class="search-box">
+										<input class="keyword" type="text" name="cseq" id="cseq" size="15" placeholder="검색어를 입력하세요">
+										<button type="submit" class="search-btn">
 											<i class="fa-solid fa-magnifying-glass"></i>
 										</button>
 									</div>
@@ -61,6 +60,7 @@ body {
 						</div>
 						<hr>
 						<ul id="placesList">
+						<!-- 
 							<c:forEach items="${list}" var="dto">
 								<li class=item><span class="markerbg marker_${dto.cseq}"></span>
 									<div class="info">
@@ -80,7 +80,7 @@ body {
 										GET방식으로 카페 번호를 query string에 입력해서 보내 줬는데,
 										이걸 세션으로 넘겨주는 방식으로 수정. 이에 맞게 예약 버튼을 누르면
 										본인 페이지로 한 번 더 카페 정보를 가지고 서블릿으로 이동하고
-										서블릿은 해당 정보를 세션에 입력하고 알맞은 카페로 이동 시켜줌
+										서블릿은 해당 정보를 세션에 입력하고 알맞은 카페로 이동 시켜줌 
  										<div class="info-title">
 											<h5>${dto.name}</h5>
 											<input type="submit" id="btntitle${dto.cseq}"
@@ -92,7 +92,7 @@ body {
 										<span class="tel">${dto.tel}</span>
 									</div></li>
 
-							</c:forEach>
+							</c:forEach>-->
 						</ul>
 						<div id="pagination"></div>
 					</div>
@@ -236,29 +236,20 @@ body {
 
 		// 검색결과 항목을 Element로 반환하는 함수
 		function getListItem(index, cafe) {
-			var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
-					+ (index + 1)
-					+ '"></span>'
-					+ '<div class="info">'
-					+ '   <div class="info-title">'
-					+ '       <h5>'
-					+ cafe.name
-					+ '</h5>'
-					+ '       <form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">'
-					+ '           <input type="hidden" name="cseq" value="' + cafe.cseq + '">'
-					+ '           <input onclick="reserveSeat('
-					+ cafe.cseq
-					+ ')" type="submit" class="btntitle" value="예약">'
-					+ '       </form>'
-					+ '   </div>'
-					+ '   <span>'
-					+ cafe.address
-					+ '</span>'
-					+ '   <span class="jibun gray">'
-					+ cafe.lotAddress
-					+ '</span>'
-					+ '   <span class="tel">'
-					+ cafe.tel + '</span>' + '</div>';
+			var el = document.createElement('li'), itemStr = 
+			'<span class="markerbg marker_' + (index + 1) + '"></span>' +
+		    '<div class="info">' +
+		    '   <div class="info-title">' +
+		    '       <h5>' + cafe.name + '</h5>' +
+		    '       <form method="POST" action="/cafe/cafe/cafemap.do#cafeseat">' +
+		    '           <input type="hidden" name="cseq" value="' + cafe.cseq + '">' +
+		    '           <input onclick="reserveSeat(' + cafe.cseq + ')" type="submit" class="btntitle" value="예약">' +
+		    '       </form>' +
+		    '   </div>' +
+		    '   <span>' + cafe.address + '</span>' +
+		    '   <span class="gray"><img src="../images/places_jibun.png" alt="지번"/><a>' + cafe.lotAddress + '</a></span>' +
+		    '   <span class="tel">' + cafe.tel + '</span>' +
+		    '</div>';
 
 			el.innerHTML = itemStr;
 			el.className = 'item';
@@ -280,7 +271,7 @@ body {
 		}
 
 		// 검색 기능
-		document.getElementById('search-btn').addEventListener(
+		document.querySelector('.search-btn').addEventListener(
 				'click',
 				function(e) {
 					e.preventDefault();
@@ -295,6 +286,7 @@ body {
 							});
 					displayCafes(filteredCafes);
 					displayPlaces(filteredCafes); // 검색 결과 목록 표시 추가
+					infowindow.close(); //인포윈도우 닫기
 				});
 
 		// 페이지 로드 시 모든 카페 표시

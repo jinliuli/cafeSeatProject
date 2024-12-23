@@ -15,7 +15,7 @@
 
 	</style>
 <body class="is-preload" style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
-	<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
+<%-- 	<%@ include file="/WEB-INF/views/inc/dev.jsp" %> --%>
 		<!-- Wrapper-->
 		<div id="wrapper">
 

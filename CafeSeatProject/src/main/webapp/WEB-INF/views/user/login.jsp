@@ -71,7 +71,7 @@ body {
 						</form>
 
 						<!-- 빠른 로그인을 위한 원클릭 로그인 버튼: 테스트 후 삭제 예정 -->
-						<div style="font-size: .8em;">사용자 계정</div>
+						<!-- <div style="font-size: .8em;">사용자 계정</div>
 						<div style="display: flex;">
 							<form method="POST" action="/cafe/user/login.do">
 								<input type="hidden" name="id" value="user">
@@ -148,7 +148,7 @@ body {
 								<input type="hidden" name="loginType" value="admin">
 								<input type="submit" value="전상수">
 							</form>
-						</div>
+						</div> -->
 
 						<div class="link">
 							<a href="#" class="register"
