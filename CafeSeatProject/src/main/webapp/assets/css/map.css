@@ -85,7 +85,7 @@
 
 	outline: 1px solid #333; 포커스주기
 } */
-#search-box {
+.search-box {
 	position: absolute;
 	top: 8px;
 	height: 35px;
@@ -96,7 +96,7 @@
 	border: 2px solid #74512D;
 	margin-left: 5px;
 }
-#keyword {
+.search-box  > .keyword {
 	position: absolute;
 	top: 7px;
 	border: none;
@@ -112,7 +112,7 @@
 	height: 20px;
 	outline: none;
 } 
-#search-btn {
+.search-btn {
 	position: absolute;
 	top: 1px;
 	left: 225px;
