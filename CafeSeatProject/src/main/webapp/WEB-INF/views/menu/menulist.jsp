@@ -12,10 +12,14 @@
 		<noscript><link rel="stylesheet" href="/cafe/assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
-
+		@import url("/cafe/assets/css/paperlogy_font.css");
+		
+		body {
+		    font-family: 'Paperlogy-8ExtraBold';
+		}
 	</style>
 <body class="is-preload" style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
-	<%@ include file="/WEB-INF/views/inc/dev.jsp" %>
+<%-- 	<%@ include file="/WEB-INF/views/inc/dev.jsp" %> --%>
 		<!-- Wrapper-->
 		<div id="wrapper">
 
@@ -74,14 +78,14 @@
 								<table id="orderDetail">
 									<tr>
 										<th>메뉴명</th>
-										<th>옵션</th>
+										<th class="hidden">옵션</th>
 										<th>수량</th>
 										<th>총액</th>
 									</tr>
 								<c:forEach items="${cart}" var="order">
 									<tr>
 										<td>${order.name}</td>
-										<td>${order.seqOptions}</td>
+										<td class="hidden">${order.seqOptions}</td>
 										<td>${order.totalCount}</td>
 										<td>${order.totalPrice}</td>
 									</tr>
@@ -89,9 +93,11 @@
 								</table>
 							
 								<div id="payType">
+									<c:forEach items="${cart}" var="order">
 									<div id="price">
-										<input type="text" id="totalPrice" name="totalPrice" value="" readonly>
+										<input type="text" id="totalPrice" name="totalPrice" value="총 금액: ${order.totalPrice}원" readonly>
 									</div>
+									</c:forEach>
 									<button type="submit" id="kakaopay"><img src="/cafe/assets/pic/payment/kakao.jpg" alt=""></button>
 									<button type="submit" id="tosspay"><img src="/cafe/assets/pic/payment/tosspay.png" alt=""></button>
 									<button type="submit" id="payETC">기타 결제</button>

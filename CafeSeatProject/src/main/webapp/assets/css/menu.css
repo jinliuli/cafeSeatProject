@@ -111,14 +111,19 @@
 /* 주문 내역 ---------------------------*/
 
 #order {
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 #order #orderDetail  {
 	width: 700px;
-	/* border: 1px solid black; */
+	border:none;
 	float: left;
 }
+
+#order #orderDetail .hidden {
+	display: none;
+}
+
 
 #order #orderDetail th {
 	border-bottom: 2px solid #74512D;
@@ -126,11 +131,17 @@
     font-family: 'Paperlogy-6SemiBold';
 	color: #3A2714;
 	font-size: 19px;
+	width: 167px;
 	padding: 2px;
 }
 
 #order #orderDetail td {
 	text-align: center;
+	border: none;
+    font-family: 'Paperlogy-4Regular';
+	color: #3A2714;
+	font-size: 19px;
+	padding: 2px;
 }
 
 #order #orderDetail #orderName, #orderCount, #orderPrice{
@@ -145,7 +156,9 @@
 #order #orderDetail 
 
 /* 결제 --------------------------------------- */
-
+#payType {
+	text-align:center;
+}
 
 #payType #price {
 	width: 350px;
@@ -162,7 +175,7 @@
 	cursor: inherit;
 	outline: none;
 	color: tomato;
-	margin-right: 30px;
+ 	margin-left: 80px;
 	width: 300px;
 } 
 

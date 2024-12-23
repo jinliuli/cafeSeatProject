@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../assets/css/dev.css" />
 <header>
 	<div style="position: sticky; top: 0;">
-		<table>
+		<table class="dev">
 				<tr>
 					<th>이름</th>
 					<th>번호</th>
