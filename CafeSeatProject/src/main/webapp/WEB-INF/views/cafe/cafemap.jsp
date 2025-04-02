@@ -124,8 +124,9 @@ body {
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+	<!-- 개인 API키 마스킹 처리. 추후에 사용 시 프로젝트 디코방에서 API 확인 가능. -->
 	<script type="text/javascript"
-		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ef00a9579c4de664a8dcf691494c9b70&libraries=services"></script>
+		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0000000000000000000000000000000000000=services"></script>
 	<!-- <script src="../assets/js/cafe/map.js"></script> -->
 
 	<script>
