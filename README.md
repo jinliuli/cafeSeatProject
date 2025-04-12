@@ -1,3 +1,6 @@
+![카페좌석 커버](https://github.com/user-attachments/assets/23bd4f25-5ed2-4d61-a321-fd9fde16dc7e)
+
+
 # ☕ 카페 좌석 예약 시스템
 
 > 사용자 위치 기반 카페 검색과 좌석 예약이 가능한 웹 기반 시스템  
